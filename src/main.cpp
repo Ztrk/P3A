@@ -2,6 +2,7 @@
 #include "local_search.h"
 
 #include <vector>
+#include <iostream>
 using namespace std;
 
 int main() {
@@ -10,6 +11,12 @@ int main() {
     vector<int> berth_lengths = {50, 100, 200, 300, 400};
 
     LocalSearch solver(quay_length, berth_lengths, evaluator);
-    solver.solve();
+    auto result = solver.solve();
+
+    for (int i = 0; i < result.size(); ++i) {
+        cout << result[i] << ' ';
+    }
+    cout << endl;
+
     return 0;
 }

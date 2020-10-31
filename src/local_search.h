@@ -30,9 +30,7 @@ private:
 
     Evaluator evaluator;
 
-    std::vector<int> initial_solution() {
-        return {0, 2, 2, 0, 1};
-    }
+    std::vector<int> initial_solution();
 };
 
 #endif

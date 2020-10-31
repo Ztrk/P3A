@@ -1,5 +1,5 @@
 #include "local_search.h"
-#include <iostream>
+#include <vector>
 #include "evaluator.h"
 using namespace std;
 
@@ -105,4 +105,16 @@ vector<int> LocalSearch::solve() {
         }
     }
     return best;
+}
+
+std::vector<int> LocalSearch::initial_solution() {
+    vector<int> berths(berth_lengths.size(), 0);
+    berths.back() = 1;
+    int length_left = quay_length - berth_lengths.back();
+    for (int i = berths.size() - 1; i >= 0; --i) {
+        int added = length_left / berth_lengths[i];
+        length_left = length_left % berth_lengths[i];
+        berths[i] += added;
+    }
+    return berths;
 }
