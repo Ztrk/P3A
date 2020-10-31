@@ -2,7 +2,6 @@
 
 #include "gtest/gtest.h"
 #include <vector>
-#include <numeric>
 using namespace std;
 
 TEST(MoveGeneratorTest, test_move_generator) {

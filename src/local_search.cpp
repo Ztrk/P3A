@@ -68,9 +68,17 @@ vector<int> MoveGenerator::try_merge(int i, int j, const vector<int> &berths) {
     return { };
 }
 
-vector<int> MoveGenerator::add_longest(vector<int> &berths) {
-    // TODO
-    return berths;
+void MoveGenerator::add_longest(vector<int> &berths) {
+    int length_left = quay_length;
+    for (size_t i = 0; i < berths.size(); ++i) {
+        length_left -= berths[i] * berth_lengths[i];
+    }
+    for (int i = berths.size() - 1; i >= 0; --i) {
+        if (berth_lengths[i] <= length_left) {
+            ++berths[i];
+            return;
+        }
+    }
 }
 
 bool MoveGenerator::is_valid(size_t i, const vector<int> &berths) {

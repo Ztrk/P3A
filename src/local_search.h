@@ -15,7 +15,7 @@ private:
 
     std::vector<int> try_split(int i, const std::vector<int> &berths);
     std::vector<int> try_merge(int i, int j, const std::vector<int> &berths);
-    std::vector<int> add_longest(std::vector<int> &berths);
+    void add_longest(std::vector<int> &berths);
     bool is_valid(std::size_t i, const std::vector<int> &berths);
 };
 
