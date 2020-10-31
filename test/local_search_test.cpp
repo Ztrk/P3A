@@ -2,6 +2,7 @@
 
 #include "gtest/gtest.h"
 #include <vector>
+#include <numeric>
 using namespace std;
 
 TEST(MoveGeneratorTest, test_move_generator) {
@@ -31,7 +32,19 @@ TEST(MoveGeneratorTest, test_move_generator) {
 }
 
 TEST(MoveGeneratorTest, test_solve) {
-    // LocalSearch solver;
-    // solver.solve();
-    EXPECT_EQ(2, 2);
+    Evaluator evaluator;
+    int quay_length = 1000;
+    vector<int> berth_lengths = {50, 100, 200, 300, 400};
+
+    LocalSearch solver(quay_length, berth_lengths, evaluator);
+    auto result = solver.solve();
+
+    ASSERT_EQ(berth_lengths.size(), result.size());
+    EXPECT_GE(result.back(), 1);
+
+    int sum = 0;
+    for (size_t i = 0; i < result.size(); ++i) {
+        sum += result[i] * berth_lengths[i];
+    }
+    EXPECT_LE(sum, quay_length);
 }

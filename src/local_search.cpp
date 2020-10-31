@@ -1,5 +1,6 @@
 #include "local_search.h"
 #include <iostream>
+#include "evaluator.h"
 using namespace std;
 
 MoveGenerator::MoveGenerator(int quay_length, const vector<int> &berth_lengths)
@@ -79,6 +80,29 @@ bool MoveGenerator::is_valid(size_t i, const vector<int> &berths) {
     return berths[i] >= 1;
 }
 
-void LocalSearch::solve() {
-    cout << "Solving" << endl;
+LocalSearch::LocalSearch(int quay_length, const vector<int> &berth_lengths, Evaluator evaluator)
+    : quay_length(quay_length), berth_lengths(berth_lengths), evaluator(evaluator) { }
+
+vector<int> LocalSearch::solve() {
+    MoveGenerator moveGenerator(quay_length, berth_lengths);
+    vector<int> berth_frequencies = initial_solution();
+    auto best = berth_frequencies;
+    int best_eval = evaluator.evaluate(berth_frequencies, berth_lengths);
+
+    bool found_better = true;
+    while (found_better) {
+        found_better = false;
+        auto neighborhood = moveGenerator.get_neighborhood(berth_frequencies);
+        for (vector<int> &berths : neighborhood) {
+            int eval = evaluator.evaluate(berths, berth_lengths);
+            if (eval > best_eval) {
+                best = berths;
+                best_eval = eval;
+                berth_frequencies = berths;
+                found_better = true;
+                break;
+            }
+        }
+    }
+    return best;
 }
