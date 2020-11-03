@@ -31,14 +31,11 @@ void Evaluator::initialize(int inst_no)
     ifstream is("input" + no + ".txt");
     if(is.is_open())
     {
-        Ship ship;
-        berth berth;
-        string berths_tmp;
-
         is >> number_of_ships;
 
         for(int i = 1; i <= number_of_ships; i++)
         {
+            Ship ship;
             is >> ship.no >> ship.ready_time >> ship.length >> ship.processing_time >> ship.weight >> ship.owner;
             //preference to big ships
             //ship.weight = ship.processing_time * ship.length; //~throughput
@@ -46,15 +43,14 @@ void Evaluator::initialize(int inst_no)
         }
         restore_ships_from_instance();
 
-        is >> number_of_berths;
-
-        for(int i = 1; i <= number_of_berths; i++)
-        {
-            berth.no = i;
-            is >> berth.length;
-            /* -- deprecated -- */
-            //if(berth.length > max_ship_length) max_ship_length = berth.length;
-            berths.push_back(berth);
+        int berth_no = 0;
+        for (int i = 0; i < berth_frequencies.size(); ++i) {
+            for (int j = 0; j < berth_frequencies[i]; ++j) {
+                berth berth;
+                berth.no = berth_no++;
+                berth.length = berth_lengths[i];
+                berths.push_back(berth);
+            }
         }
     } else {
         cout << "nie wczytuje danych z pliku (" + opts.scheduling_policy + ")\n";
@@ -148,12 +144,13 @@ float Evaluator::schedule(int open_time, int inst_no)
 }
 
 float Evaluator::calculateMWFT() {
+    mwft_from_one_processor = 0;
     for(int instance_no = 1; instance_no < this->num_of_instances+ 1; instance_no++) {
 
         processed_ships.clear();
         initialize(instance_no);
         mwft_instance_sum = 0;
-        for(int bap_schedule = 1; bap_schedule < ( sizeof(BAPS)/sizeof(BAPS[0]) + 1); bap_schedule++) {
+        for(int bap_schedule = 1; bap_schedule < BAPS.size(); bap_schedule++) {
             if(baps_to_use[ bap_schedule - 1 ]) {
 
                 reset_values();
@@ -203,7 +200,9 @@ float Evaluator::calculate_lower_bound() {
     return lower_bound_n / lower_bound_d;
 }
 
-float Evaluator::evaluate(std::vector<int> berth_frequencies, std::vector<int> berth_lenghts) {
+float Evaluator::evaluate(const std::vector<int> &berth_frequencies, const std::vector<int> &berth_lengths) {
+    this->berth_frequencies = berth_frequencies;
+    this->berth_lengths = berth_lengths;
     set_num_instances(2);
 
     float sum_mwft_proc = calculateMWFT();

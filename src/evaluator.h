@@ -23,6 +23,9 @@ private:
     float mwft_instance_sum = 0;
     float mwft_from_one_processor = 0;
     int num_of_instances = 1;
+
+    std::vector<int> berth_frequencies;
+    std::vector<int> berth_lengths;
 public:
     void set_num_instances(int instances) {
         this->num_of_instances = instances;
@@ -40,7 +43,7 @@ public:
 
     float calculateMWFT();
 
-    float evaluate(std::vector<int> berth_frequencies, std::vector<int> berth_lenghts);
+    float evaluate(const std::vector<int> &berth_frequencies, const std::vector<int> &berth_lengths);
 };
 
 #endif

@@ -103,7 +103,7 @@ vector<int> LocalSearch::solve() {
         auto neighborhood = moveGenerator.get_neighborhood(berth_frequencies);
         for (vector<int> &berths : neighborhood) {
             int eval = evaluator.evaluate(berths, berth_lengths);
-            if (eval > best_eval) {
+            if (eval < best_eval) {
                 best = berths;
                 best_eval = eval;
                 berth_frequencies = berths;
