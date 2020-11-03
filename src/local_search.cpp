@@ -88,7 +88,7 @@ bool MoveGenerator::is_valid(size_t i, const vector<int> &berths) {
     return berths[i] >= 1;
 }
 
-LocalSearch::LocalSearch(int quay_length, const vector<int> &berth_lengths, Evaluator evaluator)
+LocalSearch::LocalSearch(int quay_length, const vector<int> &berth_lengths, Evaluator &evaluator)
     : quay_length(quay_length), berth_lengths(berth_lengths), evaluator(evaluator) { }
 
 vector<int> LocalSearch::solve() {

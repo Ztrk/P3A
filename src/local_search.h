@@ -21,14 +21,14 @@ private:
 
 class LocalSearch {
 public:
-    LocalSearch(int quay_length, const std::vector<int> &berth_lengths, Evaluator evaluator);
+    LocalSearch(int quay_length, const std::vector<int> &berth_lengths, Evaluator &evaluator);
 
     std::vector<int> solve();
 private:
     int quay_length;
     std::vector<int> berth_lengths;
 
-    Evaluator evaluator;
+    Evaluator &evaluator;
 
     std::vector<int> initial_solution();
 };
