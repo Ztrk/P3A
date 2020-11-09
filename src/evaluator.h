@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include "evaluator_interface.h"
 
 struct Ship {
     int no; //# of ship
@@ -13,7 +14,7 @@ struct Ship {
     int owner; //owner
 };
 
-class Evaluator {
+class Evaluator : public EvaluatorInterface {
 private:
     std::vector<std::string> BAPS = {"fcfs", "wspt", "lsf", "lpt", "lasf", "ssf", "spt", "smsf", "weight_first", "weight_first_spt_later", "spt_first_weight_later"};
     float lower_bound;
@@ -43,7 +44,7 @@ public:
 
     float calculateMWFT();
 
-    float evaluate(const std::vector<int> &berth_frequencies, const std::vector<int> &berth_lengths);
+    double evaluate(const std::vector<int> &berth_frequencies, const std::vector<int> &berth_lengths);
 };
 
 #endif

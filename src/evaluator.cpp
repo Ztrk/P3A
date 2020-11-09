@@ -200,7 +200,7 @@ float Evaluator::calculate_lower_bound() {
     return lower_bound_n / lower_bound_d;
 }
 
-float Evaluator::evaluate(const std::vector<int> &berth_frequencies, const std::vector<int> &berth_lengths) {
+double Evaluator::evaluate(const std::vector<int> &berth_frequencies, const std::vector<int> &berth_lengths) {
     this->berth_frequencies = berth_frequencies;
     this->berth_lengths = berth_lengths;
     set_num_instances(2);

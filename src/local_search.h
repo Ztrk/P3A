@@ -2,7 +2,7 @@
 #define LOCAL_SEARCH_H
 
 #include <vector>
-#include "evaluator.h"
+#include "evaluator_interface.h"
 
 class MoveGenerator {
 public:
@@ -21,14 +21,14 @@ private:
 
 class LocalSearch {
 public:
-    LocalSearch(int quay_length, const std::vector<int> &berth_lengths, Evaluator &evaluator);
+    LocalSearch(int quay_length, const std::vector<int> &berth_lengths, EvaluatorInterface &evaluator);
 
     std::vector<int> solve();
 private:
     int quay_length;
     std::vector<int> berth_lengths;
 
-    Evaluator &evaluator;
+    EvaluatorInterface &evaluator;
 
     std::vector<int> initial_solution();
 };

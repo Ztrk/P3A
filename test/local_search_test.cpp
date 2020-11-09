@@ -1,4 +1,5 @@
 #include "local_search.h"
+#include "evaluator.h"
 
 #include "gtest/gtest.h"
 #include <vector>
