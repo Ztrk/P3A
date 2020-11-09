@@ -88,7 +88,7 @@ bool MoveGenerator::is_valid(size_t i, const vector<int> &berths) {
     return berths[i] >= 1;
 }
 
-LocalSearch::LocalSearch(int quay_length, const vector<int> &berth_lengths, Evaluator evaluator)
+LocalSearch::LocalSearch(int quay_length, const vector<int> &berth_lengths, Evaluator &evaluator)
     : quay_length(quay_length), berth_lengths(berth_lengths), evaluator(evaluator) { }
 
 vector<int> LocalSearch::solve() {
@@ -103,7 +103,7 @@ vector<int> LocalSearch::solve() {
         auto neighborhood = moveGenerator.get_neighborhood(berth_frequencies);
         for (vector<int> &berths : neighborhood) {
             int eval = evaluator.evaluate(berths, berth_lengths);
-            if (eval > best_eval) {
+            if (eval < best_eval) {
                 best = berths;
                 best_eval = eval;
                 berth_frequencies = berths;
