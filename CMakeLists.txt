@@ -6,7 +6,8 @@ project(probabilistic-port-planning-algorithm)
 
 include_directories(src)
 
-add_executable(p3a src/main.cpp src/local_search.cpp src/evaluator.cpp)
+add_executable(p3a src/main.cpp src/local_search.cpp src/evaluator.cpp src/mpi_evaluator.cpp)
+target_link_libraries(p3a mpi)
 
 if (CMAKE_COMPILER_IS_GNUCC)
     target_compile_options(p3a PRIVATE "-Wall" "-Wextra")

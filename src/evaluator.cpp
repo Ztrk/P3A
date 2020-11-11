@@ -28,7 +28,7 @@ void Evaluator::initialize(int inst_no)
     berths.clear();
     ships.clear();
     string no = to_string(inst_no);
-    ifstream is("input" + no + ".txt");
+    ifstream is("instances/input" + no + ".txt");
     if(is.is_open())
     {
         is >> number_of_ships;
@@ -89,7 +89,7 @@ float Evaluator::schedule(int open_time, int inst_no)
     mws = (1.0 / sum_of_weights) * tws;
 
 
-    string out_file = "output" + to_string(inst_no) + ".txt";
+    string out_file = "output/output" + to_string(inst_no) + ".txt";
 
     //cout << "processed_ship_length: " << processed_ships.size() << endl;
     if(open_time == 0) {
@@ -146,7 +146,6 @@ float Evaluator::schedule(int open_time, int inst_no)
 float Evaluator::calculateMWFT() {
     mwft_from_one_processor = 0;
     for(int instance_no = 1; instance_no < this->num_of_instances+ 1; instance_no++) {
-
         processed_ships.clear();
         initialize(instance_no);
         mwft_instance_sum = 0;
@@ -203,10 +202,9 @@ float Evaluator::calculate_lower_bound() {
 double Evaluator::evaluate(const std::vector<int> &berth_frequencies, const std::vector<int> &berth_lengths) {
     this->berth_frequencies = berth_frequencies;
     this->berth_lengths = berth_lengths;
-    set_num_instances(2);
 
-    float sum_mwft_proc = calculateMWFT();
-    cout << "total mwft on processor: " << sum_mwft_proc << endl;
+    double mwft = calculateMWFT();
+    cout << "total mwft on processor: " << mwft << endl;
 
-    return sum_mwft_proc;
+    return mwft;
 }
