@@ -13,14 +13,14 @@ public:
                     const std::vector<int> &berth_lengths);
     
     void listen();
-    const int EXIT = -1;
+    void stop_listeners();
 private:
-    float calculateMWFT();
 
     Evaluator evaluator;
     int num_instances;
     const int MPI_TAG = 0;
     const int ROOT = 0;
+    const int EXIT = -1;
 };
 
 #endif

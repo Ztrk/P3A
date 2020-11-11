@@ -20,14 +20,16 @@ int main(int argc, char *argv[]) {
         LocalSearch solver(quay_length, berth_lengths, evaluator);
         auto result = solver.solve();
 
-        for (int i = 0; i < berth_lengths.size(); ++i) {
+        for (size_t i = 0; i < berth_lengths.size(); ++i) {
             cout << berth_lengths[i] << ' ';
         }
         cout << endl;
-        for (int i = 0; i < result.size(); ++i) {
+        for (size_t i = 0; i < result.size(); ++i) {
             cout << result[i] << ' ';
         }
         cout << endl;
+
+        evaluator.stop_listeners();
     }
     else {
         evaluator.listen();

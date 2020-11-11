@@ -18,15 +18,14 @@ double MpiEvaluator::evaluate(const vector<int> &berth_frequencies,
 
     for (int i = 1; i < np; ++i) {
         MPI_Send(&instances_per_process, 1, MPI_INT, i, MPI_TAG, MPI_COMM_WORLD);
+        int n_berths = berth_lengths.size();
+        MPI_Send(&n_berths, 1, MPI_INT, i, MPI_TAG, MPI_COMM_WORLD);
+        MPI_Send(berth_frequencies.data(), n_berths, MPI_INT, i, MPI_TAG, MPI_COMM_WORLD);
+        MPI_Send(berth_lengths.data(), n_berths, MPI_INT, i, MPI_TAG, MPI_COMM_WORLD);
     }
-
-    cout << "Pid: " << pid << endl;
-    cout << instances_per_process << endl;
 
     evaluator.set_num_instances(instances_per_process);
     double mwft = evaluator.evaluate(berth_frequencies, berth_lengths);
-
-    cout << "mwft: " << mwft << endl;
 
     mwft_sum += mwft;
     for (int i = 1; i < np; i++)
@@ -35,6 +34,7 @@ double MpiEvaluator::evaluate(const vector<int> &berth_frequencies,
                  MPI_TAG, MPI_COMM_WORLD, &status);
         mwft_sum += mwft;
     }                         
+    cout << "mwft: " << mwft_sum << endl;
 
     return mwft_sum;
 }
@@ -50,17 +50,31 @@ void MpiEvaluator::listen() {
     while (true) {
         MPI_Recv(&n_instances, 1, MPI_INT, ROOT, MPI_TAG, MPI_COMM_WORLD, &status);
 
-
         if (n_instances == EXIT) {
             break;
         }
+        
+        int n_berths;
+        MPI_Recv(&n_berths, 1, MPI_INT, ROOT, MPI_TAG, MPI_COMM_WORLD, &status);
+        vector<int> berth_frequencies(n_berths);
+        vector<int> berth_lengths(n_berths);
+
+        MPI_Recv(berth_frequencies.data(), n_berths, MPI_INT, ROOT, MPI_TAG, MPI_COMM_WORLD, &status);
+        MPI_Recv(berth_lengths.data(), n_berths, MPI_INT, ROOT, MPI_TAG, MPI_COMM_WORLD, &status);
 
         evaluator.set_num_instances(n_instances);
-        vector<int> berth_frequencies = {0, 1, 2};
-        vector<int> berth_lengths = {100, 200, 400};
         double mwft = evaluator.evaluate(berth_frequencies, berth_lengths);
         cout << "Listener " << pid << ' ' << mwft << endl;
 
         MPI_Send(&mwft, 1, MPI_DOUBLE, ROOT, MPI_TAG, MPI_COMM_WORLD);
+    }
+}
+
+void MpiEvaluator::stop_listeners() {
+    int n;
+    MPI_Comm_size(MPI_COMM_WORLD, &n);
+    int msg = EXIT;
+    for (int i = 1; i < n; ++i) {
+        MPI_Send(&msg, 1, MPI_INT, i, MPI_TAG, MPI_COMM_WORLD);
     }
 }
