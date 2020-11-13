@@ -3,11 +3,12 @@
 #include <string>
 #include <iostream>
 #include "greedy.cpp"
+#include "instance_generator.h"
 
 using namespace std;
 
 void Evaluator::restore_ships_from_instance() {
-    for(Ship ship_data : ships_from_instance) {
+    for (generator::ship ship_data : ships_from_instance) {
         /*cout << ship_data.no << " " << ship_data.ready_time << " " << ship_data.length << " " <<
         ship_data.processing_time << " " << ship_data.weight << " " << ship_data.owner << "\n";*/
 
@@ -23,39 +24,24 @@ void Evaluator::restore_ships_from_instance() {
     //cout<< "ships size() in restore function: " << ships.size() << "\n";
 }
 
-void Evaluator::initialize(int inst_no)
+void Evaluator::initialize()
 {
     berths.clear();
     ships.clear();
-    string no = to_string(inst_no);
-    ifstream is("instances/input" + no + ".txt");
-    if(is.is_open())
-    {
-        is >> number_of_ships;
 
-        for(int i = 1; i <= number_of_ships; i++)
-        {
-            Ship ship;
-            is >> ship.no >> ship.ready_time >> ship.length >> ship.processing_time >> ship.weight >> ship.owner;
-            //preference to big ships
-            //ship.weight = ship.processing_time * ship.length; //~throughput
-            ships_from_instance.push_back(ship);
-        }
-        restore_ships_from_instance();
+    ships_from_instance = generator::generate_instance();
 
-        int berth_no = 0;
-        for (int i = 0; i < berth_frequencies.size(); ++i) {
-            for (int j = 0; j < berth_frequencies[i]; ++j) {
-                berth berth;
-                berth.no = berth_no++;
-                berth.length = berth_lengths[i];
-                berths.push_back(berth);
-            }
+    restore_ships_from_instance();
+
+    int berth_no = 0;
+    for (size_t i = 0; i < berth_frequencies.size(); ++i) {
+        for (int j = 0; j < berth_frequencies[i]; ++j) {
+            berth berth;
+            berth.no = berth_no++;
+            berth.length = berth_lengths[i];
+            berths.push_back(berth);
         }
-    } else {
-        cout << "nie wczytuje danych z pliku (" + opts.scheduling_policy + ")\n";
     }
-    is.close();
 }
 
 float Evaluator::schedule(int open_time, int inst_no)
@@ -67,7 +53,7 @@ float Evaluator::schedule(int open_time, int inst_no)
 
     if(ships_from_instance.size() == 0) {
         //cout << "data must be retrieved from the file\n";
-        initialize(inst_no);
+        initialize();
         cout << "ships size (init): " << ships.size() << endl;
     } else {
         restore_ships_from_instance();
@@ -89,6 +75,7 @@ float Evaluator::schedule(int open_time, int inst_no)
     mws = (1.0 / sum_of_weights) * tws;
 
 
+    /*
     string out_file = "output/output" + to_string(inst_no) + ".txt";
 
     //cout << "processed_ship_length: " << processed_ships.size() << endl;
@@ -110,6 +97,7 @@ float Evaluator::schedule(int open_time, int inst_no)
 
         output_file.close();
     }
+    */
 
 
     /*if(open_time == 0) {
@@ -145,11 +133,11 @@ float Evaluator::schedule(int open_time, int inst_no)
 
 float Evaluator::calculateMWFT() {
     mwft_from_one_processor = 0;
-    for(int instance_no = 1; instance_no < this->num_of_instances+ 1; instance_no++) {
+    for (int instance_no = 1; instance_no < this->num_of_instances+ 1; instance_no++) {
         processed_ships.clear();
-        initialize(instance_no);
+        initialize();
         mwft_instance_sum = 0;
-        for(int bap_schedule = 1; bap_schedule < BAPS.size(); bap_schedule++) {
+        for (size_t bap_schedule = 1; bap_schedule < BAPS.size(); bap_schedule++) {
             if(baps_to_use[ bap_schedule - 1 ]) {
 
                 reset_values();
@@ -191,7 +179,7 @@ void Evaluator::reset_values() {
 float Evaluator::calculate_lower_bound() {
     float lower_bound_n = 0; //nominator
     float lower_bound_d = 0; //denominator
-    for(int initial_ship_no = 0; initial_ship_no < ships_from_instance.size(); initial_ship_no++) {
+    for (size_t initial_ship_no = 0; initial_ship_no < ships_from_instance.size(); initial_ship_no++) {
         lower_bound_n += ships_from_instance[ initial_ship_no ].processing_time * ships_from_instance[ initial_ship_no ].weight;
         lower_bound_d += ships_from_instance[ initial_ship_no ].weight;
 

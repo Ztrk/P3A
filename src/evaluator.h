@@ -4,22 +4,14 @@
 #include <vector>
 #include <string>
 #include "evaluator_interface.h"
-
-struct Ship {
-    int no; //# of ship
-    int ready_time; //ready time
-    int length; //length
-    int processing_time; //processing time
-    int weight; //weight
-    int owner; //owner
-};
+#include "instance_generator.h"
 
 class Evaluator : public EvaluatorInterface {
 private:
     std::vector<std::string> BAPS = {"fcfs", "wspt", "lsf", "lpt", "lasf", "ssf", "spt", "smsf", "weight_first", "weight_first_spt_later", "spt_first_weight_later"};
     float lower_bound;
     std::vector<bool> baps_to_use = {true, true, true, true, true, true, true, true, true, true, true};
-    std::vector<Ship> ships_from_instance;
+    std::vector<generator::ship> ships_from_instance;
     float MWFT_BAP;
     float mwft_instance_sum = 0;
     float mwft_from_one_processor = 0;
@@ -38,7 +30,7 @@ public:
 
     void restore_ships_from_instance();
 
-    void initialize(int inst_no);
+    void initialize();
 
     float schedule(int bap_no, int inst_no);
 
