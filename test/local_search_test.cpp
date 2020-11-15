@@ -1,9 +1,11 @@
+#include <vector>
+#include <nlohmann/json.hpp>
 #include "local_search.h"
 #include "evaluator.h"
 
 #include "gtest/gtest.h"
-#include <vector>
 using namespace std;
+using json = nlohmann::json;
 
 TEST(MoveGeneratorTest, test_move_generator) {
     vector<int> lengths = {100, 200, 300, 400};
@@ -32,7 +34,12 @@ TEST(MoveGeneratorTest, test_move_generator) {
 }
 
 TEST(MoveGeneratorTest, test_solve) {
-    Evaluator evaluator;
+    json config;
+    ifstream config_file("p3a_config.json");
+    config_file >> config;
+    config_file.close();
+
+    Evaluator evaluator(config["bap_algorithms"]);
     int quay_length = 1000;
     vector<int> berth_lengths = {50, 100, 200, 300, 400};
 

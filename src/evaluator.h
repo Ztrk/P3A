@@ -3,14 +3,14 @@
 
 #include <vector>
 #include <string>
+#include <nlohmann/json.hpp>
 #include "evaluator_interface.h"
 #include "instance_generator.h"
 
 class Evaluator : public EvaluatorInterface {
 private:
-    std::vector<std::string> BAPS = {"fcfs", "wspt", "lsf", "lpt", "lasf", "ssf", "spt", "smsf", "weight_first", "weight_first_spt_later", "spt_first_weight_later"};
+    const nlohmann::json &bap_algorithms;
     float lower_bound;
-    std::vector<bool> baps_to_use = {true, true, true, true, true, true, true, true, true, true, true};
     std::vector<generator::ship> ships_from_instance;
     float MWFT_BAP;
     float mwft_instance_sum = 0;
@@ -19,7 +19,11 @@ private:
 
     std::vector<int> berth_frequencies;
     std::vector<int> berth_lengths;
+
+    void init_bap(const nlohmann::json &options);
 public:
+    Evaluator(const nlohmann::json &bap_algorithms) : bap_algorithms(bap_algorithms) { }
+
     void set_num_instances(int instances) {
         this->num_of_instances = instances;
     }
@@ -32,11 +36,12 @@ public:
 
     void initialize();
 
-    float schedule(int bap_no, int inst_no);
+    float schedule();
 
     float calculateMWFT();
 
     double evaluate(const std::vector<int> &berth_frequencies, const std::vector<int> &berth_lengths);
+
 };
 
 #endif

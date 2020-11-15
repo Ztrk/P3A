@@ -7,7 +7,8 @@
 
 class MpiEvaluator : public EvaluatorInterface {
 public:
-    MpiEvaluator(int num_instances) : num_instances(num_instances) { }
+    MpiEvaluator(int num_instances, Evaluator &evaluator) 
+    : num_instances(num_instances), evaluator(evaluator) { }
 
     double evaluate(const std::vector<int> &berth_frequencies, 
                     const std::vector<int> &berth_lengths);
@@ -16,8 +17,8 @@ public:
     void stop_listeners();
 private:
 
-    Evaluator evaluator;
     int num_instances;
+    Evaluator &evaluator;
     const int MPI_TAG = 0;
     const int ROOT = 0;
     const int EXIT = -1;

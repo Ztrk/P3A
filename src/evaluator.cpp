@@ -1,7 +1,9 @@
 #include "evaluator.h"
 #include <vector>
+#include <stdexcept>
 #include <string>
 #include <iostream>
+#include <nlohmann/json.hpp>
 #include "greedy.cpp"
 #include "instance_generator.h"
 
@@ -44,7 +46,7 @@ void Evaluator::initialize()
     }
 }
 
-float Evaluator::schedule(int open_time, int inst_no)
+float Evaluator::schedule()
 {
     float mwft = 0;
     float mws = 0;
@@ -132,30 +134,21 @@ float Evaluator::schedule(int open_time, int inst_no)
 }
 
 float Evaluator::calculateMWFT() {
-    mwft_from_one_processor = 0;
+    double mwft_from_one_processor = 0;
     for (int instance_no = 1; instance_no < this->num_of_instances+ 1; instance_no++) {
         processed_ships.clear();
         initialize();
         mwft_instance_sum = 0;
-        for (size_t bap_schedule = 1; bap_schedule < BAPS.size(); bap_schedule++) {
-            if(baps_to_use[ bap_schedule - 1 ]) {
+        lower_bound = calculate_lower_bound();
+        for (size_t i = 0; i < bap_algorithms.size(); ++i) {
+            init_bap(bap_algorithms[i]);
+            reset_values();
+            //opts.scheduling_policy = BAPS[bap_schedule - 1];
 
-                reset_values();
-                opts.scheduling_policy = BAPS[bap_schedule - 1];
+            MWFT_BAP = schedule();
+            mwft_instance_sum += (MWFT_BAP / lower_bound);
 
-                if(bap_schedule == 1)
-                {
-                    lower_bound = calculate_lower_bound();
-                }
-
-                MWFT_BAP = schedule(bap_schedule, instance_no);
-                mwft_instance_sum += (MWFT_BAP / lower_bound);
-
-                processed_ships.clear();
-                /*cout << "MWFT: " << MWFT_BAP << " , lower bound: " << lower_bound << " MWFT / LB  : " << MWFT_BAP / lower_bound << endl;*/
-                //cout << "---------------------------------------\n";
-                //cout << opts.scheduling_policy << cmax << endl;
-            }
+            processed_ships.clear();
         }
 
         mwft_from_one_processor += mwft_instance_sum;
@@ -195,4 +188,14 @@ double Evaluator::evaluate(const std::vector<int> &berth_frequencies, const std:
     cout << "total mwft on processor: " << mwft << endl;
 
     return mwft;
+}
+
+void Evaluator::init_bap(const nlohmann::json &options) {
+    if (options["algorithm"].get<string>() == "greedy") {
+        opts.scheduling_policy = options["scheduling_policy"].get<string>();
+        opts.future_arrivals = options["future_arrivals"].get<int>();
+    }
+    else {
+        throw invalid_argument("Wrong value in config file: 'algorithm' should be one of: 'greedy'");
+    }
 }
