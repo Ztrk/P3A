@@ -11,31 +11,13 @@
 //#include <windows.h>
 #include <time.h>
 
+#include "greedy.h"
+#include "ship.h"
+
 using namespace std;
 
-struct options
-{
-	string input_file; //-i
-	string output_file; //-o
-	string scheduling_policy; //-p
-	int future_arrivals; //-k
-} opts;
-
-struct ship
-{
-    int no; //# of ship
-    int ready_time; //ready time
-    int length; //length
-    int processing_time; //processing time
-    int weight; //weight
-    int owner; //owner
-};
-
-struct berth
-{
-    int no; //# of berth
-    int length; //length
-};
+namespace greedy {
+options opts;
 
 struct processed_ship
 {
@@ -642,14 +624,14 @@ void priority_based_scheduling()
 	}
 }
 
-void schedule()
+float schedule()
 {
 	float mwft = 0;
 	float mws = 0;
 
 	timespec elapsedTime;
 
-	initialize();
+	// initialize();
 	
 	clock_gettime(CLOCK_MONOTONIC, &startProcess);
 
@@ -664,17 +646,17 @@ void schedule()
 	mwft = (1.0 / sum_of_weights) * twft;
 	mws = (1.0 / sum_of_weights) * tws;
 
-	ofstream output_file(opts.output_file);
+	// ofstream output_file(opts.output_file);
 
-	output_file << to_milliseconds(elapsedTime) << " " << fixed << setprecision(4) << mwft << " " << cmax << " " << mws << endl;
-	output_file << number_of_berths << " " << number_of_ships << endl;
-	for(vector<processed_ship>::iterator itps = processed_ships.begin(); itps != processed_ships.end(); itps++)
-		output_file << itps->no << " " << itps->start_time << " " << itps->berth_no << " " << itps->processing_time << " " << itps->flow_time << endl;
+	// output_file << to_milliseconds(elapsedTime) << " " << fixed << setprecision(4) << mwft << " " << cmax << " " << mws << endl;
+	// output_file << number_of_berths << " " << number_of_ships << endl;
+	// for(vector<processed_ship>::iterator itps = processed_ships.begin(); itps != processed_ships.end(); itps++)
+	// 	output_file << itps->no << " " << itps->start_time << " " << itps->berth_no << " " << itps->processing_time << " " << itps->flow_time << endl;
 
-	output_file.close();
+	// output_file.close();
+	return mwft;
 }
 
-/*
 int main(int argc, char *argv[])
 {
 	srand(time(0)); //random seed
@@ -735,7 +717,6 @@ int main(int argc, char *argv[])
 
 	return EXIT_SUCCESS;
 }
-*/
 
 timespec diff(timespec start, timespec end)
 {
@@ -768,4 +749,24 @@ unsigned long long to_nanoseconds(timespec t)
 	temp += t.tv_nsec;
 
 	return temp;
+}
+
+double schedule(const std::vector<ship> &ships_input, const std::vector<berth> &berths_input) {
+	global_time = 0;
+	twft = 0; //total weighted flow time
+	tws = 0; //total weighted stretch
+	sum_of_weights = 0;
+	cmax = 0;
+	processed_ships.clear();
+	occupied_berths.clear();
+
+	ships = ships_input;
+	berths = berths_input;
+	number_of_ships = ships_input.size();
+	number_of_berths = berths_input.size();
+
+	double mwft = schedule();
+	return mwft;
+}
+
 }

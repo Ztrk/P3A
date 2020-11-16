@@ -14,6 +14,9 @@
 //#include <boost/random/variate_generator.hpp>
 //#include <boost/random/logistic_distribution.hpp>
 
+#include "instance_generator.h"
+#include "ship.h"
+
 #define WEEKS_PER_YEAR 52
 
 using namespace std;
@@ -27,15 +30,6 @@ struct options {
     string output_file = "lh_output.txt"; //-o
     vector<string> clusters = {"cl1", "cl2", "cl3", "cl4", "cl5", "cl6", "cl7"};
 } opts;
-
-struct ship {
-    int no; //# of ship
-    int ready_time; //ready time
-    int length; //length
-    int processing_time; //processing time
-    int weight; //weight
-    int owner = 1; //owner
-};
 
 void display_usage(string name) {
     cerr << "Usage: " << name << " <options>\n"
