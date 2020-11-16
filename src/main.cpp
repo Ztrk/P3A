@@ -1,5 +1,7 @@
+#include <cstdlib>
 #include <fstream>
 #include <iostream>
+#include <random>
 #include <vector>
 #include <mpi.h>
 #include <nlohmann/json.hpp>
@@ -10,6 +12,9 @@ using namespace std;
 using nlohmann::json;
 
 int main(int argc, char *argv[]) {
+    random_device rd;
+    srand(rd());
+
     json config;
     ifstream config_file("p3a_config.json");
     config_file >> config;

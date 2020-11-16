@@ -22,10 +22,11 @@ public:
     double aggregate(const std::vector<double> &scores);
 
 private:
+    using ScheduleFunction = double (*)(const std::vector<ship> &, const std::vector<berth> &);
     const nlohmann::json &bap_algorithms;
     int num_of_instances = 1;
 
-    void init_bap(const nlohmann::json &options);
+    ScheduleFunction init_bap(const nlohmann::json &options);
     double calculate_lower_bound(const std::vector<ship> &ships);
     std::vector<berth> berths_to_list(const std::vector<int> &berth_frequencies, 
                                       const std::vector<int> &berth_lengths);

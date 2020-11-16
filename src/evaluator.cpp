@@ -7,6 +7,7 @@
 #include <nlohmann/json.hpp>
 #include "ship.h"
 #include "greedy.h"
+#include "ils.h"
 #include "instance_generator.h"
 
 using namespace std;
@@ -37,11 +38,11 @@ vector<double> Evaluator::calculate_scores(const std::vector<int> &berth_frequen
         double lower_bound = calculate_lower_bound(ships);
 
         for (size_t i = 0; i < bap_algorithms.size(); ++i) {
-            init_bap(bap_algorithms[i]);
+            ScheduleFunction schedule = init_bap(bap_algorithms[i]);
 
-            double mwft = greedy::schedule(ships, berths);
+            double mwft = schedule(ships, berths);
             double score = mwft / lower_bound;
-            cout << score << ' ' << mwft << ' ' << lower_bound << endl;
+            // cout << score << ' ' << mwft << ' ' << lower_bound << endl;
             scores.push_back(score);
         }
     }
@@ -63,13 +64,20 @@ double Evaluator::evaluate(const std::vector<int> &berth_frequencies, const std:
     return aggregate(scores);
 }
 
-void Evaluator::init_bap(const nlohmann::json &options) {
-    if (options["algorithm"].get<string>() == "greedy") {
+Evaluator::ScheduleFunction Evaluator::init_bap(const nlohmann::json &options) {
+    string algorithm = options["algorithm"].get<string>();
+    if (algorithm == "greedy") {
         greedy::opts.scheduling_policy = options["scheduling_policy"].get<string>();
         greedy::opts.future_arrivals = options["future_arrivals"].get<int>();
+        return greedy::schedule;
+    }
+    else if (algorithm == "ils") {
+        ils::opts.destruction_method = options.value("destruction_method", "C");
+        ils::opts.destruction_fraction = options.value("destruction_fraction", 0.1);
+        return ils::schedule;
     }
     else {
-        throw invalid_argument("Wrong value in config file: 'algorithm' should be one of: 'greedy'");
+        throw invalid_argument("Wrong value in config file: 'algorithm' should be one of: 'greedy', 'ils'");
     }
 }
 
