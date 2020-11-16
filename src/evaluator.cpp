@@ -1,8 +1,9 @@
 #include "evaluator.h"
-#include <vector>
+#include <iostream>
+#include <numeric>
 #include <stdexcept>
 #include <string>
-#include <iostream>
+#include <vector>
 #include <nlohmann/json.hpp>
 #include "greedy.cpp"
 #include "instance_generator.h"
@@ -133,29 +134,31 @@ float Evaluator::schedule()
     return mwft;
 }
 
-float Evaluator::calculateMWFT() {
-    double mwft_from_one_processor = 0;
+vector<double> Evaluator::calculate_scores(const std::vector<int> &berth_frequencies, 
+                                           const std::vector<int> &berth_lengths) 
+{
+    this->berth_frequencies = berth_frequencies;
+    this->berth_lengths = berth_lengths;
+    vector<double> scores;
+
     for (int instance_no = 1; instance_no < this->num_of_instances+ 1; instance_no++) {
         processed_ships.clear();
         initialize();
-        mwft_instance_sum = 0;
-        lower_bound = calculate_lower_bound();
+
+        double lower_bound = calculate_lower_bound();
         for (size_t i = 0; i < bap_algorithms.size(); ++i) {
             init_bap(bap_algorithms[i]);
             reset_values();
-            //opts.scheduling_policy = BAPS[bap_schedule - 1];
 
-            MWFT_BAP = schedule();
-            mwft_instance_sum += (MWFT_BAP / lower_bound);
+            double score = schedule() / lower_bound;
+            scores.push_back(score);
 
             processed_ships.clear();
         }
 
-        mwft_from_one_processor += mwft_instance_sum;
         ships_from_instance.clear();
-        cout << "sum of MWFT from instance (" << instance_no << ") : " << mwft_instance_sum << endl;
     }
-    return mwft_from_one_processor;
+    return scores;
 }
 
 void Evaluator::reset_values() {
@@ -181,13 +184,8 @@ float Evaluator::calculate_lower_bound() {
 }
 
 double Evaluator::evaluate(const std::vector<int> &berth_frequencies, const std::vector<int> &berth_lengths) {
-    this->berth_frequencies = berth_frequencies;
-    this->berth_lengths = berth_lengths;
-
-    double mwft = calculateMWFT();
-    cout << "total mwft on processor: " << mwft << endl;
-
-    return mwft;
+    vector<double> scores = calculate_scores(berth_frequencies, berth_lengths);
+    return aggregate(scores);
 }
 
 void Evaluator::init_bap(const nlohmann::json &options) {
@@ -198,4 +196,12 @@ void Evaluator::init_bap(const nlohmann::json &options) {
     else {
         throw invalid_argument("Wrong value in config file: 'algorithm' should be one of: 'greedy'");
     }
+}
+
+double Evaluator::aggregate(const std::vector<double> &scores) {
+    double sum = 0.0;
+    for (size_t i = 0; i < scores.size(); ++i) {
+        sum += scores[i];
+    }
+    return sum / scores.size();
 }

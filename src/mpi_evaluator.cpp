@@ -7,7 +7,12 @@ using namespace std;
 double MpiEvaluator::evaluate(const vector<int> &berth_frequencies, 
                               const vector<int> &berth_lengths) {
 
-    double mwft_sum = 0;
+    cout << "Evaluating: ";
+    for (size_t i = 0; i < berth_frequencies.size(); ++i) {
+        cout << berth_frequencies[i] << ' ';
+    }
+    cout << endl;
+
     int pid, np;
     MPI_Status status;
 
@@ -25,17 +30,19 @@ double MpiEvaluator::evaluate(const vector<int> &berth_frequencies,
     }
 
     evaluator.set_num_instances(instances_per_process);
-    double mwft = evaluator.evaluate(berth_frequencies, berth_lengths);
+    vector<double> scores = evaluator.calculate_scores(berth_frequencies, berth_lengths);
 
-    mwft_sum += mwft;
+    int scores_per_instance = scores.size();
     for (int i = 1; i < np; i++)
     {
-        MPI_Recv(&mwft, 1, MPI_DOUBLE, MPI_ANY_SOURCE, 
+        vector<double> process_scores(scores_per_instance);
+        MPI_Recv(process_scores.data(), scores_per_instance, MPI_DOUBLE, MPI_ANY_SOURCE, 
                  MPI_TAG, MPI_COMM_WORLD, &status);
-        mwft_sum += mwft;
+        scores.insert(scores.end(), process_scores.begin(), process_scores.end());
     }                         
-    cout << "mwft: " << mwft_sum << endl;
 
+    double mwft_sum = evaluator.aggregate(scores);
+    cout << "MWFT: " << mwft_sum << endl;
     return mwft_sum;
 }
 
@@ -63,10 +70,9 @@ void MpiEvaluator::listen() {
         MPI_Recv(berth_lengths.data(), n_berths, MPI_INT, ROOT, MPI_TAG, MPI_COMM_WORLD, &status);
 
         evaluator.set_num_instances(n_instances);
-        double mwft = evaluator.evaluate(berth_frequencies, berth_lengths);
-        cout << "Listener " << pid << ' ' << mwft << endl;
+        vector<double> scores = evaluator.calculate_scores(berth_frequencies, berth_lengths);
 
-        MPI_Send(&mwft, 1, MPI_DOUBLE, ROOT, MPI_TAG, MPI_COMM_WORLD);
+        MPI_Send(scores.data(), scores.size(), MPI_DOUBLE, ROOT, MPI_TAG, MPI_COMM_WORLD);
     }
 }
 
