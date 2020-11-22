@@ -1,4 +1,5 @@
 #include "local_search.h"
+#include <random>
 #include <vector>
 #include "evaluator_interface.h"
 using namespace std;
@@ -14,7 +15,7 @@ vector<vector<int>> MoveGenerator::get_neighborhood(const vector<int> &berth_fre
         }
         auto b = try_split(i, berth_frequencies);
         if (b.size() != 0) {
-            result.push_back(b);
+            result.insert(result.end(), b.begin(), b.end());
         }
     }
 
@@ -40,6 +41,7 @@ vector<vector<int>> MoveGenerator::get_neighborhood(const vector<int> &berth_fre
     return result;
 }
 
+/*
 vector<int> MoveGenerator::try_split(int i, const vector<int> &berths) {
     for (int k = i - 1; k >= 0; --k) {
         if (2 * berth_lengths[k] <= berth_lengths[i]) {
@@ -52,10 +54,40 @@ vector<int> MoveGenerator::try_split(int i, const vector<int> &berths) {
     }
     return { };
 }
+*/
+
+vector<vector<int>> MoveGenerator::try_split(int i, const vector<int> &berths) {
+    int longest = 0;
+    vector<pair<int, int>> best;
+    for (int j = 0; j < i && berth_lengths[j] * 2 <= berth_lengths[i]; ++j) {
+        for (int k = 0; k < i; ++k) {
+            int length = berth_lengths[j] + berth_lengths[k];
+            if (length == longest) {
+                best.push_back({j, k});
+            }
+            else if (length <= berth_lengths[i] && length > longest) {
+                longest = length;
+                best.clear();
+                best.push_back({j, k});
+            }
+        }
+    }
+
+    vector<vector<int>> result;
+    for (auto &best_pair : best) {
+        auto new_berths = berths;
+        --new_berths[i];
+        new_berths[best_pair.first] += 1;
+        new_berths[best_pair.second] += 1;
+        add_longest(new_berths);
+        result.push_back(new_berths);
+    }
+    return result;
+}
 
 vector<int> MoveGenerator::try_merge(int i, int j, const vector<int> &berths) {
     int sum = berth_lengths[i] + berth_lengths[j];
-    for (int k = berth_lengths.size() - 1; k >= 0; --k) {
+    for (int k = berth_lengths.size() - 1; k > i && k > j; --k) {
         if (berth_lengths[k] <= sum) {
             auto result = berths;
             --result[i];
@@ -93,16 +125,16 @@ LocalSearch::LocalSearch(int quay_length, const vector<int> &berth_lengths, Eval
 
 vector<int> LocalSearch::solve() {
     MoveGenerator moveGenerator(quay_length, berth_lengths);
-    vector<int> berth_frequencies = initial_solution();
+    vector<int> berth_frequencies = initial_solution_random();
     auto best = berth_frequencies;
-    int best_eval = evaluator.evaluate(berth_frequencies, berth_lengths);
+    double best_eval = evaluator.evaluate(berth_frequencies, berth_lengths);
 
     bool found_better = true;
     while (found_better) {
         found_better = false;
         auto neighborhood = moveGenerator.get_neighborhood(berth_frequencies);
         for (vector<int> &berths : neighborhood) {
-            int eval = evaluator.evaluate(berths, berth_lengths);
+            double eval = evaluator.evaluate(berths, berth_lengths);
             if (eval < best_eval) {
                 best = berths;
                 best_eval = eval;
@@ -115,7 +147,7 @@ vector<int> LocalSearch::solve() {
     return best;
 }
 
-std::vector<int> LocalSearch::initial_solution() {
+vector<int> LocalSearch::initial_solution_longest() {
     vector<int> berths(berth_lengths.size(), 0);
     berths.back() = 1;
     int length_left = quay_length - berth_lengths.back();
@@ -123,6 +155,24 @@ std::vector<int> LocalSearch::initial_solution() {
         int added = length_left / berth_lengths[i];
         length_left = length_left % berth_lengths[i];
         berths[i] += added;
+    }
+    return berths;
+}
+
+vector<int> LocalSearch::initial_solution_random() {
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> index_dist(0, berth_lengths.size() - 1);
+
+    vector<int> berths(berth_lengths.size());
+    berths.back() = 1;
+    int length_left = quay_length - berth_lengths.back();
+
+    int i = index_dist(gen);
+    while (berth_lengths[i] <= length_left) {
+        ++berths[i];
+        length_left -= berth_lengths[i];
+        i = index_dist(gen);
     }
     return berths;
 }

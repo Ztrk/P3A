@@ -18,8 +18,7 @@ endif()
 # Tests setup
 add_subdirectory(lib/googletest-release-1.10.0)
 
-add_executable(p3a_test test/local_search_test.cpp src/local_search.cpp src/evaluator.cpp
-    src/instance_generator.cpp src/greedy.cpp src/ils.cpp)
+add_executable(p3a_test test/local_search_test.cpp src/local_search.cpp)
 target_link_libraries(p3a_test gtest_main)
 
 enable_testing()

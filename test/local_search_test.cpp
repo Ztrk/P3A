@@ -1,7 +1,7 @@
 #include <vector>
 #include <nlohmann/json.hpp>
 #include "local_search.h"
-#include "evaluator.h"
+#include "evaluator_interface.h"
 
 #include "gtest/gtest.h"
 using namespace std;
@@ -29,17 +29,20 @@ TEST(MoveGeneratorTest, test_move_generator) {
     EXPECT_EQ(expected, neigh);
 
     neigh = generator.get_neighborhood({0, 0, 0, 2});
-    expected = {{0, 2, 0, 1}};
+    expected = {{1, 0, 1, 1}, {0, 2, 0, 1}};
     EXPECT_EQ(expected, neigh);
 }
 
-TEST(MoveGeneratorTest, test_solve) {
-    json config;
-    ifstream config_file("p3a_config.json");
-    config_file >> config;
-    config_file.close();
+class MockEvaluator : public EvaluatorInterface {
+public:
+    double evaluate(const std::vector<int> &berth_frequencies, 
+                    const std::vector<int> &berth_lengths) {
+        return 2;
+    }
+};
 
-    Evaluator evaluator(config["bap_algorithms"]);
+TEST(MoveGeneratorTest, test_solve) {
+    MockEvaluator evaluator;
     int quay_length = 1000;
     vector<int> berth_lengths = {50, 100, 200, 300, 400};
 

@@ -13,7 +13,7 @@ private:
     int quay_length;
     std::vector<int> berth_lengths;
 
-    std::vector<int> try_split(int i, const std::vector<int> &berths);
+    std::vector<std::vector<int>> try_split(int i, const std::vector<int> &berths);
     std::vector<int> try_merge(int i, int j, const std::vector<int> &berths);
     void add_longest(std::vector<int> &berths);
     bool is_valid(std::size_t i, const std::vector<int> &berths);
@@ -30,7 +30,8 @@ private:
 
     EvaluatorInterface &evaluator;
 
-    std::vector<int> initial_solution();
+    std::vector<int> initial_solution_longest();
+    std::vector<int> initial_solution_random();
 };
 
 #endif
