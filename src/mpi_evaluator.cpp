@@ -1,4 +1,5 @@
 #include "mpi_evaluator.h"
+#include <cmath>
 #include <iostream>
 #include <vector>
 #include <mpi.h>
@@ -39,10 +40,20 @@ double MpiEvaluator::evaluate(const vector<int> &berth_frequencies,
         MPI_Recv(process_scores.data(), scores_per_instance, MPI_DOUBLE, MPI_ANY_SOURCE, 
                  MPI_TAG, MPI_COMM_WORLD, &status);
         scores.insert(scores.end(), process_scores.begin(), process_scores.end());
-    }                         
+    }
 
     double mwft_sum = evaluator.aggregate(scores);
-    cout << "MWFT: " << mwft_sum << endl;
+    double sd = standard_deviation(scores);
+    vector<double> quart = quartiles(scores);
+
+    for (size_t i = 0; i < scores.size(); ++i) {
+        cout << scores[i] << '\n';
+    }
+    cout << "Mean MWFT(norm): " << mwft_sum << '\n';
+    cout << "Min, Max: " << min(scores) << ' ' << max(scores) << '\n';
+    cout << "Quartiles: " << quart[0] << ' ' << quart[1] << ' ' << quart[2] << '\n';
+    cout << "Std dev.: " << sd << '\n';
+    cout << "IQR: " << quart[2] - quart[0] << endl;
     return mwft_sum;
 }
 
@@ -83,4 +94,47 @@ void MpiEvaluator::stop_listeners() {
     for (int i = 1; i < n; ++i) {
         MPI_Send(&msg, 1, MPI_INT, i, MPI_TAG, MPI_COMM_WORLD);
     }
+}
+
+double MpiEvaluator::standard_deviation(const vector<double> &mwft) {
+    double mean = evaluator.aggregate(mwft);
+    double variance = 0;
+    for (size_t i = 0; i < mwft.size(); ++i) {
+        variance += (mwft[i] - mean) * (mwft[i] - mean);
+    }
+    return sqrt(variance / (mwft.size() - 1));
+}
+
+vector<double> MpiEvaluator::quartiles(const vector<double> &mwft) {
+    auto values = mwft;
+    sort(values.begin(), values.end());
+    int half = values.size()/2;
+    int is_odd = values.size() % 2 != 0;
+    return {
+        median(vector<double>(values.begin(), values.begin() + half)),
+        median(values),
+        median(vector<double>(values.begin() + half + is_odd, values.end()))
+    };
+}
+
+double MpiEvaluator::median(std::vector<double> x) {
+    sort(x.begin(), x.end());
+    int half = x.size()/2;
+    return x.size() % 2 == 0 ? (x[half] + x[half - 1])/2 : x[half];
+}
+
+double MpiEvaluator::min(const std::vector<double> &x) {
+    double result = INFINITY;
+    for (size_t i = 0; i < x.size(); ++i) {
+        result = std::min(x[i], result);
+    }
+    return result;
+}
+
+double MpiEvaluator::max(const std::vector<double> &x) {
+    double result = -INFINITY;
+    for (size_t i = 0; i < x.size(); ++i) {
+        result = std::max(x[i], result);
+    }
+    return result;
 }

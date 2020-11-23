@@ -22,6 +22,12 @@ private:
     const int MPI_TAG = 0;
     const int ROOT = 0;
     const int EXIT = -1;
+
+    double standard_deviation(const std::vector<double> &mwft);
+    double median(std::vector<double> x);
+    std::vector<double> quartiles(const std::vector<double> &mwft);
+    double min(const std::vector<double> &x);
+    double max(const std::vector<double> &x);
 };
 
 #endif
