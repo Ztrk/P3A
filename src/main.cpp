@@ -34,6 +34,7 @@ int main(int argc, char *argv[]) {
         LocalSearch solver(quay_length, berth_lengths, mpi_evaluator);
         auto result = solver.solve();
 
+        cout << "\nSolution found: \n";
         for (size_t i = 0; i < berth_lengths.size(); ++i) {
             cout << berth_lengths[i] << ' ';
         }
@@ -42,6 +43,7 @@ int main(int argc, char *argv[]) {
             cout << result[i] << ' ';
         }
         cout << endl;
+        cout << "MWFT: " << solver.score() << endl;
 
         mpi_evaluator.stop_listeners();
     }

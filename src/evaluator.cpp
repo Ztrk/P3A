@@ -32,6 +32,8 @@ vector<double> Evaluator::calculate_scores(const std::vector<int> &berth_frequen
 {
     vector<berth> berths = berths_to_list(berth_frequencies, berth_lengths);
     vector<double> scores;
+    _lower_bounds.clear();
+    _mwft_not_normalized.clear();
 
     for (int instance_no = 0; instance_no < this->num_of_instances; instance_no++) {
         vector<ship> ships = generator::generate_instance();
@@ -41,8 +43,11 @@ vector<double> Evaluator::calculate_scores(const std::vector<int> &berth_frequen
             ScheduleFunction schedule = init_bap(bap_algorithms[i]);
 
             double mwft = schedule(ships, berths);
+
+            _lower_bounds.push_back(lower_bound);
+            _mwft_not_normalized.push_back(mwft);
+
             double score = mwft / lower_bound;
-            // cout << score << ' ' << mwft << ' ' << lower_bound << endl;
             scores.push_back(score);
         }
     }

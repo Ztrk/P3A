@@ -21,10 +21,16 @@ public:
                                          const std::vector<int> &berth_lengths);
     double aggregate(const std::vector<double> &scores);
 
+    std::vector<double> lower_bounds() { return _lower_bounds; };
+    std::vector<double> mwft_not_normalized() { return _mwft_not_normalized; };
+
 private:
     using ScheduleFunction = double (*)(const std::vector<ship> &, const std::vector<berth> &);
     const nlohmann::json &bap_algorithms;
     int num_of_instances = 1;
+
+    std::vector<double> _lower_bounds;
+    std::vector<double> _mwft_not_normalized;
 
     ScheduleFunction init_bap(const nlohmann::json &options);
     double calculate_lower_bound(const std::vector<ship> &ships);

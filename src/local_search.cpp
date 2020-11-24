@@ -1,4 +1,6 @@
 #include "local_search.h"
+#include <chrono>
+#include <iostream>
 #include <random>
 #include <vector>
 #include "evaluator_interface.h"
@@ -124,10 +126,13 @@ LocalSearch::LocalSearch(int quay_length, const vector<int> &berth_lengths, Eval
     : quay_length(quay_length), berth_lengths(berth_lengths), evaluator(evaluator) { }
 
 vector<int> LocalSearch::solve() {
+    auto start_time = chrono::system_clock::now();
+
     MoveGenerator moveGenerator(quay_length, berth_lengths);
     vector<int> berth_frequencies = initial_solution_random();
     auto best = berth_frequencies;
     double best_eval = evaluator.evaluate(berth_frequencies, berth_lengths);
+    log_better_solution(start_time, best_eval);
 
     bool found_better = true;
     while (found_better) {
@@ -140,10 +145,13 @@ vector<int> LocalSearch::solve() {
                 best_eval = eval;
                 berth_frequencies = berths;
                 found_better = true;
+
+                log_better_solution(start_time, best_eval);
                 break;
             }
         }
     }
+    final_score = best_eval;
     return best;
 }
 
@@ -175,4 +183,10 @@ vector<int> LocalSearch::initial_solution_random() {
         i = index_dist(gen);
     }
     return berths;
+}
+
+void LocalSearch::log_better_solution(std::chrono::time_point<std::chrono::system_clock> start_time, double mwft) {
+    auto time = chrono::system_clock::now();
+    auto duration = chrono::duration_cast<chrono::milliseconds>(time - start_time);
+    log << duration.count() / 1000.0 << " s, MWFT: " << mwft << endl;
 }

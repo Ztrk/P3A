@@ -1,6 +1,8 @@
 #ifndef MPI_EVALUATOR_H
 #define MPI_EVALUATOR_H
 
+#include <fstream>
+#include <ostream>
 #include <vector>
 #include "evaluator_interface.h"
 #include "evaluator.h"
@@ -15,8 +17,8 @@ public:
     
     void listen();
     void stop_listeners();
-private:
 
+private:
     int num_instances;
     Evaluator &evaluator;
     const int MPI_TAG = 0;
@@ -28,6 +30,9 @@ private:
     std::vector<double> quartiles(const std::vector<double> &mwft);
     double min(const std::vector<double> &x);
     double max(const std::vector<double> &x);
+
+    std::ofstream file = std::ofstream("evaluator.log");
+    std::ostream &log = file;
 };
 
 #endif
