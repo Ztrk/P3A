@@ -1,14 +1,13 @@
 {
-    "quay_length": 2000,
-    "berths": [100, 200, 300, 400, 600, 800],
+    "quay_length": 5000,
+    "berths": [200, 225, 250, 275, 300, 325, 350, 375, 400],
     "n_instances": 16,
     "bap_algorithms": [
         {
-            "algorithm": "greedy", "scheduling_policy": "fcfs", "future_arrivals": 0,
-            "_scheduling_policies": ["fcfs", "wspt", "lsf", "lpt", "lasf", "ssf", "spt", "smsf", "weight_first", "weight_first_spt_later", "spt_first_weight_later"]
+            "algorithm": "greedy", "scheduling_policy": "fcfs", "future_arrivals": 0
         },
         {
-            "algorithm": "greedy", "scheduling_policy": "wspt", "future_arrivals": 1
+            "algorithm": "greedy", "scheduling_policy": "wspt", "future_arrivals": 10
         },
         {
             "algorithm": "greedy", "scheduling_policy": "random", "future_arrivals": 0
@@ -17,11 +16,5 @@
             "algorithm": "greedy", "scheduling_policy": "spt_first_weight_later", "future_arrivals": 5
         }
     ],
-    "__not_used_bap_algorithms": [
-        {
-            "algorithm": "ils",
-            "destruction_method": "C",
-            "destruction_fraction": 0.1
-        }
-    ]
+    "read_ships_from_file": false
 }

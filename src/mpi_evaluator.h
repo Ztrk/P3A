@@ -33,6 +33,8 @@ private:
 
     std::ofstream file = std::ofstream("evaluator.log");
     std::ostream &log = file;
+
+    bool instances_generated = false;
 };
 
 #endif

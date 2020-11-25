@@ -33,7 +33,11 @@ double MpiEvaluator::evaluate(const vector<int> &berth_frequencies,
         MPI_Send(berth_lengths.data(), n_berths, MPI_INT, i, MPI_TAG, MPI_COMM_WORLD);
     }
 
-    evaluator.set_num_instances(instances_per_process);
+    if (!instances_generated) {
+        evaluator.set_num_instances(instances_per_process);
+        instances_generated = true;
+    }
+
     vector<double> scores = evaluator.calculate_scores(berth_frequencies, berth_lengths);
     vector<double> mwft_not_normalized = evaluator.mwft_not_normalized();
     vector<double> lower_bounds = evaluator.lower_bounds();
@@ -82,10 +86,14 @@ void MpiEvaluator::listen() {
     cout << "Process " << pid << " listening" << endl;
 
     while (true) {
+        int n_instances_prev = n_instances;
         MPI_Recv(&n_instances, 1, MPI_INT, ROOT, MPI_TAG, MPI_COMM_WORLD, &status);
 
         if (n_instances == EXIT) {
             break;
+        }
+        if (n_instances_prev != n_instances) {
+            evaluator.set_num_instances(n_instances);
         }
         
         int n_berths;
@@ -96,7 +104,6 @@ void MpiEvaluator::listen() {
         MPI_Recv(berth_frequencies.data(), n_berths, MPI_INT, ROOT, MPI_TAG, MPI_COMM_WORLD, &status);
         MPI_Recv(berth_lengths.data(), n_berths, MPI_INT, ROOT, MPI_TAG, MPI_COMM_WORLD, &status);
 
-        evaluator.set_num_instances(n_instances);
         vector<double> scores = evaluator.calculate_scores(berth_frequencies, berth_lengths);
         vector<double> mwft_not_normalized = evaluator.mwft_not_normalized();
         vector<double> lower_bounds = evaluator.lower_bounds();

@@ -1,5 +1,6 @@
 #include "evaluator.h"
 #include <iostream>
+#include <fstream>
 #include <numeric>
 #include <stdexcept>
 #include <string>
@@ -36,7 +37,7 @@ vector<double> Evaluator::calculate_scores(const std::vector<int> &berth_frequen
     _mwft_not_normalized.clear();
 
     for (int instance_no = 0; instance_no < this->num_of_instances; instance_no++) {
-        vector<ship> ships = generator::generate_instance();
+        vector<ship> &ships = instances[instance_no];
         double lower_bound = calculate_lower_bound(ships);
 
         for (size_t i = 0; i < bap_algorithms.size(); ++i) {
@@ -92,4 +93,38 @@ double Evaluator::aggregate(const std::vector<double> &scores) {
         sum += scores[i];
     }
     return sum / scores.size();
+}
+
+void Evaluator::generate_instances(int no_instances, int offset) {
+    instances = vector<vector<ship>>(no_instances);
+    for (int i = 0; i < no_instances; ++i) {
+        instances[i] = instance_generator(i + offset);
+        write_instance_to_file(i, instances[i]);
+    }
+}
+
+vector<ship> read_instance_from_file(int instance_no) {
+    string path = "instances/instance" + to_string(instance_no) + ".txt";
+    ifstream is(path);
+
+    int n;
+    is >> n;
+
+    vector<ship> ships(n);
+    for (int i = 0; i < n; i++) {
+        is  >> ships[i].no >> ships[i].ready_time >> ships[i].length 
+            >> ships[i].processing_time >> ships[i].weight >> ships[i].owner;
+    }
+    return ships;
+}
+
+void write_instance_to_file(int instance_no, const vector<ship> &ships) {
+    string path = "instances/used-instance" + to_string(instance_no) + ".txt";
+    ofstream file(path);
+
+    file << ships.size() << '\n';
+    for (size_t i = 0; i < ships.size(); i++) {
+        file << ships[i].no << ' ' << ships[i].ready_time << ' ' << ships[i].length << ' '
+             << ships[i].processing_time << ' ' << ships[i].weight << ' ' << ships[i].owner << '\n';
+    }
 }

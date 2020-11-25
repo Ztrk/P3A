@@ -1,10 +1,13 @@
 #include <cstdlib>
+#include <cstring>
 #include <fstream>
 #include <iostream>
 #include <random>
 #include <vector>
 #include <mpi.h>
 #include <nlohmann/json.hpp>
+#include "evaluator.h"
+#include "instance_generator.h"
 #include "mpi_evaluator.h"
 #include "local_search.h"
 
@@ -25,18 +28,31 @@ int main(int argc, char *argv[]) {
     int pid;
     MPI_Comm_rank(MPI_COMM_WORLD, &pid);
 
-    Evaluator evaluator(config["bap_algorithms"]);
-    MpiEvaluator mpi_evaluator(config["n_instances"].get<int>(), evaluator);
-    if (pid == 0) {
-        int quay_length = 0, tmp;
-        vector<int> berth_lengths;
-        cin >> quay_length;
-        while (cin >> tmp) {
-            berth_lengths.push_back(tmp);
-        }
+    bool read_instances_from_file = config["read_ships_from_file"].get<bool>();
 
-        // int quay_length = config["quay_length"].get<int>();
-        // vector<int> berth_lengths = config["berths"].get<vector<int>>();
+    Evaluator::InstanceGenerator generator = generator::generate_instance;
+    if (read_instances_from_file) {
+        generator = read_instance_from_file;
+    }
+    Evaluator evaluator(config["bap_algorithms"], generator);
+    MpiEvaluator mpi_evaluator(config["n_instances"].get<int>(), evaluator);
+
+    if (pid == 0) {
+        int quay_length = 0;
+        vector<int> berth_lengths;
+
+        if (argc >= 3 && strcmp(argv[1], "-i") == 0) {
+            ifstream file(argv[2]);
+            int tmp;
+            file >> quay_length;
+            while (file >> tmp) {
+                berth_lengths.push_back(tmp);
+            }
+        }
+        else {
+            quay_length = config["quay_length"].get<int>();
+            berth_lengths = config["berths"].get<vector<int>>();
+        }
 
         LocalSearch solver(quay_length, berth_lengths, mpi_evaluator);
         auto result = solver.solve();
