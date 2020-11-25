@@ -28,8 +28,15 @@ int main(int argc, char *argv[]) {
     Evaluator evaluator(config["bap_algorithms"]);
     MpiEvaluator mpi_evaluator(config["n_instances"].get<int>(), evaluator);
     if (pid == 0) {
-        int quay_length = config["quay_length"].get<int>();
-        vector<int> berth_lengths = config["berths"].get<vector<int>>();
+        int quay_length = 0, tmp;
+        vector<int> berth_lengths;
+        cin >> quay_length;
+        while (cin >> tmp) {
+            berth_lengths.push_back(tmp);
+        }
+
+        // int quay_length = config["quay_length"].get<int>();
+        // vector<int> berth_lengths = config["berths"].get<vector<int>>();
 
         LocalSearch solver(quay_length, berth_lengths, mpi_evaluator);
         auto result = solver.solve();
