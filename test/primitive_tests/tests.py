@@ -13,7 +13,7 @@ class Ship:
         self.weight=weight
         self.owner=own
 
-def write_reality(filename_ships, filename_berths, shipz, berthz):
+def write_reality(filename_ships, filename_berths, shipz, berthz, Q):
     try:
         shutil.rmtree('../../instances')
     except:
@@ -23,10 +23,10 @@ def write_reality(filename_ships, filename_berths, shipz, berthz):
     with open(filename_ships, 'w') as outer:
         outer.write(f'{len(shipz)}\n')
         for x in shipz:
-            outer.write(f'{x.no} {x.ready} {x.length} {x.proc_time} {x.owner}\n')
+            outer.write(f'{x.no} {x.ready} {x.length} {x.proc_time} {x.weight} {x.owner}\n')
 
     with open(filename_berths, 'w') as outer:
-        outer.write(f'{len(berthz)}\n')
+        outer.write(f'{Q}\n')
         for x in berthz:
             outer.write(f'{x}\n')
 
@@ -38,8 +38,8 @@ def get_res(correct_res):
             line=outer.readline()
     print(int(old_line), correct_res)
 
-def procession(res, ships, berths):
-    write_reality(f'../../instances/instance{i}.txt', f'test_b_no_{i}.txt', ships, berths)
+def procession(res, ships, berths, Q):
+    write_reality(f'../../instances/instance{i}.txt', f'test_b_no_{i}.txt', ships, berths, Q)
     bashCommand = os.system("mpirun ../../build/p3a -i ./test_b_no_{i}.txt > result.txt")
     get_res(res)
 
@@ -51,12 +51,13 @@ for i in range(3):
 
     m=random.randint(1, 20) #segments
     Q=L*m #full quayside
+    print(Q)
     k=random.randint(1, 30) #number of ship batches
     n=k*m #number of ships
     for j in range(n):
         x=Ship(j, 0, L, 1, 1, 1)
         ships.append(x)
-    procession((k*(k-1))//2*m, ships, berths)
+    procession((k*(k-1))//2*m, ships, berths, Q)
 
 
 for i in range(3):
@@ -70,7 +71,7 @@ for i in range(3):
     for j in range(2):
         x=Ship(j, 0, mx, 1, 1, 1)
         ships.append(x)
-    procession(1, ships, berths)
+    procession(1, ships, berths, Q)
 
 for i in range(3):
     L=random.randint(1, 15) #berth len
@@ -86,4 +87,4 @@ for i in range(3):
         x=Ship(j, j, L, m, 1, 1)
         ships.append(x)
 
-    procession(0, ships, berths)
+    procession(0, ships, berths, Q)
