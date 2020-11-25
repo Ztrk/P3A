@@ -12,7 +12,7 @@ const std::string config_file = "lh_instance.json";
 
 std::vector<ship> generate_instance(nlohmann::json &instance_parameters);
 
-inline std::vector<ship> generate_instance() {
+inline std::vector<ship> generate_instance(int) {
     nlohmann::json instance_parameters;
     std::ifstream instance_parameters_file(config_file);
     instance_parameters_file >> instance_parameters;
