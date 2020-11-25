@@ -39,8 +39,8 @@ def get_res(correct_res):
     print(int(old_line), correct_res)
 
 def procession(res, ships, berths):
-    write_reality(f'../../instances/test_s_no_{i}.in', f'test_b_no_{i}.in', ships, berths)
-    bashCommand = os.system("mpirun ../../build/p3a -i ./test_b_no_{i}.in > result.txt")
+    write_reality(f'../../instances/instance{i}.txt', f'test_b_no_{i}.txt', ships, berths)
+    bashCommand = os.system("mpirun ../../build/p3a -i ./test_b_no_{i}.txt > result.txt")
     get_res(res)
 
 
