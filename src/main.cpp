@@ -53,6 +53,7 @@ int main(int argc, char *argv[]) {
             quay_length = config["quay_length"].get<int>();
             berth_lengths = config["berths"].get<vector<int>>();
         }
+        sort(berth_lengths.begin(), berth_lengths.end());
 
         LocalSearch solver(quay_length, berth_lengths, mpi_evaluator);
         auto result = solver.solve();
@@ -61,12 +62,12 @@ int main(int argc, char *argv[]) {
         for (size_t i = 0; i < berth_lengths.size(); ++i) {
             cout << berth_lengths[i] << ' ';
         }
-        cout << endl;
+        cout << '\n';
         for (size_t i = 0; i < result.size(); ++i) {
             cout << result[i] << ' ';
         }
-        cout << endl;
-        cout << "MWFT: " << solver.score() << endl;
+        cout << '\n';
+        cout << solver.score() << endl;
 
         mpi_evaluator.stop_listeners();
     }

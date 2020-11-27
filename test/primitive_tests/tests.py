@@ -15,10 +15,10 @@ class Ship:
 
 def write_reality(filename_ships, filename_berths, shipz, berthz, Q):
     try:
-        shutil.rmtree('../../instances')
+        shutil.rmtree('./instances')
     except:
         pass
-    os.mkdir('../../instances')
+    os.mkdir('./instances')
 
     with open(filename_ships, 'w') as outer:
         outer.write(f'{len(shipz)}\n')
@@ -36,11 +36,11 @@ def get_res(correct_res):
         while line:
             old_line=line
             line=outer.readline()
-    print(int(old_line), correct_res)
+    print(float(old_line), correct_res)
 
 def procession(res, ships, berths, Q):
-    write_reality(f'../../instances/instance{i}.txt', f'test_b_no_{i}.txt', ships, berths, Q)
-    bashCommand = os.system("mpirun ../../build/p3a -i ./test_b_no_{i}.txt > result.txt")
+    write_reality(f'./instances/instance0.txt', f'test_b_no_{i}.txt', ships, berths, Q)
+    bashCommand = os.system(f"mpirun ../../build/p3a -i ./test_b_no_{i}.txt > result.txt")
     get_res(res)
 
 
@@ -58,7 +58,6 @@ for i in range(3):
         x=Ship(j, 0, L, 1, 1, 1)
         ships.append(x)
     procession((k*(k-1))//2*m, ships, berths, Q)
-
 
 for i in range(3):
     berths=[]
