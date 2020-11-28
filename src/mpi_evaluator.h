@@ -2,7 +2,6 @@
 #define MPI_EVALUATOR_H
 
 #include <fstream>
-#include <ostream>
 #include <vector>
 #include "evaluator_interface.h"
 #include "evaluator.h"
@@ -10,7 +9,7 @@
 class MpiEvaluator : public EvaluatorInterface {
 public:
     MpiEvaluator(int num_instances, Evaluator &evaluator) 
-    : num_instances(num_instances), evaluator(evaluator) { }
+    : num_instances(num_instances), evaluator(evaluator), log("evaluator.log") { }
 
     double evaluate(const std::vector<int> &berth_frequencies, 
                     const std::vector<int> &berth_lengths);
@@ -31,8 +30,7 @@ private:
     double min(const std::vector<double> &x);
     double max(const std::vector<double> &x);
 
-    std::ofstream file = std::ofstream("evaluator.log");
-    std::ostream &log = file;
+    std::ofstream log;
 
     bool instances_generated = false;
 };

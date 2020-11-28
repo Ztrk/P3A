@@ -123,7 +123,7 @@ bool MoveGenerator::is_valid(size_t i, const vector<int> &berths) {
 }
 
 LocalSearch::LocalSearch(int quay_length, const vector<int> &berth_lengths, EvaluatorInterface &evaluator)
-    : quay_length(quay_length), berth_lengths(berth_lengths), evaluator(evaluator) { }
+    : quay_length(quay_length), berth_lengths(berth_lengths), evaluator(evaluator), log("local_search.log") { }
 
 vector<int> LocalSearch::solve() {
     auto start_time = chrono::system_clock::now();

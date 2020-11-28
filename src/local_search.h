@@ -4,7 +4,6 @@
 #include <chrono>
 #include <fstream>
 #include <iostream>
-#include <ostream>
 #include <vector>
 #include "evaluator_interface.h"
 
@@ -38,8 +37,7 @@ private:
 
     double final_score;
 
-    std::ofstream file = std::ofstream("local_search.log");
-    std::ostream &log = file;
+    std::ofstream log;
 
     std::vector<int> initial_solution_longest();
     std::vector<int> initial_solution_random();
