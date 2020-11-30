@@ -16,5 +16,6 @@
             "algorithm": "greedy", "scheduling_policy": "spt_first_weight_later", "future_arrivals": 5
         }
     ],
-    "read_ships_from_file": false
+    "read_ships_from_file": false,
+    "folder_with_instances": "instances/"
 }

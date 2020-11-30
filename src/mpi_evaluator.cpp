@@ -43,8 +43,7 @@ double MpiEvaluator::evaluate(const vector<int> &berth_frequencies,
     vector<double> lower_bounds = evaluator.lower_bounds();
 
     int scores_per_instance = scores.size();
-    for (int i = 1; i < np; i++)
-    {
+    for (int i = 1; i < np; i++) {
         vector<double> tmp(scores_per_instance);
         MPI_Recv(tmp.data(), scores_per_instance, MPI_DOUBLE, i, 
                  MPI_TAG, MPI_COMM_WORLD, &status);
@@ -93,6 +92,7 @@ void MpiEvaluator::listen() {
             break;
         }
         if (n_instances_prev != n_instances) {
+            evaluator.set_offset(pid * n_instances);
             evaluator.set_num_instances(n_instances);
         }
         

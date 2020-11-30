@@ -10,14 +10,16 @@
 
 class Evaluator : public EvaluatorInterface {
 public:
-    using InstanceGenerator = std::vector<ship> (*)(int);
-
-    Evaluator(const nlohmann::json &bap_algorithms, InstanceGenerator instance_generator) 
+    Evaluator(const nlohmann::json &bap_algorithms, BaseInstanceGenerator &instance_generator) 
         : bap_algorithms(bap_algorithms), instance_generator(instance_generator) { }
 
     void set_num_instances(int instances) {
         this->num_of_instances = instances;
-        generate_instances(num_of_instances, 0);
+        generate_instances(num_of_instances, offset);
+    }
+
+    void set_offset(int offset) {
+        this->offset = offset;
     }
 
     double evaluate(const std::vector<int> &berth_frequencies, const std::vector<int> &berth_lengths);
@@ -33,12 +35,13 @@ private:
 
     const nlohmann::json &bap_algorithms;
     int num_of_instances = 1;
+    int offset = 0;
 
     std::vector<double> _lower_bounds;
     std::vector<double> _mwft_not_normalized;
 
     std::vector<std::vector<ship>> instances;
-    InstanceGenerator instance_generator;
+    BaseInstanceGenerator &instance_generator;
 
     ScheduleFunction init_bap(const nlohmann::json &options);
     double calculate_lower_bound(const std::vector<ship> &ships);
@@ -48,7 +51,18 @@ private:
     void generate_instances(int no_instances, int offset);
 };
 
-std::vector<ship> read_instance_from_file(int instance_no);
-void write_instance_to_file(int instance_no, const std::vector<ship> &ships);
+class InstanceGenerator : public BaseInstanceGenerator {
+public:
+    InstanceGenerator(const std::string &folder, bool instances_from_file)
+        : instances_folder(folder), instances_from_file(instances_from_file) { }
+
+    std::vector<ship> generate(int instance_num);
+private:
+    std::string instances_folder;
+    bool instances_from_file;
+
+    std::vector<ship> read_instance_from_file(const std::string &path);
+    void write_instance_to_file(const std::string &path, const std::vector<ship> &ships);
+};
 
 #endif

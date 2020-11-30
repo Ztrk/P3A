@@ -13,17 +13,18 @@ class Ship:
         self.weight=weight
         self.owner=own
 
-def write_reality(filename_ships, filename_berths, shipz, berthz, Q):
+def write_reality(filename_ships, filename_berths, shipz, berthz, Q, n_instances):
     try:
         shutil.rmtree('./instances')
     except:
         pass
     os.mkdir('./instances')
 
-    with open(filename_ships, 'w') as outer:
-        outer.write(f'{len(shipz)}\n')
-        for x in shipz:
-            outer.write(f'{x.no} {x.ready} {x.length} {x.proc_time} {x.weight} {x.owner}\n')
+    for i in range(0, n_instances):
+        with open(f'{filename_ships}{i}.txt', 'w') as outer:
+            outer.write(f'{len(shipz)}\n')
+            for x in shipz:
+                outer.write(f'{x.no} {x.ready} {x.length} {x.proc_time} {x.weight} {x.owner}\n')
 
     with open(filename_berths, 'w') as outer:
         outer.write(f'{Q}\n')
@@ -39,7 +40,7 @@ def get_res(correct_res):
     print(float(old_line), correct_res)
 
 def procession(res, ships, berths, Q):
-    write_reality(f'./instances/instance0.txt', f'test_b_no_{i}.txt', ships, berths, Q)
+    write_reality(f'./instances/instance', f'test_b_no_{i}.txt', ships, berths, Q, 4)
     bashCommand = os.system(f"mpirun ../../build/p3a -i ./test_b_no_{i}.txt > result.txt")
     get_res(res)
 

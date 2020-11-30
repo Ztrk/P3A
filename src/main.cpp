@@ -25,17 +25,17 @@ int main(int argc, char *argv[]) {
 
     MPI_Init(&argc, &argv);
 
-    int pid;
+    int pid, num_processes;
     MPI_Comm_rank(MPI_COMM_WORLD, &pid);
+    MPI_Comm_size(MPI_COMM_WORLD, &num_processes);
 
+    string instances_path = config["folder_with_instances"].get<string>();
     bool read_instances_from_file = config["read_ships_from_file"].get<bool>();
+    int n_instances = config["n_instances"].get<int>();
 
-    Evaluator::InstanceGenerator generator = generator::generate_instance;
-    if (read_instances_from_file) {
-        generator = read_instance_from_file;
-    }
+    InstanceGenerator generator(instances_path, read_instances_from_file);
     Evaluator evaluator(config["bap_algorithms"], generator);
-    MpiEvaluator mpi_evaluator(config["n_instances"].get<int>(), evaluator);
+    MpiEvaluator mpi_evaluator(n_instances, evaluator);
 
     if (pid == 0) {
         int quay_length = 0;

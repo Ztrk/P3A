@@ -98,13 +98,24 @@ double Evaluator::aggregate(const std::vector<double> &scores) {
 void Evaluator::generate_instances(int no_instances, int offset) {
     instances = vector<vector<ship>>(no_instances);
     for (int i = 0; i < no_instances; ++i) {
-        instances[i] = instance_generator(i + offset);
-        write_instance_to_file(i, instances[i]);
+        instances[i] = instance_generator.generate(i + offset);
     }
 }
 
-vector<ship> read_instance_from_file(int instance_no) {
-    string path = "instances/instance" + to_string(instance_no) + ".txt";
+std::vector<ship> InstanceGenerator::generate(int instance_num) {
+    vector<ship> ships;
+    string number = to_string(instance_num);
+    if (instances_from_file) {
+        ships = read_instance_from_file(instances_folder + "instance" + number + ".txt");
+    }
+    else {
+        ships = generator::generate_instance();
+    }
+    write_instance_to_file(instances_folder + "used-instance" + number + ".txt", ships);
+    return ships;
+}
+
+vector<ship> InstanceGenerator::read_instance_from_file(const string &path) {
     ifstream is(path);
 
     int n;
@@ -118,8 +129,7 @@ vector<ship> read_instance_from_file(int instance_no) {
     return ships;
 }
 
-void write_instance_to_file(int instance_no, const vector<ship> &ships) {
-    string path = "instances/used-instance" + to_string(instance_no) + ".txt";
+void InstanceGenerator::write_instance_to_file(const string &path, const vector<ship> &ships) {
     ofstream file(path);
 
     file << ships.size() << '\n';
