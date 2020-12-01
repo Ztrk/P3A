@@ -15,6 +15,10 @@ std::vector<ship> generate_instance(nlohmann::json &instance_parameters);
 inline std::vector<ship> generate_instance() {
     nlohmann::json instance_parameters;
     std::ifstream instance_parameters_file(config_file);
+    if (instance_parameters_file.fail()) {
+        throw std::runtime_error("Could not open instance generator config file " + config_file);
+    }
+
     instance_parameters_file >> instance_parameters;
     return generate_instance(instance_parameters);
 }

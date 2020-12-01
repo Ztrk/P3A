@@ -1,9 +1,11 @@
 #include <cstdlib>
 #include <cstring>
 #include <fstream>
+#include <stdexcept>
 #include <iostream>
 #include <random>
 #include <vector>
+
 #include <mpi.h>
 #include <nlohmann/json.hpp>
 #include "evaluator.h"
@@ -20,10 +22,17 @@ int main(int argc, char *argv[]) {
 
     json config;
     ifstream config_file("p3a_config.json");
+    if (config_file.fail()) {
+        throw runtime_error("Could not open 'p3a_config.json'.");
+    }
+
     config_file >> config;
     config_file.close();
 
-    MPI_Init(&argc, &argv);
+    int res = MPI_Init(&argc, &argv);
+    if (res != 0) {
+        throw runtime_error(string("MPI_Init failed with code ") + to_string(res) + ".");
+    }
 
     int pid, num_processes;
     MPI_Comm_rank(MPI_COMM_WORLD, &pid);
@@ -43,6 +52,10 @@ int main(int argc, char *argv[]) {
 
         if (argc >= 3 && strcmp(argv[1], "-i") == 0) {
             ifstream file(argv[2]);
+            if (file.fail()) {
+                throw runtime_error(string("Could not open berths file ") + argv[2]);
+            }
+
             int tmp;
             file >> quay_length;
             while (file >> tmp) {

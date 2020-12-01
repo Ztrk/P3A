@@ -117,6 +117,9 @@ std::vector<ship> InstanceGenerator::generate(int instance_num) {
 
 vector<ship> InstanceGenerator::read_instance_from_file(const string &path) {
     ifstream is(path);
+    if (is.fail()) {
+        throw runtime_error("Could not open instance file " + path);
+    }
 
     int n;
     is >> n;
@@ -131,6 +134,11 @@ vector<ship> InstanceGenerator::read_instance_from_file(const string &path) {
 
 void InstanceGenerator::write_instance_to_file(const string &path, const vector<ship> &ships) {
     ofstream file(path);
+    if (file.fail()) {
+        // throw runtime_error("Could not save instance in file " + path);
+        cerr << "Could not save instance in file " + path << endl;
+        return;
+    }
 
     file << ships.size() << '\n';
     for (size_t i = 0; i < ships.size(); i++) {
