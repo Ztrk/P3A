@@ -41,10 +41,12 @@ def get_res(correct_res):
 
 def procession(res, ships, berths, Q):
     write_reality(f'./instances/instance', f'test_b_no_{i}.txt', ships, berths, Q, 4)
-    bashCommand = os.system(f"mpirun ../../build/p3a -i ./test_b_no_{i}.txt > result.txt")
-    get_res(res)
+    bashCommand = os.system(f"mpirun ./build/p3a -i ./test_b_no_{i}.txt > result.txt")
+    normal=sum([x.proc_time for x in ships])/len(ships)
+    get_res((res+sum([x.proc_time for x in ships]))/(len(ships)*normal))
 
 
+print('Basic case')
 for i in range(3):
     L=random.randint(1, 15) #berth len
     ships=[]
@@ -52,7 +54,6 @@ for i in range(3):
 
     m=random.randint(1, 20) #segments
     Q=L*m #full quayside
-    print(Q)
     k=random.randint(1, 30) #number of ship batches
     n=k*m #number of ships
     for j in range(n):
@@ -60,6 +61,7 @@ for i in range(3):
         ships.append(x)
     procession((k*(k-1))//2*m, ships, berths, Q)
 
+print('Test Max')
 for i in range(3):
     berths=[]
     ships=[]
@@ -73,6 +75,7 @@ for i in range(3):
         ships.append(x)
     procession(1, ships, berths, Q)
 
+print('Cyclic')
 for i in range(3):
     L=random.randint(1, 15) #berth len
     ships=[]
@@ -82,9 +85,19 @@ for i in range(3):
 
     k=random.randint(2, 30) #number of ship batches
     n=k*m #number of ships
-
     for j in range(n):
         x=Ship(j, j, L, m, 1, 1)
         ships.append(x)
-
     procession(0, ships, berths, Q)
+
+print('Trivial case - 2 ships')
+berths=[5]
+ships=[]
+Pt=2
+x=Ship(0, 0, 5, Pt, 1, 1)
+ships.append(x)
+
+x=Ship(1, 1, 5, Pt, 1, 1)
+ships.append(x)
+
+procession(1, ships, berths, 5)
