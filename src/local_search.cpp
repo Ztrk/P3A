@@ -132,6 +132,8 @@ vector<int> LocalSearch::solve() {
     vector<int> berth_frequencies = initial_solution_random();
     auto best = berth_frequencies;
     double best_eval = evaluator.evaluate(berth_frequencies, berth_lengths);
+
+    log << "time(s) mean MWFT\n";
     log_better_solution(start_time, best_eval);
 
     bool found_better = true;
@@ -151,6 +153,7 @@ vector<int> LocalSearch::solve() {
             }
         }
     }
+    log_better_solution(start_time, best_eval);
     final_score = best_eval;
     return best;
 }
@@ -188,5 +191,5 @@ vector<int> LocalSearch::initial_solution_random() {
 void LocalSearch::log_better_solution(std::chrono::time_point<std::chrono::system_clock> start_time, double mwft) {
     auto time = chrono::system_clock::now();
     auto duration = chrono::duration_cast<chrono::milliseconds>(time - start_time);
-    log << duration.count() / 1000.0 << " s, MWFT: " << mwft << endl;
+    log << duration.count() / 1000.0 << ' ' << mwft << endl;
 }
