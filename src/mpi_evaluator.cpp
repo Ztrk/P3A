@@ -3,6 +3,9 @@
 #include <iostream>
 #include <vector>
 #include <mpi.h>
+#include <string>
+#include <sys/stat.h>
+#include <sys/types.h>
 using namespace std;
 
 double MpiEvaluator::evaluate(const vector<int> &berth_frequencies, 
@@ -18,10 +21,7 @@ double MpiEvaluator::evaluate(const vector<int> &berth_frequencies,
 
     cout << "\nEvaluating: ";
     log << "Evaluating: ";
-    for (size_t i = 0; i < berth_frequencies.size(); ++i) {
-        cout << berth_frequencies[i] << ' ';
-        log << berth_frequencies[i] << ' ';
-    }
+
     cout << endl;
     log << '\n';
 
@@ -68,11 +68,42 @@ double MpiEvaluator::evaluate(const vector<int> &berth_frequencies,
     }
     log.flush();
 
+    //file system output init part - START
+    string berth_folder_name = "";    
+
+    for (size_t i = 0; i < berth_frequencies.size(); ++i) {
+        cout << berth_frequencies[i] << ' ';
+        log << berth_frequencies[i] << ' ';
+	berth_folder_name += to_string(berth_frequencies[i]);
+	if(i != berth_frequencies.size() - 1)
+	   berth_folder_name += "_";
+    }	    
+
+    string command = "mkdir quay_divisions/" + berth_folder_name;
+    
+    int berth_division_folder_status; 
+    
+    berth_division_folder_status = system(command.c_str());
+
+    ofstream berth_div_stats;
+    berth_div_stats.open("quay_divisions/" + berth_folder_name + "/overall_stats.txt");
+    //file system output init part - END
+
     cout << "Mean MWFT(norm): " << mwft_sum << '\n';
+    berth_div_stats << "Mean MWFT(norm): " << mwft_sum << '\n';
+
     cout << "Min, Max: " << min(scores) << ' ' << max(scores) << '\n';
+    berth_div_stats << "Min, Max: " << min(scores) << ' ' << max(scores) << '\n';
+    
     cout << "Quartiles: " << quart[0] << ' ' << quart[1] << ' ' << quart[2] << '\n';
+    berth_div_stats << "Quartiles: " << quart[0] << ' ' << quart[1] << ' ' << quart[2] << '\n';
+
     cout << "Std dev.: " << sd << '\n';
+    berth_div_stats << "Std dev.: " << sd << '\n';
+
     cout << "IQR: " << quart[2] - quart[0] << endl;
+    berth_div_stats << "IQR: " << quart[2] - quart[0] << endl;
+    berth_div_stats.close();
     return mwft_sum;
 }
 
