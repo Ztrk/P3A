@@ -71,7 +71,7 @@ with open('p3a_config.json') as json_file:
 		if line_no == bap_algorithms_count:
 			instance_no += 1
 			line_no = 0
-		if(instance_no == 100):
+		if(instance_no == num_instances):
 			instance_no = 0
 		
 
