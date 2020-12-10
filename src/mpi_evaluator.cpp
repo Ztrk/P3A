@@ -21,6 +21,10 @@ double MpiEvaluator::evaluate(const vector<int> &berth_frequencies,
 
     cout << "\nEvaluating: ";
     log << "Evaluating: ";
+    for (size_t i = 0; i < berth_frequencies.size(); ++i) {
+        cout << berth_frequencies[i] << ' ';
+        log << berth_frequencies[i] << ' ';
+    } 
 
     cout << endl;
     log << '\n';
