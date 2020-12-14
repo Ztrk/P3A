@@ -40,7 +40,14 @@ int main(int argc, char *argv[]) {
 
     string instances_path = config["folder_with_instances"].get<string>();
     bool read_instances_from_file = config["read_ships_from_file"].get<bool>();
-    int n_instances = config["n_instances"].get<int>();
+    int n_instances;// = config["n_instances"].get<int>();
+
+    if(argc >= 5 && strcmp(argv[3], "-t") == 0) {
+	n_instances = stoi(argv[4]);
+    }
+    else {
+	n_instances = config["n_instances"].get<int>();
+    }
 
     InstanceGenerator generator(instances_path, read_instances_from_file);
     Evaluator evaluator(config["bap_algorithms"], generator);
@@ -92,3 +99,4 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
