@@ -28,3 +28,16 @@ Konfiguracja algorytmu znajduje się w pliku `p3a_config.json`. Przykładowy pli
 Algortym obsługuje opcję `-i` umożliwiającą podanie pliku z długościami nabrzeży. Wtedy `quay_length` i `berths` w pliku `p3a_config.json` są ignorowane.
 
 Kod generatora instancji (`instance_generator.cpp`) i algorytmów BAP (`ils.cpp`, `greedy.cpp`) jest autorstwa Jakuba Wawrzyniaka.
+
+#### PCSS - uruchomienie
+
+Podstawową wersję skryptu -  `p3ascr.sh` uruchamiamy w miejscu gdzie znajduję się program `p3a` za pomocą komendy `sbatch p3ascr.sh`. Program tworzy wstępną hierarchię plików podzieloną na foldery przypisując każdemu nazwę - podział nabrzeża (wektor frekwencji). Plik `file_system.py` dodatkowo tworzy kolejne podkatalogi - dotyczące instancji, a w nich wyniki poszczególnych algorytmów BAP w plikach `.txt`.
+
+Druga wersja skryptu - `p3ascr_v2_const_p_diff_inst.sh` służy do pomiaru czasu wykonywania algorytmu przy tej samej liczbie procesorów (10) i różnej liczbie instancji (100-10). Uruchomić ją można w podobny sposób jak 1-szą wersje: `sbatch p3ascr_v2_const_p_diff_inst.sh`. Do parsowania wyników potrzebny jest skrypt `get_inst_time.py`, który pobiera ostatnią linię pliku wyjściowego `local_search.log` - czas wykonania programu dla danej liczby instancji.
+
+### Pliki wyjściowe - druga wersja skryptu
+
+Po uruchomieniu skryptu `p3ascr_v2_const_p_diff_inst.sh` powstaje plik wynikowy `10tasks_100to10inst.txt`, który zawiera cykliczne informacje zawierające - liczbę instancji i 5 wartości czasów wykonywanego algorytmu, każda informacja w osobnym wierszu. Przy obecności tego pliku można uruchomić skrypt `diff_inst_mean_alg_time.py` (python diff_inst_mean_alg_time.py), co daje ostatecznie w pliku wynikowym `mean_times_const_proc_diff_inst.txt` zestawienie: 'liczba instancji' oraz 'przyspieszenie dla danej liczby instancji' w odniesieniu do największej uwzględnianej liczby instancji (100) przy stałej ilości procesorów (--ntasks w skrypcie).
+
+
+
