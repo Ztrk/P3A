@@ -1,16 +1,18 @@
+import sys
+
 def mean_from_arr(arr):
 	mean = 0
  	for i in range (0, len(arr)):
 		mean = mean + arr[i]
 	return (mean / 3)
 
-inst_output_times = open("10tasks_100to10inst.txt")
+inst_output_times = open(sys.argv[1])
 
 line_no = 0
 
-f = open("mean_times_const_proc_diff_inst.txt", "w")
+f = open(sys.argv[2], "w")
 
-f.write("instances: acceleration:\n")
+f.write("instances: mean_time:\n")
 
 first_fetched = False
 
@@ -27,13 +29,7 @@ for line in inst_output_times:
 			times_arr.pop()
 			times_arr.pop(0)
 			mean_time = mean_from_arr(times_arr)
-			if(not first_fetched):
-				first_fetched = True
-				acceleration = 1.0
-				basic_time = mean_time
-			else:
-				acceleration = basic_time / mean_time
-			f.write(str(n_inst) + " " + str(acceleration) + "\n")
+			f.write(str(n_inst) + " " + str(mean_time) + "\n")
 			line_no = 0		
 f.close()
 inst_output_times.close()
