@@ -39,5 +39,9 @@ Druga wersja skryptu - `p3ascr_v2_const_p_diff_inst.sh` służy do pomiaru czasu
 
 Po uruchomieniu skryptu `p3ascr_v2_const_p_diff_inst.sh` powstaje plik wynikowy `10tasks_100to10inst.txt`, który zawiera cykliczne informacje zawierające - liczbę instancji i 5 wartości czasów wykonywanego algorytmu, każda informacja w osobnym wierszu. Przy obecności tego pliku można uruchomić skrypt `diff_inst_mean_alg_time.py` (python diff_inst_mean_alg_time.py), co daje ostatecznie w pliku wynikowym `mean_times_const_proc_diff_inst.txt` zestawienie: 'liczba instancji' oraz 'przyspieszenie dla danej liczby instancji' w odniesieniu do największej uwzględnianej liczby instancji (100) przy stałej ilości procesorów (--ntasks w skrypcie).
 
+#### Uwagi - PCSS
+
+Przed uruchomieniem polecenia `cmake -S .` na używanym w projekcie klastrze eagle PCSS należy załadować biblioteke MPI poleceniem `module load mpich`.
+
 
 
