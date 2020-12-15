@@ -127,30 +127,41 @@ LocalSearch::LocalSearch(int quay_length, const vector<int> &berth_lengths, Eval
 
 vector<int> LocalSearch::solve() {
     auto start_time = chrono::system_clock::now();
+    vector<int> best;
 
     MoveGenerator moveGenerator(quay_length, berth_lengths);
-    vector<int> berth_frequencies = initial_solution_random();
-    auto best = berth_frequencies;
-    double best_eval = evaluator.evaluate(berth_frequencies, berth_lengths);
+    double best_eval=-1;
+    for (int i=0; i<10; i++){
+        log << "Finding solutions from different starting point\n";
+        vector<int> berth_frequencies = initial_solution_random();
+        auto tmp_best = berth_frequencies;
+        double tmp_best_eval = evaluator.evaluate(berth_frequencies, berth_lengths);
 
-    log << "time(s) mean MWFT\n";
-    log_better_solution(start_time, best_eval);
+        if (i==0 || tmp_best_eval < best_eval) 
+	    best_eval=tmp_best_eval, best=tmp_best;
 
-    bool found_better = true;
-    while (found_better) {
-        found_better = false;
-        auto neighborhood = moveGenerator.get_neighborhood(berth_frequencies);
-        for (vector<int> &berths : neighborhood) {
-            double eval = evaluator.evaluate(berths, berth_lengths);
-            if (eval < best_eval) {
-                best = berths;
-                best_eval = eval;
-                berth_frequencies = berths;
-                found_better = true;
+        log << "time(s) mean MWFT\n";
+        log_better_solution(start_time, best_eval);
 
-                log_better_solution(start_time, best_eval);
-                break;
+        bool found_better = true;
+        while (found_better) {
+            found_better = false;
+            auto neighborhood = moveGenerator.get_neighborhood(berth_frequencies);
+            for (vector<int> &berths : neighborhood) {
+                double eval = evaluator.evaluate(berths, berth_lengths);
+                if (eval < tmp_best_eval) {
+                    tmp_best = berths;
+                    tmp_best_eval = eval;
+                    berth_frequencies = berths;
+                    found_better = true;
+                    log_better_solution(start_time, tmp_best_eval);
+                    break;
+                }
             }
+        }
+        if (tmp_best_eval < best_eval){
+            best_eval=tmp_best_eval;
+            best=tmp_best;
         }
     }
     log_better_solution(start_time, best_eval);
