@@ -131,17 +131,19 @@ vector<int> LocalSearch::solve() {
 
     MoveGenerator moveGenerator(quay_length, berth_lengths);
     double best_eval=-1;
-    for (int i=0; i<10; i++){
-        log << "Finding solutions from different starting point\n";
+    for (int i = 0; i < 1; ++i) {
         vector<int> berth_frequencies = initial_solution_random();
         auto tmp_best = berth_frequencies;
         double tmp_best_eval = evaluator.evaluate(berth_frequencies, berth_lengths);
 
-        if (i==0 || tmp_best_eval < best_eval) 
-	    best_eval=tmp_best_eval, best=tmp_best;
+        if (i == 0 || tmp_best_eval < best_eval) {
+            best_eval = tmp_best_eval;
+            best = tmp_best;
+        }
 
+        log << "Finding solutions from different starting point\n";
         log << "time(s) mean MWFT\n";
-        log_better_solution(start_time, best_eval);
+        log_better_solution(start_time, tmp_best_eval);
 
         bool found_better = true;
         while (found_better) {

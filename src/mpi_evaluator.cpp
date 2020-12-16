@@ -19,16 +19,7 @@ double MpiEvaluator::evaluate(const vector<int> &berth_frequencies,
 
     int instances_per_process = num_instances/np;
 
-    cout << "\nEvaluating: ";
-    log << "Evaluating: ";
-    for (size_t i = 0; i < berth_frequencies.size(); ++i) {
-        cout << berth_frequencies[i] << ' ';
-        log << berth_frequencies[i] << ' ';
-    } 
-
-    cout << endl;
-    log << '\n';
-
+    // Send data to other processes
     for (int i = 1; i < np; ++i) {
         MPI_Send(&instances_per_process, 1, MPI_INT, i, MPI_TAG, MPI_COMM_WORLD);
         int n_berths = berth_lengths.size();
@@ -37,6 +28,7 @@ double MpiEvaluator::evaluate(const vector<int> &berth_frequencies,
         MPI_Send(berth_lengths.data(), n_berths, MPI_INT, i, MPI_TAG, MPI_COMM_WORLD);
     }
 
+    // Compute on process 0
     if (!instances_generated) {
         evaluator.set_num_instances(instances_per_process);
         instances_generated = true;
@@ -46,8 +38,9 @@ double MpiEvaluator::evaluate(const vector<int> &berth_frequencies,
     vector<double> mwft_not_normalized = evaluator.mwft_not_normalized();
     vector<double> lower_bounds = evaluator.lower_bounds();
 
+    // Receive results from other processes
     int scores_per_instance = scores.size();
-    for (int i = 1; i < np; i++) {
+    for (int i = 1; i < np; ++i) {
         vector<double> tmp(scores_per_instance);
         MPI_Recv(tmp.data(), scores_per_instance, MPI_DOUBLE, i, 
                  MPI_TAG, MPI_COMM_WORLD, &status);
@@ -62,53 +55,9 @@ double MpiEvaluator::evaluate(const vector<int> &berth_frequencies,
         lower_bounds.insert(lower_bounds.end(), tmp.begin(), tmp.end());
     }
 
-    double mwft_sum = evaluator.aggregate(scores);
-    double sd = standard_deviation(scores);
-    vector<double> quart = quartiles(scores);
+    write_log(berth_frequencies, scores, mwft_not_normalized, lower_bounds);
 
-    log << "MWFT(norm) MWFT LB" << '\n';
-    for (size_t i = 0; i < scores.size(); ++i) {
-        log << scores[i] << ' ' << mwft_not_normalized[i] << ' ' << lower_bounds[i] << '\n';
-    }
-    log.flush();
-
-    //file system output init part - START
-    string berth_folder_name = "";    
-
-    for (size_t i = 0; i < berth_frequencies.size(); ++i) {
-        cout << berth_frequencies[i] << ' ';
-        log << berth_frequencies[i] << ' ';
-	berth_folder_name += to_string(berth_frequencies[i]);
-	if(i != berth_frequencies.size() - 1)
-	   berth_folder_name += "_";
-    }	    
-
-    string command = "mkdir quay_divisions/" + berth_folder_name;
-    
-    int berth_division_folder_status; 
-    
-    berth_division_folder_status = system(command.c_str());
-
-    ofstream berth_div_stats;
-    berth_div_stats.open("quay_divisions/" + berth_folder_name + "/overall_stats.txt");
-    //file system output init part - END
-
-    cout << "Mean MWFT(norm): " << mwft_sum << '\n';
-    berth_div_stats << "Mean MWFT(norm): " << mwft_sum << '\n';
-
-    cout << "Min, Max: " << min(scores) << ' ' << max(scores) << '\n';
-    berth_div_stats << "Min, Max: " << min(scores) << ' ' << max(scores) << '\n';
-    
-    cout << "Quartiles: " << quart[0] << ' ' << quart[1] << ' ' << quart[2] << '\n';
-    berth_div_stats << "Quartiles: " << quart[0] << ' ' << quart[1] << ' ' << quart[2] << '\n';
-
-    cout << "Std dev.: " << sd << '\n';
-    berth_div_stats << "Std dev.: " << sd << '\n';
-
-    cout << "IQR: " << quart[2] - quart[0] << endl;
-    berth_div_stats << "IQR: " << quart[2] - quart[0] << endl;
-    berth_div_stats.close();
-    return mwft_sum;
+    return evaluator.aggregate(scores);
 }
 
 void MpiEvaluator::listen() {
@@ -117,7 +66,7 @@ void MpiEvaluator::listen() {
 
     int pid;
     MPI_Comm_rank(MPI_COMM_WORLD, &pid);
-    cout << "Process " << pid << " listening" << endl;
+    // cout << "Process " << pid << " listening" << endl;
 
     while (true) {
         int n_instances_prev = n_instances;
@@ -147,6 +96,66 @@ void MpiEvaluator::listen() {
         MPI_Send(mwft_not_normalized.data(), mwft_not_normalized.size(), MPI_DOUBLE, ROOT, MPI_TAG, MPI_COMM_WORLD);
         MPI_Send(lower_bounds.data(), lower_bounds.size(), MPI_DOUBLE, ROOT, MPI_TAG, MPI_COMM_WORLD);
     }
+}
+
+void MpiEvaluator::write_log(const vector<int> &berths, const vector<double> &mwft_norm,
+                             const vector<double> &mwft, const vector<double> &lower_bounds) {
+    // Write berths to stdout and logfile
+    cout << "Evaluating: ";
+    log << "Evaluating: ";
+    for (size_t i = 0; i < berths.size(); ++i) {
+        cout << berths[i] << ' ';
+        log << berths[i] << ' ';
+    } 
+    cout << '\n';
+    log << '\n';
+
+    // Write results to log file
+    log << "MWFT(norm) MWFT LB" << '\n';
+    for (size_t i = 0; i < mwft_norm.size(); ++i) {
+        log << mwft_norm[i] << ' ' << mwft[i] << ' ' << lower_bounds[i] << '\n';
+    }
+    log.flush();
+
+    // Prepare file system - create folders
+    string berth_folder_name = "";
+
+    for (size_t i = 0; i < berths.size(); ++i) {
+        berth_folder_name += to_string(berths[i]);
+        if (i != berths.size() - 1) {
+            berth_folder_name += "_";
+        }
+    }	    
+
+    string command = "mkdir quay_divisions/" + berth_folder_name;
+    
+    int mkdir_result = system(command.c_str());
+
+    ofstream berth_div_stats;
+    berth_div_stats.open("quay_divisions/" + berth_folder_name + "/overall_stats.txt");
+
+    // Compute and write statistics of results
+    double mwft_sum = evaluator.aggregate(mwft_norm);
+    double sd = standard_deviation(mwft_norm);
+    vector<double> quart = quartiles(mwft_norm);
+
+    cout << "Mean MWFT(norm): " << mwft_sum << '\n';
+    berth_div_stats << "Mean MWFT(norm): " << mwft_sum << '\n';
+
+    cout << "Min, Max: " << min(mwft_norm) << ' ' << max(mwft_norm) << '\n';
+    berth_div_stats << "Min, Max: " << min(mwft_norm) << ' ' << max(mwft_norm) << '\n';
+    
+    cout << "Quartiles: " << quart[0] << ' ' << quart[1] << ' ' << quart[2] << '\n';
+    berth_div_stats << "Quartiles: " << quart[0] << ' ' << quart[1] << ' ' << quart[2] << '\n';
+
+    cout << "Std dev.: " << sd << '\n';
+    berth_div_stats << "Std dev.: " << sd << '\n';
+
+    cout << "IQR: " << quart[2] - quart[0] << '\n';
+    berth_div_stats << "IQR: " << quart[2] - quart[0] << endl;
+    cout << endl;
+
+    berth_div_stats.close();
 }
 
 void MpiEvaluator::stop_listeners() {

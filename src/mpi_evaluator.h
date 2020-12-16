@@ -33,6 +33,9 @@ private:
     std::ofstream log;
 
     bool instances_generated = false;
+
+    void write_log(const std::vector<int> &berths, const std::vector<double> &mwft_norm,
+                   const std::vector<double> &mwft, const std::vector<double> &lower_bounds);
 };
 
 #endif

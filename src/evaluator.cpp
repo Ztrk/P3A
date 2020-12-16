@@ -110,8 +110,8 @@ std::vector<ship> InstanceGenerator::generate(int instance_num) {
     }
     else {
         ships = generator::generate_instance();
+        write_instance_to_file(instances_folder + "used-instance" + number + ".txt", ships);
     }
-    write_instance_to_file(instances_folder + "used-instance" + number + ".txt", ships);
     return ships;
 }
 
