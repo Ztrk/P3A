@@ -43,10 +43,10 @@ int main(int argc, char *argv[]) {
     int n_instances;// = config["n_instances"].get<int>();
 
     if(argc >= 5 && strcmp(argv[3], "-t") == 0) {
-	n_instances = stoi(argv[4]);
+        n_instances = stoi(argv[4]);
     }
     else {
-	n_instances = config["n_instances"].get<int>();
+        n_instances = config["n_instances"].get<int>();
     }
 
     InstanceGenerator generator(instances_path, read_instances_from_file);
@@ -56,6 +56,9 @@ int main(int argc, char *argv[]) {
     if (pid == 0) {
         int quay_length = 0;
         vector<int> berth_lengths;
+        vector<int> initial_solution = config.value("initial_solution", vector<int>());
+        int max_restarts = config.value("max_restarts", 1);
+        int max_time = config.value("time_limit", 86400);
 
         if (argc >= 3 && strcmp(argv[1], "-i") == 0) {
             ifstream file(argv[2]);
@@ -75,7 +78,8 @@ int main(int argc, char *argv[]) {
         }
         sort(berth_lengths.begin(), berth_lengths.end());
 
-        LocalSearch solver(quay_length, berth_lengths, mpi_evaluator);
+        LocalSearch solver(quay_length, berth_lengths, mpi_evaluator,
+            max_restarts, max_time, initial_solution);
         auto result = solver.solve();
 
         cout << "Solution found: \n";

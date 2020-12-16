@@ -122,17 +122,27 @@ bool MoveGenerator::is_valid(size_t i, const vector<int> &berths) {
     return berths[i] >= 1;
 }
 
-LocalSearch::LocalSearch(int quay_length, const vector<int> &berth_lengths, EvaluatorInterface &evaluator)
-    : quay_length(quay_length), berth_lengths(berth_lengths), evaluator(evaluator), log("local_search.log") { }
+LocalSearch::LocalSearch(int quay_length, const vector<int> &berth_lengths, EvaluatorInterface &evaluator,
+        int max_restarts, int max_time, const vector<int> &initial_solution)
+    : quay_length(quay_length), berth_lengths(berth_lengths), evaluator(evaluator), 
+    initial_solution(initial_solution), max_restarts(max_restarts), 
+    max_time(max_time), log("local_search.log") { }
 
 vector<int> LocalSearch::solve() {
     auto start_time = chrono::system_clock::now();
     vector<int> best;
 
     MoveGenerator moveGenerator(quay_length, berth_lengths);
-    double best_eval=-1;
-    for (int i = 0; i < 1; ++i) {
-        vector<int> berth_frequencies = initial_solution_random();
+    double best_eval = -1;
+    for (int i = 0; i < max_restarts; ++i) {
+        vector<int> berth_frequencies;
+        if (initial_solution.size() != 0) {
+            berth_frequencies = initial_solution;
+        }
+        else {
+            berth_frequencies = initial_solution_random();
+        }
+
         auto tmp_best = berth_frequencies;
         double tmp_best_eval = evaluator.evaluate(berth_frequencies, berth_lengths);
 
@@ -159,13 +169,23 @@ vector<int> LocalSearch::solve() {
                     log_better_solution(start_time, tmp_best_eval);
                     break;
                 }
+
+                if (should_exit(start_time)) {
+                    break;
+                }
             }
         }
+
         if (tmp_best_eval < best_eval){
             best_eval=tmp_best_eval;
             best=tmp_best;
         }
+
+        if (should_exit(start_time)) {
+            break;
+        }
     }
+
     log_better_solution(start_time, best_eval);
     final_score = best_eval;
     return best;
@@ -201,7 +221,7 @@ vector<int> LocalSearch::initial_solution_random() {
     return berths;
 }
 
-void LocalSearch::log_better_solution(std::chrono::time_point<std::chrono::system_clock> start_time, double mwft) {
+void LocalSearch::log_better_solution(const chrono::time_point<chrono::system_clock> &start_time, double mwft) {
     auto time = chrono::system_clock::now();
     auto duration = chrono::duration_cast<chrono::milliseconds>(time - start_time);
     log << duration.count() / 1000.0 << ' ' << mwft << endl;

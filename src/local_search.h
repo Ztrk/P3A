@@ -24,7 +24,9 @@ private:
 
 class LocalSearch {
 public:
-    LocalSearch(int quay_length, const std::vector<int> &berth_lengths, EvaluatorInterface &evaluator);
+    LocalSearch(int quay_length, const std::vector<int> &berth_lengths,
+        EvaluatorInterface &evaluator, int max_restarts = 1, int max_time = 86400,
+        const std::vector<int> &initial_solution = std::vector<int>());
 
     std::vector<int> solve();
     double score() { return final_score; }
@@ -32,17 +34,24 @@ public:
 private:
     int quay_length;
     std::vector<int> berth_lengths;
-
     EvaluatorInterface &evaluator;
 
     double final_score;
+
+    std::vector<int> initial_solution;
+    int max_restarts;
+    std::chrono::seconds max_time;
 
     std::ofstream log;
 
     std::vector<int> initial_solution_longest();
     std::vector<int> initial_solution_random();
 
-    void log_better_solution(std::chrono::time_point<std::chrono::system_clock> start_time, double mwft);
+    void log_better_solution(const std::chrono::time_point<std::chrono::system_clock> &start_time, double mwft);
+    bool should_exit(const std::chrono::time_point<std::chrono::system_clock> &start_time) {
+        auto now = std::chrono::system_clock::now();
+        return now - start_time >= max_time;
+    }
 };
 
 
