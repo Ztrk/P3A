@@ -16,7 +16,7 @@ def plot_mwft_time(times, mwft):
     ax.set_ylabel('Średnie znormalizowane MWFT')
     ax.set_title('MWFT w zależności od czasu')
 
-    plt.show()
+    plt.savefig('mwft_time.png')
 
 def plot_mwft_sd(mwfts_norm):
     means, sds = [], []
@@ -31,7 +31,7 @@ def plot_mwft_sd(mwfts_norm):
     ax.set_ylabel('Odchylenie standardowe')
     ax.set_title('Odchylenie standardowe w zależności od MWFT')
 
-    plt.show()
+    plt.savefig('mwft_sd.png')
 
 def read_local_search_log(filepath):
     times, mwfts = [], []
