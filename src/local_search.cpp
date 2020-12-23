@@ -136,15 +136,26 @@ vector<int> LocalSearch::solve() {
     double best_eval = -1;
     for (int i = 0; i < max_restarts; ++i) {
         vector<int> berth_frequencies;
+	double tmp_best_eval, tmp_tmp_best_eval;
+	vector<int> tmp_best;
+
+
         if (initial_solution.size() != 0) {
             berth_frequencies = initial_solution;
         }
         else {
-            berth_frequencies = initial_solution_random();
+	    for (auto j=0; j<100; j++){
+                berth_frequencies = initial_solution_random();
+		tmp_tmp_best_eval = evaluator.evaluate(berth_frequencies, berth_lengths);
+		if(j==0 || tmp_tmp_best_eval < tmp_best_eval){
+			tmp_best_eval=tmp_tmp_best_eval, tmp_best=berth_frequencies;
+		}
+	    }
+	    berth_frequencies=tmp_best;
         }
 
-        auto tmp_best = berth_frequencies;
-        double tmp_best_eval = evaluator.evaluate(berth_frequencies, berth_lengths);
+        tmp_best = berth_frequencies;
+        tmp_best_eval = evaluator.evaluate(berth_frequencies, berth_lengths);
 
         if (i == 0 || tmp_best_eval < best_eval) {
             best_eval = tmp_best_eval;
