@@ -2,17 +2,18 @@ import sys
 
 def mean_from_arr(arr):
 	mean = 0
- 	for i in range (0, len(arr)):
+	arr_len = len(arr)
+	for i in range (0,arr_len):
 		mean = mean + arr[i]
-	return (mean / 3)
+	return mean / arr_len
 
-inst_output_times = open(sys.argv[1])
+inst_output_times = open(sys.argv[1], "r")
 
 line_no = 0
 
-f = open(sys.argv[2], "w")
+inst_mean_times = open(sys.argv[2], "w")
 
-f.write("instances: mean_time:\n")
+inst_mean_times.write("instances: mean_time:\n")
 
 for line in inst_output_times:
 	if(line_no == 0):
@@ -25,7 +26,7 @@ for line in inst_output_times:
 		if(line_no == 3 + 1):
 			times_arr.sort()
 			mean_time = mean_from_arr(times_arr)
-			f.write(str(n_inst) + " " + str(mean_time) + "\n")
+			inst_mean_times.write(str(n_inst) + " " + str(mean_time) + "\n")
 			line_no = 0		
-f.close()
+inst_mean_times.close()
 inst_output_times.close()
