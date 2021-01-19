@@ -2,8 +2,7 @@
 [R|r]elease
 [D|d]ebug
 .vscode
-*.log
+evaluator.log
 !sample_output_20proc_100inst_lh/logs/local_search.log
 !sample_output_20proc_100inst_lh/logs/evaluator.log
 instances/
-output/

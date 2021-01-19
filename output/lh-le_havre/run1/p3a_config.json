@@ -1,0 +1,21 @@
+{
+    "quay_length": 5000,
+    "berths": [200, 225, 250, 275, 300, 325, 350, 375, 400],
+    "n_instances": 100,
+    "bap_algorithms": [
+        {
+            "algorithm": "greedy", "scheduling_policy": "fcfs", "future_arrivals": 0
+        },
+        {
+            "algorithm": "greedy", "scheduling_policy": "wspt", "future_arrivals": 10
+        },
+        {
+            "algorithm": "greedy", "scheduling_policy": "lpt", "future_arrivals": 0
+        },
+        {
+            "algorithm": "greedy", "scheduling_policy": "spt_first_weight_later", "future_arrivals": 5
+        }
+    ],
+    "read_ships_from_file": true,
+    "folder_with_instances": "instances_lh/"
+}

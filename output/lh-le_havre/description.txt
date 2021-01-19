@@ -1,0 +1,4 @@
+run2 - more berths, different algorithms
+run3 - initial solution randomized multiple times
+run4 - weight_first -> wieght_first_spt
+run4_2 - weight_first -> smallest area first

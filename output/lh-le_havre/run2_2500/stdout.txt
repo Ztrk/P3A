@@ -1,0 +1,2545 @@
+Evaluating: 1 1 0 0 0 1 1 1 0 1 1 0 2 
+Mean MWFT(norm): 74.9366
+Min, Max: 64.1167 84.1862
+Quartiles: 72.0803 75.0685 79.4676
+Std dev.: 4.96842
+IQR: 7.38724
+
+Evaluating: 2 2 0 0 0 0 1 1 0 1 1 0 2 
+Mean MWFT(norm): 78.1479
+Min, Max: 68.5935 87.0254
+Quartiles: 75.0798 78.0217 81.7354
+Std dev.: 4.48772
+IQR: 6.65565
+
+Evaluating: 2 1 1 0 0 1 0 1 0 1 1 0 2 
+Mean MWFT(norm): 78.7263
+Min, Max: 68.6898 88.2961
+Quartiles: 75.4694 78.1173 83.4068
+Std dev.: 4.93391
+IQR: 7.93741
+
+Evaluating: 1 3 0 0 0 1 0 1 0 1 1 0 2 
+Mean MWFT(norm): 79.4828
+Min, Max: 69.7435 88.7225
+Quartiles: 76.5085 79.1403 83.7655
+Std dev.: 4.68146
+IQR: 7.25695
+
+Evaluating: 2 1 0 1 0 1 1 0 0 1 1 0 2 
+Mean MWFT(norm): 81.2223
+Min, Max: 70.5214 92.2923
+Quartiles: 77.6193 80.2842 86.1989
+Std dev.: 5.24292
+IQR: 8.57964
+
+Evaluating: 1 2 1 0 0 1 1 0 0 1 1 0 2 
+Mean MWFT(norm): 81.4384
+Min, Max: 71.0178 92.0867
+Quartiles: 77.6997 80.6139 86.6773
+Std dev.: 5.12662
+IQR: 8.97766
+
+Evaluating: 2 1 0 0 0 2 1 1 0 0 1 0 2 
+Mean MWFT(norm): 87.1227
+Min, Max: 75.0005 98.6017
+Quartiles: 83.329 86.9516 91.631
+Std dev.: 5.64872
+IQR: 8.30199
+
+Evaluating: 1 2 0 0 1 1 1 1 0 0 1 0 2 
+Mean MWFT(norm): 87.864
+Min, Max: 75.6175 100.102
+Quartiles: 83.9438 87.3992 92.9311
+Std dev.: 6.03707
+IQR: 8.98731
+
+Evaluating: 1 1 1 1 0 1 1 1 0 0 1 0 2 
+Mean MWFT(norm): 87.9413
+Min, Max: 76.6849 100.376
+Quartiles: 83.907 87.3003 92.7361
+Std dev.: 6.02157
+IQR: 8.82905
+
+Evaluating: 2 1 0 0 0 1 2 1 0 1 0 0 2 
+Mean MWFT(norm): 91.1608
+Min, Max: 77.7588 102.999
+Quartiles: 87.2489 92.5228 95.7502
+Std dev.: 6.16897
+IQR: 8.50126
+
+Evaluating: 1 2 0 0 0 2 1 1 0 1 0 0 2 
+Mean MWFT(norm): 92.1545
+Min, Max: 78.9232 104.094
+Quartiles: 87.7025 93.0593 97.3441
+Std dev.: 6.46016
+IQR: 9.64157
+
+Evaluating: 1 1 1 0 1 1 1 1 0 1 0 0 2 
+Mean MWFT(norm): 92.3268
+Min, Max: 78.4312 104.302
+Quartiles: 87.6435 92.8913 98.3284
+Std dev.: 6.96415
+IQR: 10.6849
+
+Evaluating: 1 1 0 2 0 1 1 1 0 1 0 0 2 
+Mean MWFT(norm): 92.919
+Min, Max: 78.6908 104.585
+Quartiles: 88.317 93.595 98.7614
+Std dev.: 6.76557
+IQR: 10.4444
+
+Evaluating: 2 1 0 0 0 1 1 1 1 1 1 0 1 
+Mean MWFT(norm): 96.4018
+Min, Max: 74.4806 136.289
+Quartiles: 88.5278 95.1743 103.653
+Std dev.: 12.9259
+IQR: 15.1257
+
+Evaluating: 1 2 0 0 0 1 1 2 0 1 1 0 1 
+Mean MWFT(norm): 101.065
+Min, Max: 79.4258 139.009
+Quartiles: 92.9246 99.8022 107.49
+Std dev.: 12.5721
+IQR: 14.5656
+
+Evaluating: 1 1 1 0 0 1 2 1 0 1 1 0 1 
+Mean MWFT(norm): 103.036
+Min, Max: 81.6941 139.45
+Quartiles: 94.0143 102.302 109.308
+Std dev.: 12.3883
+IQR: 15.2934
+
+Evaluating: 1 1 0 1 0 2 1 1 0 1 1 0 1 
+Mean MWFT(norm): 103.895
+Min, Max: 82.5202 141.634
+Quartiles: 94.0508 103.687 110.777
+Std dev.: 12.4028
+IQR: 16.7263
+
+Evaluating: 1 1 0 0 2 1 1 1 0 1 1 0 1 
+Mean MWFT(norm): 104.488
+Min, Max: 82.7979 141.375
+Quartiles: 94.8474 104.604 111.494
+Std dev.: 12.4092
+IQR: 16.6469
+
+Evaluating: 0 0 0 0 0 2 1 1 0 1 1 0 2 
+Mean MWFT(norm): 72.8818
+Min, Max: 62.4951 82.1287
+Quartiles: 69.8981 73.126 77.3095
+Std dev.: 5.12555
+IQR: 7.41134
+
+Evaluating: 1 1 0 0 0 1 1 1 0 1 1 0 2 
+Mean MWFT(norm): 74.9366
+Min, Max: 64.1167 84.1862
+Quartiles: 72.0803 75.0685 79.4676
+Std dev.: 4.96842
+IQR: 7.38724
+
+Evaluating: 1 0 1 0 0 2 0 1 0 1 1 0 2 
+Mean MWFT(norm): 76.1888
+Min, Max: 65.5822 85.6635
+Quartiles: 73.0714 75.9082 80.8751
+Std dev.: 5.08268
+IQR: 7.80373
+
+Evaluating: 0 2 0 0 0 2 0 1 0 1 1 0 2 
+Mean MWFT(norm): 76.549
+Min, Max: 66.207 85.7849
+Quartiles: 73.5686 76.3948 80.8117
+Std dev.: 4.92166
+IQR: 7.24316
+
+Evaluating: 1 0 0 1 0 2 1 0 0 1 1 0 2 
+Mean MWFT(norm): 78.9171
+Min, Max: 68.9815 89.3133
+Quartiles: 75.2294 78.1127 83.9377
+Std dev.: 5.1239
+IQR: 8.70827
+
+Evaluating: 0 1 1 0 0 2 1 0 0 1 1 0 2 
+Mean MWFT(norm): 78.8691
+Min, Max: 68.6303 89.2604
+Quartiles: 75.3542 78.0336 83.8799
+Std dev.: 5.11429
+IQR: 8.52567
+
+Evaluating: 1 0 0 0 0 3 1 1 0 0 1 0 2 
+Mean MWFT(norm): 85.5313
+Min, Max: 74.1696 96.2622
+Quartiles: 82.0311 85.5595 90.1328
+Std dev.: 5.39885
+IQR: 8.10169
+
+Evaluating: 0 1 0 0 1 2 1 1 0 0 1 0 2 
+Mean MWFT(norm): 85.7709
+Min, Max: 73.8062 97.1661
+Quartiles: 81.8711 85.4533 90.6408
+Std dev.: 5.77801
+IQR: 8.76966
+
+Evaluating: 0 0 1 1 0 2 1 1 0 0 1 0 2 
+Mean MWFT(norm): 85.7464
+Min, Max: 74.2737 97.4059
+Quartiles: 81.7678 85.6262 90.7667
+Std dev.: 5.87346
+IQR: 8.99888
+
+Evaluating: 1 0 0 0 0 2 2 1 0 1 0 0 2 
+Mean MWFT(norm): 89.3128
+Min, Max: 75.9965 102.584
+Quartiles: 84.7055 90.7696 94.2509
+Std dev.: 6.19766
+IQR: 9.54542
+
+Evaluating: 0 1 0 0 0 3 1 1 0 1 0 0 2 
+Mean MWFT(norm): 90.3425
+Min, Max: 76.4807 103.405
+Quartiles: 85.8544 91.5977 95.4609
+Std dev.: 6.41386
+IQR: 9.60655
+
+Evaluating: 0 0 1 0 1 2 1 1 0 1 0 0 2 
+Mean MWFT(norm): 90.5052
+Min, Max: 76.4772 103.196
+Quartiles: 85.9193 91.4658 96.1368
+Std dev.: 6.76611
+IQR: 10.2176
+
+Evaluating: 0 0 0 2 0 2 1 1 0 1 0 0 2 
+Mean MWFT(norm): 90.7771
+Min, Max: 77.3985 103.268
+Quartiles: 86.2192 91.6094 96.3907
+Std dev.: 6.7594
+IQR: 10.1715
+
+Evaluating: 1 0 0 0 0 2 1 1 1 1 1 0 1 
+Mean MWFT(norm): 94.3702
+Min, Max: 72.65 136.077
+Quartiles: 86.0073 92.6649 101.331
+Std dev.: 13.3471
+IQR: 15.3233
+
+Evaluating: 0 1 0 0 0 2 1 2 0 1 1 0 1 
+Mean MWFT(norm): 99.0624
+Min, Max: 78.2243 137.61
+Quartiles: 90.3513 97.4253 106.194
+Std dev.: 13.0511
+IQR: 15.843
+
+Evaluating: 0 0 1 0 0 2 2 1 0 1 1 0 1 
+Mean MWFT(norm): 101.319
+Min, Max: 80.4153 138.832
+Quartiles: 92.4031 99.9989 108.748
+Std dev.: 12.7128
+IQR: 16.3447
+
+Evaluating: 0 0 0 1 0 3 1 1 0 1 1 0 1 
+Mean MWFT(norm): 102.403
+Min, Max: 81.5181 140.967
+Quartiles: 93.4169 101.773 109.28
+Std dev.: 12.6195
+IQR: 15.8627
+
+Evaluating: 0 0 0 0 2 2 1 1 0 1 1 0 1 
+Mean MWFT(norm): 102.775
+Min, Max: 81.5169 141.408
+Quartiles: 93.5141 102.245 109.229
+Std dev.: 12.6146
+IQR: 15.7146
+
+Evaluating: 1 0 0 0 0 0 1 1 0 1 1 0 3 
+Mean MWFT(norm): 62.1007
+Min, Max: 55.3839 69.9882
+Quartiles: 58.711 61.4777 65.8796
+Std dev.: 3.85322
+IQR: 7.16858
+
+Evaluating: 2 0 1 0 0 0 0 1 0 1 1 0 3 
+Mean MWFT(norm): 65.7887
+Min, Max: 58.3698 73.7463
+Quartiles: 62.8734 65.2149 69.6046
+Std dev.: 3.95245
+IQR: 6.73113
+
+Evaluating: 1 2 0 0 0 0 0 1 0 1 1 0 3 
+Mean MWFT(norm): 66.203
+Min, Max: 58.7664 74.0377
+Quartiles: 63.3464 65.7908 69.8084
+Std dev.: 3.8533
+IQR: 6.46203
+
+Evaluating: 2 0 0 1 0 0 1 0 0 1 1 0 3 
+Mean MWFT(norm): 67.0992
+Min, Max: 58.5752 76.1615
+Quartiles: 63.6562 66.4079 71.0675
+Std dev.: 4.45282
+IQR: 7.41135
+
+Evaluating: 1 1 1 0 0 0 1 0 0 1 1 0 3 
+Mean MWFT(norm): 67.2256
+Min, Max: 59.3371 75.941
+Quartiles: 64.0465 66.4802 71.5023
+Std dev.: 4.38776
+IQR: 7.45578
+
+Evaluating: 2 0 0 0 0 1 1 1 0 0 1 0 3 
+Mean MWFT(norm): 69.3523
+Min, Max: 60.9006 79.0234
+Quartiles: 65.1386 68.4227 73.3723
+Std dev.: 4.81516
+IQR: 8.23367
+
+Evaluating: 1 1 0 0 1 0 1 1 0 0 1 0 3 
+Mean MWFT(norm): 70.3715
+Min, Max: 61.3954 80.8256
+Quartiles: 65.9325 69.3391 74.7302
+Std dev.: 5.02839
+IQR: 8.79768
+
+Evaluating: 1 0 1 1 0 0 1 1 0 0 1 0 3 
+Mean MWFT(norm): 70.686
+Min, Max: 62.3057 81.198
+Quartiles: 66.543 69.4856 74.599
+Std dev.: 4.86563
+IQR: 8.05604
+
+Evaluating: 2 0 0 0 0 0 2 1 0 1 0 0 3 
+Mean MWFT(norm): 70.924
+Min, Max: 63.0422 80.1357
+Quartiles: 67.2755 70.2632 75.1163
+Std dev.: 4.48638
+IQR: 7.84086
+
+Evaluating: 1 1 0 0 0 1 1 1 0 1 0 0 3 
+Mean MWFT(norm): 71.4446
+Min, Max: 63.1067 81.2056
+Quartiles: 67.5565 70.4729 75.9927
+Std dev.: 4.84577
+IQR: 8.43625
+
+Evaluating: 1 0 1 0 1 0 1 1 0 1 0 0 3 
+Mean MWFT(norm): 72.2103
+Min, Max: 63.6312 82.7408
+Quartiles: 68.2428 71.1149 76.7256
+Std dev.: 5.11949
+IQR: 8.48284
+
+Evaluating: 1 0 0 2 0 0 1 1 0 1 0 0 3 
+Mean MWFT(norm): 72.8657
+Min, Max: 65.7855 83.0413
+Quartiles: 68.9831 71.5953 77.1486
+Std dev.: 4.85501
+IQR: 8.16545
+
+Evaluating: 2 0 0 0 0 0 1 1 1 1 1 0 2 
+Mean MWFT(norm): 69.9972
+Min, Max: 60.071 79.8628
+Quartiles: 67.9417 70.8724 73.1122
+Std dev.: 4.18926
+IQR: 5.17049
+
+Evaluating: 1 1 0 0 0 0 1 2 0 1 1 0 2 
+Mean MWFT(norm): 72.4884
+Min, Max: 62.3846 82.1725
+Quartiles: 69.9292 73.0664 76.1356
+Std dev.: 4.49054
+IQR: 6.20644
+
+Evaluating: 1 0 1 0 0 0 2 1 0 1 1 0 2 
+Mean MWFT(norm): 73.5736
+Min, Max: 63.2116 82.5598
+Quartiles: 70.5952 73.9824 77.8166
+Std dev.: 4.93211
+IQR: 7.22137
+
+Evaluating: 1 0 0 1 0 1 1 1 0 1 1 0 2 
+Mean MWFT(norm): 74.0749
+Min, Max: 63.3467 83.5095
+Quartiles: 70.8195 74.2897 78.9209
+Std dev.: 5.301
+IQR: 8.10143
+
+Evaluating: 1 0 0 0 2 0 1 1 0 1 1 0 2 
+Mean MWFT(norm): 75.1337
+Min, Max: 63.8239 84.7499
+Quartiles: 72.2885 75.0553 79.8811
+Std dev.: 5.27906
+IQR: 7.59268
+
+Evaluating: 0 0 0 0 0 0 0 1 0 1 2 0 3 
+Mean MWFT(norm): 57.0865
+Min, Max: 50.4457 63.5401
+Quartiles: 54.7917 56.6112 59.9929
+Std dev.: 3.13083
+IQR: 5.20121
+
+Evaluating: 1 0 0 1 0 0 0 0 0 1 2 0 3 
+Mean MWFT(norm): 61.8885
+Min, Max: 53.6469 69.293
+Quartiles: 59.4842 61.5969 65.2501
+Std dev.: 3.62146
+IQR: 5.76591
+
+Evaluating: 0 1 1 0 0 0 0 0 0 1 2 0 3 
+Mean MWFT(norm): 62.0051
+Min, Max: 54.48 69.9362
+Quartiles: 59.4836 61.751 65.2259
+Std dev.: 3.56385
+IQR: 5.74231
+
+Evaluating: 1 0 0 0 0 1 0 1 0 0 2 0 3 
+Mean MWFT(norm): 62.0034
+Min, Max: 54.4578 70.1629
+Quartiles: 58.8144 61.5213 65.6563
+Std dev.: 4.02739
+IQR: 6.84191
+
+Evaluating: 0 1 0 0 1 0 0 1 0 0 2 0 3 
+Mean MWFT(norm): 63.3204
+Min, Max: 55.5909 71.6453
+Quartiles: 60.2994 62.653 66.9902
+Std dev.: 4.04622
+IQR: 6.69084
+
+Evaluating: 0 0 1 1 0 0 0 1 0 0 2 0 3 
+Mean MWFT(norm): 63.7667
+Min, Max: 56.3236 72.1076
+Quartiles: 60.8788 63.0934 67.6427
+Std dev.: 3.93416
+IQR: 6.76387
+
+Evaluating: 1 0 0 0 0 0 1 1 0 1 1 0 3 
+Mean MWFT(norm): 62.1007
+Min, Max: 55.3839 69.9882
+Quartiles: 58.711 61.4777 65.8796
+Std dev.: 3.85322
+IQR: 7.16858
+
+Evaluating: 0 1 0 0 0 1 0 1 0 1 1 0 3 
+Mean MWFT(norm): 62.9209
+Min, Max: 56.6867 71.1615
+Quartiles: 59.4547 62.0702 66.9851
+Std dev.: 4.06357
+IQR: 7.53046
+
+Evaluating: 0 0 1 0 1 0 0 1 0 1 1 0 3 
+Mean MWFT(norm): 64.0653
+Min, Max: 56.3041 72.7488
+Quartiles: 60.6193 63.0818 68.2379
+Std dev.: 4.16089
+IQR: 7.61864
+
+Evaluating: 0 0 0 2 0 0 0 1 0 1 1 0 3 
+Mean MWFT(norm): 64.8057
+Min, Max: 57.8375 73.0515
+Quartiles: 61.7296 63.8338 68.8304
+Std dev.: 3.94739
+IQR: 7.10081
+
+Evaluating: 1 0 0 0 0 0 0 1 1 1 2 0 2 
+Mean MWFT(norm): 63.6602
+Min, Max: 56.6414 74.2307
+Quartiles: 61.6425 64.0383 65.8338
+Std dev.: 2.9173
+IQR: 4.19135
+
+Evaluating: 0 1 0 0 0 0 0 2 0 1 2 0 2 
+Mean MWFT(norm): 65.0323
+Min, Max: 57.4946 75.0294
+Quartiles: 62.6819 65.3311 67.6193
+Std dev.: 3.26239
+IQR: 4.93737
+
+Evaluating: 0 0 1 0 0 0 1 1 0 1 2 0 2 
+Mean MWFT(norm): 65.4763
+Min, Max: 56.9917 74.9565
+Quartiles: 63.1099 65.4174 68.6704
+Std dev.: 3.71014
+IQR: 5.56044
+
+Evaluating: 0 0 0 1 0 1 0 1 0 1 2 0 2 
+Mean MWFT(norm): 66.2664
+Min, Max: 57.9362 75.4068
+Quartiles: 63.5907 66.1006 69.7132
+Std dev.: 3.94251
+IQR: 6.12255
+
+Evaluating: 0 0 0 0 2 0 0 1 0 1 2 0 2 
+Mean MWFT(norm): 67.6197
+Min, Max: 59.7398 75.8897
+Quartiles: 65.0461 67.4321 70.8367
+Std dev.: 3.71695
+IQR: 5.79059
+
+Evaluating: 0 0 0 0 1 0 0 0 0 0 2 0 4 
+Mean MWFT(norm): 58.5532
+Min, Max: 49.915 67.2441
+Quartiles: 55.376 58.8212 62.4855
+Std dev.: 4.36221
+IQR: 7.10952
+
+Evaluating: 0 0 0 0 0 1 0 0 0 1 1 0 4 
+Mean MWFT(norm): 57.5892
+Min, Max: 49.1927 65.9242
+Quartiles: 54.4737 57.5396 61.6906
+Std dev.: 4.27607
+IQR: 7.21687
+
+Evaluating: 0 0 0 0 0 0 0 2 0 0 1 0 4 
+Mean MWFT(norm): 58.0778
+Min, Max: 50.6187 65.7903
+Quartiles: 54.846 58.1456 61.6231
+Std dev.: 3.88188
+IQR: 6.77713
+
+Evaluating: 0 0 0 0 0 0 0 1 1 1 0 0 4 
+Mean MWFT(norm): 57.7026
+Min, Max: 50.6814 64.5002
+Quartiles: 54.8708 57.7084 61.0422
+Std dev.: 3.47496
+IQR: 6.1714
+
+Evaluating: 3 0 1 0 0 0 1 1 0 0 0 0 3 
+Mean MWFT(norm): 89.8644
+Min, Max: 79.3246 102.427
+Quartiles: 84.6537 88.7694 95.4523
+Std dev.: 6.04811
+IQR: 10.7985
+
+Evaluating: 4 0 2 0 0 0 0 1 0 1 0 0 3 
+Mean MWFT(norm): 79.2612
+Min, Max: 70.5537 89.3262
+Quartiles: 75.5542 78.399 83.418
+Std dev.: 4.81012
+IQR: 7.86376
+
+Evaluating: 5 0 2 1 0 0 0 0 0 1 0 0 3 
+Mean MWFT(norm): 89.4512
+Min, Max: 78.1228 100.268
+Quartiles: 85.425 89.2293 94.4826
+Std dev.: 5.67695
+IQR: 9.05763
+
+Evaluating: 4 1 3 0 0 0 0 0 0 1 0 0 3 
+Mean MWFT(norm): 89.9306
+Min, Max: 78.2576 100.531
+Quartiles: 85.5721 90.0256 94.865
+Std dev.: 5.6469
+IQR: 9.29298
+
+Evaluating: 5 0 2 0 0 1 0 1 0 0 0 0 3 
+Mean MWFT(norm): 91.4174
+Min, Max: 80.081 105.029
+Quartiles: 86.2216 89.9402 96.9173
+Std dev.: 6.38112
+IQR: 10.6957
+
+Evaluating: 4 1 2 0 1 0 0 1 0 0 0 0 3 
+Mean MWFT(norm): 94.488
+Min, Max: 82.1992 108.639
+Quartiles: 89.2732 93.3891 99.8063
+Std dev.: 6.52233
+IQR: 10.5331
+
+Evaluating: 4 0 3 1 0 0 0 1 0 0 0 0 3 
+Mean MWFT(norm): 95.8015
+Min, Max: 83.3149 109.105
+Quartiles: 91.2181 95.0916 100.59
+Std dev.: 6.16736
+IQR: 9.37151
+
+Evaluating: 5 0 2 0 0 0 0 1 1 1 0 0 2 
+Mean MWFT(norm): 91.2365
+Min, Max: 80.2722 101.735
+Quartiles: 88.1746 92.1455 95.2191
+Std dev.: 5.07774
+IQR: 7.04451
+
+Evaluating: 4 1 2 0 0 0 0 2 0 1 0 0 2 
+Mean MWFT(norm): 95.4212
+Min, Max: 83.9373 105.849
+Quartiles: 91.9966 95.9789 99.8943
+Std dev.: 5.53487
+IQR: 7.89765
+
+Evaluating: 4 0 3 0 0 0 1 1 0 1 0 0 2 
+Mean MWFT(norm): 97.2309
+Min, Max: 84.6056 109.056
+Quartiles: 93.481 97.6423 102.388
+Std dev.: 6.17169
+IQR: 8.90667
+
+Evaluating: 4 0 2 1 0 1 0 1 0 1 0 0 2 
+Mean MWFT(norm): 98.7762
+Min, Max: 85.4318 111.448
+Quartiles: 94.5463 98.6264 104.75
+Std dev.: 6.60814
+IQR: 10.2041
+
+Evaluating: 4 0 2 0 2 0 0 1 0 1 0 0 2 
+Mean MWFT(norm): 101.607
+Min, Max: 89.404 114.184
+Quartiles: 97.2742 100.985 106.923
+Std dev.: 6.25103
+IQR: 9.64901
+
+Evaluating: 2 0 2 0 1 0 0 1 0 1 0 0 3 
+Mean MWFT(norm): 77.1758
+Min, Max: 69.1339 88.1533
+Quartiles: 73.073 75.661 81.2735
+Std dev.: 5.08776
+IQR: 8.20056
+
+Evaluating: 4 0 2 0 0 0 0 1 0 1 0 0 3 
+Mean MWFT(norm): 79.2612
+Min, Max: 70.5537 89.3262
+Quartiles: 75.5542 78.399 83.418
+Std dev.: 4.81012
+IQR: 7.86376
+
+Evaluating: 3 0 2 1 1 0 0 0 0 1 0 0 3 
+Mean MWFT(norm): 87.1951
+Min, Max: 76.3644 98.5868
+Quartiles: 83.0323 86.4045 92.1931
+Std dev.: 5.70467
+IQR: 9.16084
+
+Evaluating: 2 1 3 0 1 0 0 0 0 1 0 0 3 
+Mean MWFT(norm): 87.3977
+Min, Max: 76.6157 98.8475
+Quartiles: 83.346 86.6017 92.4783
+Std dev.: 5.70103
+IQR: 9.13235
+
+Evaluating: 3 0 2 0 1 1 0 1 0 0 0 0 3 
+Mean MWFT(norm): 89.5367
+Min, Max: 79.1117 103.614
+Quartiles: 84.3195 87.8403 94.7907
+Std dev.: 6.49047
+IQR: 10.4712
+
+Evaluating: 2 1 2 0 2 0 0 1 0 0 0 0 3 
+Mean MWFT(norm): 93.17
+Min, Max: 81.7038 106.873
+Quartiles: 88.2555 91.5889 98.344
+Std dev.: 6.34688
+IQR: 10.0886
+
+Evaluating: 2 0 3 1 1 0 0 1 0 0 0 0 3 
+Mean MWFT(norm): 93.5155
+Min, Max: 81.6337 107.758
+Quartiles: 88.5462 92.0488 98.3098
+Std dev.: 6.31292
+IQR: 9.76366
+
+Evaluating: 3 0 2 0 1 0 0 1 1 1 0 0 2 
+Mean MWFT(norm): 88.9392
+Min, Max: 76.2791 101.493
+Quartiles: 85.2335 90.0902 93.6342
+Std dev.: 5.85766
+IQR: 8.40075
+
+Evaluating: 2 1 2 0 1 0 0 2 0 1 0 0 2 
+Mean MWFT(norm): 93.1796
+Min, Max: 79.1469 104.487
+Quartiles: 88.9545 94.0551 98.3488
+Std dev.: 6.23773
+IQR: 9.39423
+
+Evaluating: 2 0 3 0 1 0 1 1 0 1 0 0 2 
+Mean MWFT(norm): 95.0927
+Min, Max: 81.2871 107.264
+Quartiles: 90.4501 95.3608 100.868
+Std dev.: 6.72995
+IQR: 10.4182
+
+Evaluating: 2 0 2 1 1 1 0 1 0 1 0 0 2 
+Mean MWFT(norm): 96.9844
+Min, Max: 83.5607 109.966
+Quartiles: 92.539 96.8055 103.178
+Std dev.: 6.92054
+IQR: 10.6386
+
+Evaluating: 2 0 2 0 3 0 0 1 0 1 0 0 2 
+Mean MWFT(norm): 100.679
+Min, Max: 88.7934 112.847
+Quartiles: 96.5109 100.097 105.933
+Std dev.: 6.04298
+IQR: 9.42249
+
+Evaluating: 0 0 2 0 2 0 0 1 0 1 0 0 3 
+Mean MWFT(norm): 76.0157
+Min, Max: 68.3271 87.0129
+Quartiles: 72.0918 74.2135 80.3252
+Std dev.: 5.02996
+IQR: 8.23338
+
+Evaluating: 2 0 2 0 1 0 0 1 0 1 0 0 3 
+Mean MWFT(norm): 77.1758
+Min, Max: 69.1339 88.1533
+Quartiles: 73.073 75.661 81.2735
+Std dev.: 5.08776
+IQR: 8.20056
+
+Evaluating: 1 0 2 1 2 0 0 0 0 1 0 0 3 
+Mean MWFT(norm): 86.1021
+Min, Max: 75.5658 97.407
+Quartiles: 82.1349 85.1113 91.0943
+Std dev.: 5.5346
+IQR: 8.95935
+
+Evaluating: 0 1 3 0 2 0 0 0 0 1 0 0 3 
+Mean MWFT(norm): 86.1729
+Min, Max: 75.5397 97.5252
+Quartiles: 82.1542 85.1412 91.1944
+Std dev.: 5.51518
+IQR: 9.04018
+
+Evaluating: 1 0 2 0 2 1 0 1 0 0 0 0 3 
+Mean MWFT(norm): 88.3981
+Min, Max: 78.614 102.241
+Quartiles: 83.3494 86.6528 93.8498
+Std dev.: 6.37233
+IQR: 10.5004
+
+Evaluating: 0 1 2 0 3 0 0 1 0 0 0 0 3 
+Mean MWFT(norm): 92.3514
+Min, Max: 81.1868 106.11
+Quartiles: 87.6842 90.8161 97.2849
+Std dev.: 6.07416
+IQR: 9.60077
+
+Evaluating: 0 0 3 1 2 0 0 1 0 0 0 0 3 
+Mean MWFT(norm): 92.487
+Min, Max: 81.2609 106.432
+Quartiles: 87.8401 90.9712 97.5751
+Std dev.: 6.12691
+IQR: 9.73508
+
+Evaluating: 1 0 2 0 2 0 0 1 1 1 0 0 2 
+Mean MWFT(norm): 87.7223
+Min, Max: 75.253 100.762
+Quartiles: 83.7915 89.1922 92.5273
+Std dev.: 6.05086
+IQR: 8.73571
+
+Evaluating: 0 1 2 0 2 0 0 2 0 1 0 0 2 
+Mean MWFT(norm): 91.9594
+Min, Max: 78.6328 104.226
+Quartiles: 87.4329 92.8317 97.304
+Std dev.: 6.36677
+IQR: 9.87114
+
+Evaluating: 0 0 3 0 2 0 1 1 0 1 0 0 2 
+Mean MWFT(norm): 93.9247
+Min, Max: 79.4929 106.32
+Quartiles: 89.3084 94.2495 99.7446
+Std dev.: 6.80347
+IQR: 10.4362
+
+Evaluating: 0 0 2 1 2 1 0 1 0 1 0 0 2 
+Mean MWFT(norm): 96.0249
+Min, Max: 82.9037 108.844
+Quartiles: 91.3048 96.0101 102.249
+Std dev.: 6.86504
+IQR: 10.9439
+
+Evaluating: 0 0 2 0 4 0 0 1 0 1 0 0 2 
+Mean MWFT(norm): 99.9611
+Min, Max: 87.7883 111.904
+Quartiles: 95.6739 99.4575 104.847
+Std dev.: 5.84521
+IQR: 9.17276
+
+Evaluating: 0 0 0 0 2 0 0 1 1 1 0 0 3 
+Mean MWFT(norm): 67.7032
+Min, Max: 60.3013 75.9912
+Quartiles: 64.475 66.9911 71.4334
+Std dev.: 4.13757
+IQR: 6.95838
+
+Evaluating: 2 0 0 0 1 0 0 1 1 1 0 0 3 
+Mean MWFT(norm): 68.8626
+Min, Max: 61.1769 76.9549
+Quartiles: 65.6046 68.3167 72.6929
+Std dev.: 4.0406
+IQR: 7.08829
+
+Evaluating: 1 0 0 1 2 0 0 0 1 1 0 0 3 
+Mean MWFT(norm): 74.1327
+Min, Max: 67.4382 83.3356
+Quartiles: 70.6773 72.9045 78.048
+Std dev.: 4.31625
+IQR: 7.37066
+
+Evaluating: 0 1 1 0 2 0 0 0 1 1 0 0 3 
+Mean MWFT(norm): 74.0618
+Min, Max: 67.7507 83.2892
+Quartiles: 70.7257 72.6934 78.0652
+Std dev.: 4.33976
+IQR: 7.33948
+
+Evaluating: 1 0 0 0 3 0 0 1 0 1 0 0 3 
+Mean MWFT(norm): 76.1369
+Min, Max: 68.779 86.6225
+Quartiles: 72.169 74.5488 80.2502
+Std dev.: 4.9529
+IQR: 8.08115
+
+Evaluating: 0 1 0 1 2 0 0 1 0 1 0 0 3 
+Mean MWFT(norm): 76.1019
+Min, Max: 68.5165 86.7793
+Quartiles: 72.0739 74.4088 80.6023
+Std dev.: 5.00034
+IQR: 8.52839
+
+Evaluating: 0 0 2 0 2 0 0 1 0 1 0 0 3 
+Mean MWFT(norm): 76.0157
+Min, Max: 68.3271 87.0129
+Quartiles: 72.0918 74.2135 80.3252
+Std dev.: 5.02996
+IQR: 8.23338
+
+Evaluating: 1 0 0 0 2 1 0 1 1 0 0 0 3 
+Mean MWFT(norm): 76.3334
+Min, Max: 66.7042 87.0767
+Quartiles: 72.2288 75.598 81.4091
+Std dev.: 5.30041
+IQR: 9.18035
+
+Evaluating: 0 1 0 0 3 0 0 1 1 0 0 0 3 
+Mean MWFT(norm): 78.8426
+Min, Max: 69.7775 89.3515
+Quartiles: 74.81 77.773 83.5134
+Std dev.: 4.89502
+IQR: 8.70335
+
+Evaluating: 0 0 1 1 2 0 0 1 1 0 0 0 3 
+Mean MWFT(norm): 78.7771
+Min, Max: 70.172 89.364
+Quartiles: 74.8335 77.7421 83.457
+Std dev.: 4.95872
+IQR: 8.62353
+
+Evaluating: 1 0 0 0 2 0 0 1 2 1 0 0 2 
+Mean MWFT(norm): 80.1247
+Min, Max: 67.4696 96.7889
+Quartiles: 76.9281 82.0375 84.3322
+Std dev.: 6.15814
+IQR: 7.40408
+
+Evaluating: 0 1 0 0 2 0 0 2 1 1 0 0 2 
+Mean MWFT(norm): 82.0281
+Min, Max: 67.7048 98.1175
+Quartiles: 78.5818 84.4279 86.9426
+Std dev.: 6.48185
+IQR: 8.36072
+
+Evaluating: 0 0 1 0 2 0 1 1 1 1 0 0 2 
+Mean MWFT(norm): 83.024
+Min, Max: 68.5387 98.6398
+Quartiles: 78.9748 85.2461 88.1958
+Std dev.: 6.76868
+IQR: 9.22096
+
+Evaluating: 0 0 0 1 2 1 0 1 1 1 0 0 2 
+Mean MWFT(norm): 84.3997
+Min, Max: 69.9563 99.0142
+Quartiles: 79.8168 86.365 89.7567
+Std dev.: 6.73013
+IQR: 9.93984
+
+Evaluating: 0 0 0 0 4 0 0 1 1 1 0 0 2 
+Mean MWFT(norm): 87.0306
+Min, Max: 74.248 100.858
+Quartiles: 83.2065 88.4121 91.6734
+Std dev.: 5.90359
+IQR: 8.46696
+
+Evaluating: 0 0 0 0 0 0 0 1 1 1 0 0 4 
+Mean MWFT(norm): 57.7026
+Min, Max: 50.6814 64.5002
+Quartiles: 54.8708 57.7084 61.0422
+Std dev.: 3.47496
+IQR: 6.1714
+
+Evaluating: 1 0 0 1 0 0 0 0 1 1 0 0 4 
+Mean MWFT(norm): 62.3251
+Min, Max: 54.3988 69.9995
+Quartiles: 59.6828 62.1833 66.2399
+Std dev.: 3.98206
+IQR: 6.55703
+
+Evaluating: 0 1 1 0 0 0 0 0 1 1 0 0 4 
+Mean MWFT(norm): 62.4054
+Min, Max: 54.7213 70.0718
+Quartiles: 59.6789 62.3514 66.1203
+Std dev.: 3.96488
+IQR: 6.44147
+
+Evaluating: 1 0 0 0 1 0 0 1 0 1 0 0 4 
+Mean MWFT(norm): 63.0763
+Min, Max: 54.5233 71.6616
+Quartiles: 59.5629 62.7449 67.1881
+Std dev.: 4.47463
+IQR: 7.62515
+
+Evaluating: 0 1 0 1 0 0 0 1 0 1 0 0 4 
+Mean MWFT(norm): 63.5372
+Min, Max: 55.6259 72.0613
+Quartiles: 60.5892 63.1884 67.7337
+Std dev.: 4.32679
+IQR: 7.14456
+
+Evaluating: 0 0 2 0 0 0 0 1 0 1 0 0 4 
+Mean MWFT(norm): 63.5828
+Min, Max: 55.4312 72.1324
+Quartiles: 60.6141 63.154 67.7237
+Std dev.: 4.32981
+IQR: 7.10966
+
+Evaluating: 1 0 0 0 0 1 0 1 1 0 0 0 4 
+Mean MWFT(norm): 63.3131
+Min, Max: 54.6896 71.6644
+Quartiles: 59.3357 63.0604 67.3292
+Std dev.: 4.31612
+IQR: 7.99346
+
+Evaluating: 0 1 0 0 1 0 0 1 1 0 0 0 4 
+Mean MWFT(norm): 64.5813
+Min, Max: 56.3372 73.2875
+Quartiles: 60.7615 64.3271 68.5102
+Std dev.: 4.36444
+IQR: 7.7487
+
+Evaluating: 0 0 1 1 0 0 0 1 1 0 0 0 4 
+Mean MWFT(norm): 64.9486
+Min, Max: 56.845 73.59
+Quartiles: 61.3993 64.604 68.9962
+Std dev.: 4.17615
+IQR: 7.59688
+
+Evaluating: 1 0 0 0 0 0 0 1 2 1 0 0 3 
+Mean MWFT(norm): 63.9586
+Min, Max: 57.396 69.5901
+Quartiles: 62.1032 63.912 66.3265
+Std dev.: 2.90993
+IQR: 4.22332
+
+Evaluating: 0 1 0 0 0 0 0 2 1 1 0 0 3 
+Mean MWFT(norm): 65.1382
+Min, Max: 58.0568 72.1636
+Quartiles: 62.8558 65.0361 68.1426
+Std dev.: 3.41587
+IQR: 5.28677
+
+Evaluating: 0 0 1 0 0 0 1 1 1 1 0 0 3 
+Mean MWFT(norm): 65.6036
+Min, Max: 57.7161 73.3425
+Quartiles: 62.7804 65.3322 69.3435
+Std dev.: 4.00019
+IQR: 6.56309
+
+Evaluating: 0 0 0 1 0 1 0 1 1 1 0 0 3 
+Mean MWFT(norm): 66.3603
+Min, Max: 58.2642 74.6897
+Quartiles: 63.4207 65.7651 70.4361
+Std dev.: 4.25383
+IQR: 7.01537
+
+Evaluating: 0 0 0 0 2 0 0 1 1 1 0 0 3 
+Mean MWFT(norm): 67.7032
+Min, Max: 60.3013 75.9912
+Quartiles: 64.475 66.9911 71.4334
+Std dev.: 4.13757
+IQR: 6.95838
+
+Evaluating: 0 0 0 1 0 0 0 0 0 1 0 0 5 
+Mean MWFT(norm): 58.9915
+Min, Max: 50.0079 68.0272
+Quartiles: 55.6092 59.4467 62.9814
+Std dev.: 4.50416
+IQR: 7.3722
+
+Evaluating: 0 0 0 0 1 0 0 0 1 0 0 0 5 
+Mean MWFT(norm): 59.3577
+Min, Max: 49.9623 67.6539
+Quartiles: 56.0643 59.77 63.4446
+Std dev.: 4.47893
+IQR: 7.3803
+
+Evaluating: 0 0 0 0 0 1 0 1 0 0 0 0 5 
+Mean MWFT(norm): 59.3778
+Min, Max: 49.9653 67.7399
+Quartiles: 55.795 59.6838 63.7577
+Std dev.: 4.6764
+IQR: 7.9627
+
+Evaluating: 0 0 0 0 0 0 1 0 0 2 1 0 3 
+Mean MWFT(norm): 59.6999
+Min, Max: 52.9626 66.5383
+Quartiles: 57.1161 59.1231 62.9345
+Std dev.: 3.3202
+IQR: 5.81841
+
+Evaluating: 1 0 1 0 0 0 0 0 0 2 1 0 3 
+Mean MWFT(norm): 63.5489
+Min, Max: 55.7907 70.3436
+Quartiles: 61.0563 63.0866 66.8194
+Std dev.: 3.42973
+IQR: 5.76314
+
+Evaluating: 0 2 0 0 0 0 0 0 0 2 1 0 3 
+Mean MWFT(norm): 63.951
+Min, Max: 57.0189 71.0143
+Quartiles: 61.6669 63.4793 66.912
+Std dev.: 3.34677
+IQR: 5.24512
+
+Evaluating: 1 0 0 0 0 1 1 0 0 1 1 0 3 
+Mean MWFT(norm): 65.0101
+Min, Max: 56.6744 73.957
+Quartiles: 61.31 64.136 69.1855
+Std dev.: 4.43088
+IQR: 7.87552
+
+Evaluating: 0 1 0 0 1 0 1 0 0 1 1 0 3 
+Mean MWFT(norm): 66.197
+Min, Max: 58.6464 75.2163
+Quartiles: 62.5606 65.1971 70.5441
+Std dev.: 4.53317
+IQR: 7.98355
+
+Evaluating: 0 0 1 1 0 0 1 0 0 1 1 0 3 
+Mean MWFT(norm): 66.5082
+Min, Max: 58.9743 75.6209
+Quartiles: 63.0703 65.5484 70.8557
+Std dev.: 4.46233
+IQR: 7.78541
+
+Evaluating: 1 0 0 0 0 0 2 0 0 2 0 0 3 
+Mean MWFT(norm): 67.0661
+Min, Max: 60.1581 74.9684
+Quartiles: 64.1608 66.3692 70.4128
+Std dev.: 3.77583
+IQR: 6.25197
+
+Evaluating: 0 1 0 0 0 1 1 0 0 2 0 0 3 
+Mean MWFT(norm): 67.6464
+Min, Max: 60.6171 76.1749
+Quartiles: 64.34 66.9277 71.7831
+Std dev.: 4.13107
+IQR: 7.44309
+
+Evaluating: 0 0 1 0 1 0 1 0 0 2 0 0 3 
+Mean MWFT(norm): 68.5337
+Min, Max: 61.6832 77.3491
+Quartiles: 65.2778 67.6399 72.589
+Std dev.: 4.3146
+IQR: 7.31124
+
+Evaluating: 0 0 0 2 0 0 1 0 0 2 0 0 3 
+Mean MWFT(norm): 69.2302
+Min, Max: 62.7882 78.116
+Quartiles: 66.0152 68.0704 73.0224
+Std dev.: 4.0692
+IQR: 7.0072
+
+Evaluating: 1 0 0 0 0 0 1 0 1 2 1 0 2 
+Mean MWFT(norm): 67.3811
+Min, Max: 59.1634 80.2259
+Quartiles: 65.3185 68.0858 69.9841
+Std dev.: 3.60249
+IQR: 4.66561
+
+Evaluating: 0 1 0 0 0 0 1 1 0 2 1 0 2 
+Mean MWFT(norm): 68.5166
+Min, Max: 59.3386 79.3874
+Quartiles: 66.2855 69.1386 71.5125
+Std dev.: 3.94656
+IQR: 5.22707
+
+Evaluating: 0 0 1 0 0 0 2 0 0 2 1 0 2 
+Mean MWFT(norm): 69.8949
+Min, Max: 60.2262 80.4552
+Quartiles: 67.1932 70.0969 73.4648
+Std dev.: 4.20256
+IQR: 6.27158
+
+Evaluating: 0 0 0 1 0 1 1 0 0 2 1 0 2 
+Mean MWFT(norm): 70.4167
+Min, Max: 60.6172 80.9411
+Quartiles: 67.2531 70.461 74.3182
+Std dev.: 4.53762
+IQR: 7.06511
+
+Evaluating: 0 0 0 0 2 0 1 0 0 2 1 0 2 
+Mean MWFT(norm): 71.6287
+Min, Max: 62.5569 82.2237
+Quartiles: 68.9848 71.435 75.5109
+Std dev.: 4.42652
+IQR: 6.52612
+
+Evaluating: 0 0 0 0 0 1 0 0 0 1 1 0 4 
+Mean MWFT(norm): 57.5892
+Min, Max: 49.1927 65.9242
+Quartiles: 54.4737 57.5396 61.6906
+Std dev.: 4.27607
+IQR: 7.21687
+
+Evaluating: 1 1 0 0 0 0 0 0 0 1 1 0 4 
+Mean MWFT(norm): 60.6815
+Min, Max: 52.0836 69.3746
+Quartiles: 57.0961 61.2165 64.3766
+Std dev.: 4.35279
+IQR: 7.28045
+
+Evaluating: 1 0 0 0 0 2 0 0 0 0 1 0 4 
+Mean MWFT(norm): 64.295
+Min, Max: 53.6383 72.9389
+Quartiles: 60.886 64.3939 68.83
+Std dev.: 4.89226
+IQR: 7.94394
+
+Evaluating: 0 1 0 0 1 1 0 0 0 0 1 0 4 
+Mean MWFT(norm): 65.1771
+Min, Max: 54.746 74.5114
+Quartiles: 61.7184 65.0094 70.1475
+Std dev.: 5.11978
+IQR: 8.42914
+
+Evaluating: 0 0 1 1 0 1 0 0 0 0 1 0 4 
+Mean MWFT(norm): 65.4409
+Min, Max: 55.8499 74.9118
+Quartiles: 62.1757 65.1779 70.5596
+Std dev.: 5.04732
+IQR: 8.38397
+
+Evaluating: 1 0 0 0 0 1 1 0 0 1 0 0 4 
+Mean MWFT(norm): 63.3768
+Min, Max: 54.2289 72.4172
+Quartiles: 59.7622 63.0416 67.9708
+Std dev.: 4.799
+IQR: 8.2086
+
+Evaluating: 0 1 0 0 0 2 0 0 0 1 0 0 4 
+Mean MWFT(norm): 65.2705
+Min, Max: 56.286 74.2811
+Quartiles: 61.9699 64.8605 69.8732
+Std dev.: 4.75022
+IQR: 7.90331
+
+Evaluating: 0 0 1 0 1 1 0 0 0 1 0 0 4 
+Mean MWFT(norm): 65.9802
+Min, Max: 56.7538 75.4978
+Quartiles: 62.3566 65.3097 71.0129
+Std dev.: 5.04295
+IQR: 8.65628
+
+Evaluating: 0 0 0 2 0 1 0 0 0 1 0 0 4 
+Mean MWFT(norm): 66.5293
+Min, Max: 57.4954 76.0169
+Quartiles: 63.0831 65.8577 71.4236
+Std dev.: 4.94435
+IQR: 8.34044
+
+Evaluating: 1 0 0 0 0 1 0 0 1 1 1 0 3 
+Mean MWFT(norm): 61.6391
+Min, Max: 54.8202 68.7953
+Quartiles: 58.5007 60.9448 65.1094
+Std dev.: 3.65009
+IQR: 6.60869
+
+Evaluating: 0 1 0 0 0 1 0 1 0 1 1 0 3 
+Mean MWFT(norm): 62.9209
+Min, Max: 56.6867 71.1615
+Quartiles: 59.4547 62.0702 66.9851
+Std dev.: 4.06357
+IQR: 7.53046
+
+Evaluating: 0 0 1 0 0 1 1 0 0 1 1 0 3 
+Mean MWFT(norm): 64.2044
+Min, Max: 56.4353 73.4232
+Quartiles: 60.4199 63.1353 68.8318
+Std dev.: 4.50832
+IQR: 8.4119
+
+Evaluating: 0 0 0 1 0 2 0 0 0 1 1 0 3 
+Mean MWFT(norm): 66.2067
+Min, Max: 58.6773 75.2277
+Quartiles: 62.6842 65.0346 70.7889
+Std dev.: 4.44474
+IQR: 8.10479
+
+Evaluating: 0 0 0 0 2 1 0 0 0 1 1 0 3 
+Mean MWFT(norm): 67.0609
+Min, Max: 58.9806 76.6567
+Quartiles: 63.366 65.7437 71.7508
+Std dev.: 4.66673
+IQR: 8.38475
+
+Evaluating: 0 0 1 0 0 0 0 0 0 0 1 0 5 
+Mean MWFT(norm): 58.4146
+Min, Max: 49.2078 68.1897
+Quartiles: 54.4006 59.2922 62.3005
+Std dev.: 4.65814
+IQR: 7.89995
+
+Evaluating: 0 0 0 1 0 0 0 0 0 1 0 0 5 
+Mean MWFT(norm): 58.9915
+Min, Max: 50.0079 68.0272
+Quartiles: 55.6092 59.4467 62.9814
+Std dev.: 4.50416
+IQR: 7.3722
+
+Evaluating: 0 0 0 0 0 1 0 1 0 0 0 0 5 
+Mean MWFT(norm): 59.3778
+Min, Max: 49.9653 67.7399
+Quartiles: 55.795 59.6838 63.7577
+Std dev.: 4.6764
+IQR: 7.9627
+
+Evaluating: 1 2 1 0 1 0 0 1 1 0 1 0 2 
+Mean MWFT(norm): 83.6178
+Min, Max: 72.9248 93.3752
+Quartiles: 80.2539 83.5046 87.861
+Std dev.: 5.02698
+IQR: 7.60715
+
+Evaluating: 3 2 1 0 0 0 0 1 1 0 1 0 2 
+Mean MWFT(norm): 85.963
+Min, Max: 77.2654 95.014
+Quartiles: 82.8541 85.712 89.6508
+Std dev.: 4.35727
+IQR: 6.79677
+
+Evaluating: 2 2 1 1 1 0 0 0 1 0 1 0 2 
+Mean MWFT(norm): 93.2874
+Min, Max: 84.6805 104.327
+Quartiles: 89.303 91.9344 97.3408
+Std dev.: 5.03615
+IQR: 8.03777
+
+Evaluating: 1 3 2 0 1 0 0 0 1 0 1 0 2 
+Mean MWFT(norm): 93.6457
+Min, Max: 84.7863 104.637
+Quartiles: 89.6975 92.2844 97.368
+Std dev.: 4.9293
+IQR: 7.67049
+
+Evaluating: 2 2 1 0 2 0 0 1 0 0 1 0 2 
+Mean MWFT(norm): 96.6887
+Min, Max: 86.7796 110.071
+Quartiles: 91.9824 95.0216 101.456
+Std dev.: 5.94873
+IQR: 9.47413
+
+Evaluating: 1 3 1 1 1 0 0 1 0 0 1 0 2 
+Mean MWFT(norm): 97.2073
+Min, Max: 87.0303 110.659
+Quartiles: 92.6215 95.4549 101.641
+Std dev.: 5.98118
+IQR: 9.01915
+
+Evaluating: 1 2 3 0 1 0 0 1 0 0 1 0 2 
+Mean MWFT(norm): 97.2723
+Min, Max: 87.4877 110.691
+Quartiles: 92.6411 95.8226 101.581
+Std dev.: 5.88892
+IQR: 8.94006
+
+Evaluating: 2 2 1 0 1 0 1 1 1 0 0 0 2 
+Mean MWFT(norm): 102.049
+Min, Max: 86.3794 113.181
+Quartiles: 97.0888 104.109 107.239
+Std dev.: 7.17889
+IQR: 10.1499
+
+Evaluating: 1 3 1 0 1 1 0 1 1 0 0 0 2 
+Mean MWFT(norm): 104.104
+Min, Max: 89.2594 116.389
+Quartiles: 98.8486 105.837 109.778
+Std dev.: 7.17883
+IQR: 10.9291
+
+Evaluating: 1 2 2 0 2 0 0 1 1 0 0 0 2 
+Mean MWFT(norm): 107.336
+Min, Max: 93.3681 119.28
+Quartiles: 103.05 108.392 112.732
+Std dev.: 6.56076
+IQR: 9.6813
+
+Evaluating: 1 2 1 2 1 0 0 1 1 0 0 0 2 
+Mean MWFT(norm): 107.771
+Min, Max: 93.349 119.774
+Quartiles: 103.324 108.626 113.12
+Std dev.: 6.52646
+IQR: 9.7958
+
+Evaluating: 2 2 1 0 1 0 0 1 2 0 1 0 1 
+Mean MWFT(norm): 108.237
+Min, Max: 86.2499 142.795
+Quartiles: 100.459 107.178 116.243
+Std dev.: 12.8482
+IQR: 15.7845
+
+Evaluating: 1 3 1 0 1 0 0 2 1 0 1 0 1 
+Mean MWFT(norm): 111.987
+Min, Max: 88.4234 143.835
+Quartiles: 104.958 112.022 120.059
+Std dev.: 12.665
+IQR: 15.1007
+
+Evaluating: 1 2 2 0 1 0 1 1 1 0 1 0 1 
+Mean MWFT(norm): 113.484
+Min, Max: 89.5817 144.384
+Quartiles: 104.867 114.326 121.113
+Std dev.: 12.654
+IQR: 16.2459
+
+Evaluating: 1 2 1 1 1 1 0 1 1 0 1 0 1 
+Mean MWFT(norm): 115.188
+Min, Max: 91.269 146.404
+Quartiles: 106.242 116.434 122.195
+Std dev.: 12.5593
+IQR: 15.953
+
+Evaluating: 1 2 1 0 3 0 0 1 1 0 1 0 1 
+Mean MWFT(norm): 118.586
+Min, Max: 96.4582 149.937
+Quartiles: 110.354 119.217 125.161
+Std dev.: 11.5331
+IQR: 14.807
+
+Evaluating: 0 1 1 0 1 1 0 1 1 0 1 0 2 
+Mean MWFT(norm): 79.8578
+Min, Max: 67.4782 89.9813
+Quartiles: 76.8255 80.292 84.7513
+Std dev.: 5.59661
+IQR: 7.92585
+
+Evaluating: 2 1 1 0 0 1 0 1 1 0 1 0 2 
+Mean MWFT(norm): 81.5531
+Min, Max: 70.7462 91.1157
+Quartiles: 78.4658 81.7204 85.9272
+Std dev.: 5.20355
+IQR: 7.46135
+
+Evaluating: 1 2 1 0 1 0 0 1 1 0 1 0 2 
+Mean MWFT(norm): 83.6178
+Min, Max: 72.9248 93.3752
+Quartiles: 80.2539 83.5046 87.861
+Std dev.: 5.02698
+IQR: 7.60715
+
+Evaluating: 1 1 1 1 1 1 0 0 1 0 1 0 2 
+Mean MWFT(norm): 87.9917
+Min, Max: 77.3727 99.5352
+Quartiles: 84.1884 87.0474 92.5184
+Std dev.: 5.53073
+IQR: 8.33006
+
+Evaluating: 0 2 2 0 1 1 0 0 1 0 1 0 2 
+Mean MWFT(norm): 88.2262
+Min, Max: 76.9958 99.4722
+Quartiles: 84.2187 87.1954 92.6261
+Std dev.: 5.42041
+IQR: 8.40743
+
+Evaluating: 1 1 1 0 2 1 0 1 0 0 1 0 2 
+Mean MWFT(norm): 91.7146
+Min, Max: 80.4263 105.307
+Quartiles: 87.0525 90.4381 96.5809
+Std dev.: 6.28137
+IQR: 9.52842
+
+Evaluating: 0 2 1 1 1 1 0 1 0 0 1 0 2 
+Mean MWFT(norm): 92.0498
+Min, Max: 80.6984 105.506
+Quartiles: 87.569 90.7744 96.7693
+Std dev.: 6.32224
+IQR: 9.20031
+
+Evaluating: 0 1 3 0 1 1 0 1 0 0 1 0 2 
+Mean MWFT(norm): 92.1448
+Min, Max: 80.8918 105.96
+Quartiles: 87.4745 90.8533 96.7363
+Std dev.: 6.231
+IQR: 9.26177
+
+Evaluating: 1 1 1 0 1 1 1 1 1 0 0 0 2 
+Mean MWFT(norm): 98.7587
+Min, Max: 82.2606 109.977
+Quartiles: 93.7161 101.221 104.295
+Std dev.: 7.48114
+IQR: 10.5788
+
+Evaluating: 0 2 1 0 1 2 0 1 1 0 0 0 2 
+Mean MWFT(norm): 101.328
+Min, Max: 86.1059 113.193
+Quartiles: 96.7997 103.283 106.853
+Std dev.: 7.12615
+IQR: 10.0532
+
+Evaluating: 0 1 2 0 2 1 0 1 1 0 0 0 2 
+Mean MWFT(norm): 102.584
+Min, Max: 87.8002 114.942
+Quartiles: 98.0895 104.195 108.257
+Std dev.: 7.30505
+IQR: 10.1671
+
+Evaluating: 0 1 1 2 1 1 0 1 1 0 0 0 2 
+Mean MWFT(norm): 102.844
+Min, Max: 88.1791 115.224
+Quartiles: 98.1348 104.48 108.618
+Std dev.: 7.29917
+IQR: 10.4833
+
+Evaluating: 1 1 1 0 1 1 0 1 2 0 1 0 1 
+Mean MWFT(norm): 104.619
+Min, Max: 81.8482 141.23
+Quartiles: 95.4788 103.283 114.208
+Std dev.: 13.7953
+IQR: 18.7289
+
+Evaluating: 0 2 1 0 1 1 0 2 1 0 1 0 1 
+Mean MWFT(norm): 108.392
+Min, Max: 84.4476 142.459
+Quartiles: 99.9056 108.006 117.022
+Std dev.: 13.5284
+IQR: 17.1168
+
+Evaluating: 0 1 2 0 1 1 1 1 1 0 1 0 1 
+Mean MWFT(norm): 110.255
+Min, Max: 85.7726 143.276
+Quartiles: 101.478 110.484 118.726
+Std dev.: 13.3255
+IQR: 17.248
+
+Evaluating: 0 1 1 1 1 2 0 1 1 0 1 0 1 
+Mean MWFT(norm): 112.664
+Min, Max: 89.4323 145.94
+Quartiles: 104.492 112.932 119.839
+Std dev.: 12.8905
+IQR: 15.3477
+
+Evaluating: 0 1 1 0 3 1 0 1 1 0 1 0 1 
+Mean MWFT(norm): 114.01
+Min, Max: 91.122 146.217
+Quartiles: 105.427 114.659 121.252
+Std dev.: 12.7226
+IQR: 15.825
+
+Evaluating: 0 0 0 0 1 1 0 2 1 0 1 0 2 
+Mean MWFT(norm): 75.0116
+Min, Max: 62.6126 83.663
+Quartiles: 72.7079 76.38 79.2259
+Std dev.: 5.45169
+IQR: 6.51804
+
+Evaluating: 2 0 0 0 0 1 0 2 1 0 1 0 2 
+Mean MWFT(norm): 76.6238
+Min, Max: 65.1347 84.8321
+Quartiles: 74.3337 78.0357 80.3294
+Std dev.: 4.95768
+IQR: 5.99575
+
+Evaluating: 1 1 0 0 1 0 0 2 1 0 1 0 2 
+Mean MWFT(norm): 77.667
+Min, Max: 65.3815 86.0034
+Quartiles: 75.3565 78.6446 81.5372
+Std dev.: 4.9691
+IQR: 6.18077
+
+Evaluating: 1 0 0 1 1 1 0 1 1 0 1 0 2 
+Mean MWFT(norm): 79.8528
+Min, Max: 68.0376 89.9226
+Quartiles: 76.742 80.1699 84.6144
+Std dev.: 5.6425
+IQR: 7.87242
+
+Evaluating: 0 1 1 0 1 1 0 1 1 0 1 0 2 
+Mean MWFT(norm): 79.8578
+Min, Max: 67.4782 89.9813
+Quartiles: 76.8255 80.292 84.7513
+Std dev.: 5.59661
+IQR: 7.92585
+
+Evaluating: 1 0 0 0 2 1 0 2 0 0 1 0 2 
+Mean MWFT(norm): 84.6572
+Min, Max: 72.6115 95.8641
+Quartiles: 81.147 84.8438 89.7675
+Std dev.: 5.6555
+IQR: 8.62056
+
+Evaluating: 0 1 0 1 1 1 0 2 0 0 1 0 2 
+Mean MWFT(norm): 84.7448
+Min, Max: 72.879 96.4292
+Quartiles: 81.2612 84.8361 89.9894
+Std dev.: 5.7275
+IQR: 8.72818
+
+Evaluating: 0 0 2 0 1 1 0 2 0 0 1 0 2 
+Mean MWFT(norm): 84.6655
+Min, Max: 72.2246 96.1798
+Quartiles: 80.9407 84.7677 89.7778
+Std dev.: 5.74796
+IQR: 8.83707
+
+Evaluating: 1 0 0 0 1 1 1 2 1 0 0 0 2 
+Mean MWFT(norm): 93.7861
+Min, Max: 78.3556 106.074
+Quartiles: 89.9598 96.388 98.8504
+Std dev.: 7.30805
+IQR: 8.8906
+
+Evaluating: 0 1 0 0 1 2 0 2 1 0 0 0 2 
+Mean MWFT(norm): 95.004
+Min, Max: 79.3848 106.68
+Quartiles: 91.0787 97.6943 100.202
+Std dev.: 7.28306
+IQR: 9.12336
+
+Evaluating: 0 0 1 0 2 1 0 2 1 0 0 0 2 
+Mean MWFT(norm): 95.726
+Min, Max: 80.4379 106.609
+Quartiles: 91.2639 98.4707 101.169
+Std dev.: 7.39181
+IQR: 9.90544
+
+Evaluating: 0 0 0 2 1 1 0 2 1 0 0 0 2 
+Mean MWFT(norm): 95.9467
+Min, Max: 80.1157 106.59
+Quartiles: 91.6024 98.7573 101.507
+Std dev.: 7.39163
+IQR: 9.90451
+
+Evaluating: 1 0 0 0 1 1 0 2 2 0 1 0 1 
+Mean MWFT(norm): 100.219
+Min, Max: 77.9347 138.974
+Quartiles: 91.2982 98.0204 110.416
+Std dev.: 14.5595
+IQR: 19.1178
+
+Evaluating: 0 1 0 0 1 1 0 3 1 0 1 0 1 
+Mean MWFT(norm): 104.303
+Min, Max: 80.9916 140.235
+Quartiles: 94.8971 102.446 112.585
+Std dev.: 14.2003
+IQR: 17.6882
+
+Evaluating: 0 0 1 0 1 1 1 2 1 0 1 0 1 
+Mean MWFT(norm): 105.094
+Min, Max: 81.4278 140.3
+Quartiles: 96.8935 103.991 114.194
+Std dev.: 14.1881
+IQR: 17.3001
+
+Evaluating: 0 0 0 1 1 2 0 2 1 0 1 0 1 
+Mean MWFT(norm): 106.491
+Min, Max: 83.2873 142.647
+Quartiles: 97.9569 105.488 114.718
+Std dev.: 13.8975
+IQR: 16.7609
+
+Evaluating: 0 0 0 0 3 1 0 2 1 0 1 0 1 
+Mean MWFT(norm): 107.325
+Min, Max: 83.9872 142.952
+Quartiles: 98.8112 106.461 115.431
+Std dev.: 13.7411
+IQR: 16.6198
+
+Evaluating: 1 0 0 0 0 0 0 2 1 0 1 0 3 
+Mean MWFT(norm): 62.809
+Min, Max: 56.9374 69.8168
+Quartiles: 59.8423 62.4388 66.0224
+Std dev.: 3.40538
+IQR: 6.18006
+
+Evaluating: 2 0 0 1 0 0 0 1 1 0 1 0 3 
+Mean MWFT(norm): 67.1372
+Min, Max: 59.9655 75.1818
+Quartiles: 63.825 66.6465 70.886
+Std dev.: 3.92538
+IQR: 7.06108
+
+Evaluating: 1 1 1 0 0 0 0 1 1 0 1 0 3 
+Mean MWFT(norm): 67.2545
+Min, Max: 60.1255 75.2533
+Quartiles: 63.9589 66.8169 70.9027
+Std dev.: 3.86339
+IQR: 6.94378
+
+Evaluating: 2 0 0 0 1 0 0 2 0 0 1 0 3 
+Mean MWFT(norm): 69.147
+Min, Max: 60.9896 78.8655
+Quartiles: 65.2392 68.427 73.1205
+Std dev.: 4.46692
+IQR: 7.88125
+
+Evaluating: 1 1 0 1 0 0 0 2 0 0 1 0 3 
+Mean MWFT(norm): 69.615
+Min, Max: 61.7919 78.9774
+Quartiles: 65.9972 68.7631 73.5235
+Std dev.: 4.27161
+IQR: 7.52628
+
+Evaluating: 1 0 2 0 0 0 0 2 0 0 1 0 3 
+Mean MWFT(norm): 69.6902
+Min, Max: 62.3724 79.183
+Quartiles: 66.2268 68.8858 73.4632
+Std dev.: 4.20663
+IQR: 7.23643
+
+Evaluating: 2 0 0 0 0 0 1 2 1 0 0 0 3 
+Mean MWFT(norm): 72.3966
+Min, Max: 63.4227 80.5009
+Quartiles: 69.4083 72.6313 75.9228
+Std dev.: 4.17885
+IQR: 6.51449
+
+Evaluating: 1 1 0 0 0 1 0 2 1 0 0 0 3 
+Mean MWFT(norm): 73.0519
+Min, Max: 63.1324 81.8603
+Quartiles: 69.8632 73.3299 76.9774
+Std dev.: 4.44659
+IQR: 7.11417
+
+Evaluating: 1 0 1 0 1 0 0 2 1 0 0 0 3 
+Mean MWFT(norm): 73.927
+Min, Max: 64.8261 83.2471
+Quartiles: 70.4614 73.661 78.1254
+Std dev.: 4.61903
+IQR: 7.66401
+
+Evaluating: 1 0 0 2 0 0 0 2 1 0 0 0 3 
+Mean MWFT(norm): 74.5665
+Min, Max: 65.9058 83.52
+Quartiles: 71.3976 74.3039 78.2749
+Std dev.: 4.31061
+IQR: 6.87729
+
+Evaluating: 2 0 0 0 0 0 0 2 2 0 1 0 2 
+Mean MWFT(norm): 72.369
+Min, Max: 61.4782 82.4132
+Quartiles: 70.9515 73.777 75.2626
+Std dev.: 4.33082
+IQR: 4.31109
+
+Evaluating: 1 1 0 0 0 0 0 3 1 0 1 0 2 
+Mean MWFT(norm): 74.5442
+Min, Max: 64.0136 83.7451
+Quartiles: 72.4007 75.992 77.7096
+Std dev.: 4.58246
+IQR: 5.30889
+
+Evaluating: 1 0 1 0 0 0 1 2 1 0 1 0 2 
+Mean MWFT(norm): 74.9514
+Min, Max: 63.1268 83.6091
+Quartiles: 72.7104 76.3533 78.6316
+Std dev.: 5.0738
+IQR: 5.9212
+
+Evaluating: 1 0 0 1 0 1 0 2 1 0 1 0 2 
+Mean MWFT(norm): 75.5156
+Min, Max: 64.1827 83.8325
+Quartiles: 73.1072 76.7817 79.7023
+Std dev.: 5.28195
+IQR: 6.59516
+
+Evaluating: 1 0 0 0 2 0 0 2 1 0 1 0 2 
+Mean MWFT(norm): 76.6649
+Min, Max: 63.7046 85.2171
+Quartiles: 74.0765 77.7853 80.6403
+Std dev.: 5.21242
+IQR: 6.56382
+
+Evaluating: 0 0 0 0 0 0 0 1 1 0 1 1 3 
+Mean MWFT(norm): 57.0027
+Min, Max: 49.8709 63.8704
+Quartiles: 54.0912 57.0784 60.1299
+Std dev.: 3.4238
+IQR: 6.03871
+
+Evaluating: 1 0 0 1 0 0 0 0 1 0 1 1 3 
+Mean MWFT(norm): 61.7239
+Min, Max: 53.3527 69.7803
+Quartiles: 59.2873 61.7788 65.2794
+Std dev.: 3.95466
+IQR: 5.99204
+
+Evaluating: 0 1 1 0 0 0 0 0 1 0 1 1 3 
+Mean MWFT(norm): 61.8309
+Min, Max: 53.8766 70.1233
+Quartiles: 59.0419 61.8851 65.3203
+Std dev.: 3.88048
+IQR: 6.2784
+
+Evaluating: 1 0 0 0 1 0 0 1 0 0 1 1 3 
+Mean MWFT(norm): 62.5068
+Min, Max: 53.7411 71.0249
+Quartiles: 58.8737 62.3149 66.3727
+Std dev.: 4.34348
+IQR: 7.4991
+
+Evaluating: 0 1 0 1 0 0 0 1 0 0 1 1 3 
+Mean MWFT(norm): 63.0304
+Min, Max: 54.8692 71.2725
+Quartiles: 59.7024 62.834 67.0748
+Std dev.: 4.1967
+IQR: 7.37242
+
+Evaluating: 0 0 2 0 0 0 0 1 0 0 1 1 3 
+Mean MWFT(norm): 63.0582
+Min, Max: 54.9107 71.2323
+Quartiles: 59.7365 62.8096 67.1468
+Std dev.: 4.19522
+IQR: 7.41022
+
+Evaluating: 1 0 0 0 0 0 1 1 1 0 0 1 3 
+Mean MWFT(norm): 62.9636
+Min, Max: 54.9913 70.6232
+Quartiles: 59.4124 63.0273 66.4288
+Std dev.: 3.88873
+IQR: 7.0164
+
+Evaluating: 0 1 0 0 0 1 0 1 1 0 0 1 3 
+Mean MWFT(norm): 63.7455
+Min, Max: 56.2581 72.0196
+Quartiles: 60.0634 63.2064 67.8007
+Std dev.: 4.11716
+IQR: 7.7373
+
+Evaluating: 0 0 1 0 1 0 0 1 1 0 0 1 3 
+Mean MWFT(norm): 64.8209
+Min, Max: 57.2033 73.4304
+Quartiles: 61.1352 64.2177 68.7238
+Std dev.: 4.22097
+IQR: 7.58862
+
+Evaluating: 0 0 0 2 0 0 0 1 1 0 0 1 3 
+Mean MWFT(norm): 65.54
+Min, Max: 58.0343 73.867
+Quartiles: 62.0276 65.046 69.3428
+Std dev.: 3.98355
+IQR: 7.31523
+
+Evaluating: 1 0 0 0 0 0 0 2 1 0 1 0 3 
+Mean MWFT(norm): 62.809
+Min, Max: 56.9374 69.8168
+Quartiles: 59.8423 62.4388 66.0224
+Std dev.: 3.40538
+IQR: 6.18006
+
+Evaluating: 0 1 0 0 0 0 1 1 1 0 1 0 3 
+Mean MWFT(norm): 63.6153
+Min, Max: 57.1307 71.2831
+Quartiles: 60.1677 63.0987 67.1992
+Std dev.: 3.83626
+IQR: 7.03154
+
+Evaluating: 0 0 1 0 0 1 0 1 1 0 1 0 3 
+Mean MWFT(norm): 64.0987
+Min, Max: 57.4175 72.7923
+Quartiles: 60.5542 63.2172 67.9287
+Std dev.: 4.168
+IQR: 7.37452
+
+Evaluating: 0 0 0 1 1 0 0 1 1 0 1 0 3 
+Mean MWFT(norm): 65.489
+Min, Max: 58.5959 74.3182
+Quartiles: 61.8803 64.6191 69.2765
+Std dev.: 4.16661
+IQR: 7.39617
+
+Evaluating: 1 0 0 0 0 0 0 1 2 0 1 1 2 
+Mean MWFT(norm): 62.8815
+Min, Max: 56.3174 68.3081
+Quartiles: 61.0587 63.1327 64.9855
+Std dev.: 2.69525
+IQR: 3.92687
+
+Evaluating: 0 1 0 0 0 0 0 2 1 0 1 1 2 
+Mean MWFT(norm): 64.0868
+Min, Max: 57.2307 70.4704
+Quartiles: 61.7733 64.0943 66.6675
+Std dev.: 3.13101
+IQR: 4.89427
+
+Evaluating: 0 0 1 0 0 0 1 1 1 0 1 1 2 
+Mean MWFT(norm): 64.5947
+Min, Max: 57.4432 71.9893
+Quartiles: 61.8218 64.5214 67.7714
+Std dev.: 3.68541
+IQR: 5.94957
+
+Evaluating: 0 0 0 1 0 1 0 1 1 0 1 1 2 
+Mean MWFT(norm): 65.381
+Min, Max: 57.8432 73.1398
+Quartiles: 62.4636 65.2166 68.6037
+Std dev.: 3.93613
+IQR: 6.14007
+
+Evaluating: 0 0 0 0 2 0 0 1 1 0 1 1 2 
+Mean MWFT(norm): 66.7135
+Min, Max: 59.2691 74.776
+Quartiles: 63.8383 66.2292 69.8493
+Std dev.: 3.7883
+IQR: 6.01097
+
+Evaluating: 0 0 0 1 0 0 0 0 0 0 1 1 4 
+Mean MWFT(norm): 58.6353
+Min, Max: 49.5853 67.8843
+Quartiles: 54.8278 59.3407 62.4807
+Std dev.: 4.51095
+IQR: 7.65288
+
+Evaluating: 0 0 0 0 0 1 0 0 1 0 0 1 4 
+Mean MWFT(norm): 58.1293
+Min, Max: 48.9766 66.2403
+Quartiles: 54.9139 58.4251 62.1528
+Std dev.: 4.32414
+IQR: 7.23895
+
+Evaluating: 0 0 0 0 0 0 1 0 1 0 1 0 4 
+Mean MWFT(norm): 57.4738
+Min, Max: 49.4188 64.6448
+Quartiles: 54.1659 57.8675 61.1458
+Std dev.: 4.06371
+IQR: 6.97987
+
+Evaluating: 0 0 0 0 0 0 1 1 0 0 0 1 4 
+Mean MWFT(norm): 58.6584
+Min, Max: 49.5426 66.6156
+Quartiles: 55.0357 59.1145 62.6827
+Std dev.: 4.37352
+IQR: 7.64695
+
+Evaluating: 0 0 0 0 0 0 0 2 0 0 1 0 4 
+Mean MWFT(norm): 58.0778
+Min, Max: 50.6187 65.7903
+Quartiles: 54.846 58.1456 61.6231
+Std dev.: 3.88188
+IQR: 6.77713
+
+Evaluating: 0 0 0 0 0 0 0 1 1 1 0 0 4 
+Mean MWFT(norm): 57.7026
+Min, Max: 50.6814 64.5002
+Quartiles: 54.8708 57.7084 61.0422
+Std dev.: 3.47496
+IQR: 6.1714
+
+Evaluating: 0 1 1 0 1 1 1 0 0 1 1 1 1 
+Mean MWFT(norm): 85.4439
+Min, Max: 71.5393 101.65
+Quartiles: 80.4601 86.4354 90.6299
+Std dev.: 6.41925
+IQR: 10.1698
+
+Evaluating: 3 1 1 0 0 1 1 0 0 1 1 1 1 
+Mean MWFT(norm): 87.1673
+Min, Max: 74.0401 102.58
+Quartiles: 82.8875 88.6667 91.7631
+Std dev.: 5.90085
+IQR: 8.87557
+
+Evaluating: 2 2 1 0 1 0 1 0 0 1 1 1 1 
+Mean MWFT(norm): 89.0621
+Min, Max: 76.2589 103.549
+Quartiles: 84.9503 89.9016 93.6248
+Std dev.: 5.73118
+IQR: 8.67449
+
+Evaluating: 2 1 2 0 1 1 0 0 0 1 1 1 1 
+Mean MWFT(norm): 91.2604
+Min, Max: 79.5245 104.924
+Quartiles: 86.6015 91.4856 95.8926
+Std dev.: 5.64182
+IQR: 9.29105
+
+Evaluating: 1 3 1 0 1 1 0 0 0 1 1 1 1 
+Mean MWFT(norm): 91.5952
+Min, Max: 79.5939 104.861
+Quartiles: 87.0707 91.9255 96.1376
+Std dev.: 5.51951
+IQR: 9.06686
+
+Evaluating: 2 1 1 0 1 2 1 0 0 0 1 1 1 
+Mean MWFT(norm): 100.671
+Min, Max: 87.993 111.973
+Quartiles: 95.9791 100.853 105.586
+Std dev.: 5.85254
+IQR: 9.60705
+
+Evaluating: 1 2 1 0 2 1 1 0 0 0 1 1 1 
+Mean MWFT(norm): 101.992
+Min, Max: 88.0332 113.665
+Quartiles: 97.1002 101.868 107.235
+Std dev.: 6.11054
+IQR: 10.1349
+
+Evaluating: 1 1 2 1 1 1 1 0 0 0 1 1 1 
+Mean MWFT(norm): 102.041
+Min, Max: 88.0516 113.727
+Quartiles: 97.2525 101.791 107.613
+Std dev.: 6.2167
+IQR: 10.3605
+
+Evaluating: 2 1 1 0 1 1 2 0 0 1 0 1 1 
+Mean MWFT(norm): 103.354
+Min, Max: 88.9095 119.712
+Quartiles: 97.4743 104.857 108.835
+Std dev.: 7.05388
+IQR: 11.3611
+
+Evaluating: 1 2 1 0 1 2 1 0 0 1 0 1 1 
+Mean MWFT(norm): 105.165
+Min, Max: 90.7713 120.865
+Quartiles: 99.4262 106.693 111.219
+Std dev.: 7.16934
+IQR: 11.7931
+
+Evaluating: 1 1 2 0 2 1 1 0 0 1 0 1 1 
+Mean MWFT(norm): 106.249
+Min, Max: 89.9826 121.401
+Quartiles: 100.101 107.473 112.659
+Std dev.: 7.40031
+IQR: 12.5578
+
+Evaluating: 1 1 1 2 1 1 1 0 0 1 0 1 1 
+Mean MWFT(norm): 106.538
+Min, Max: 90.4003 121.528
+Quartiles: 100.417 107.809 112.907
+Std dev.: 7.45825
+IQR: 12.4897
+
+Evaluating: 2 1 1 0 1 1 1 1 0 1 1 0 1 
+Mean MWFT(norm): 105.011
+Min, Max: 83.0096 141.574
+Quartiles: 95.2011 105.388 112.458
+Std dev.: 12.3152
+IQR: 17.2567
+
+Evaluating: 1 2 1 0 1 1 2 0 0 1 1 0 1 
+Mean MWFT(norm): 110.742
+Min, Max: 91.5312 145.402
+Quartiles: 102.301 110.491 117.45
+Std dev.: 10.6809
+IQR: 15.1491
+
+Evaluating: 1 1 2 0 1 2 1 0 0 1 1 0 1 
+Mean MWFT(norm): 112.39
+Min, Max: 91.9776 145.958
+Quartiles: 103.853 112.537 119.665
+Std dev.: 10.7804
+IQR: 15.8122
+
+Evaluating: 1 1 1 1 2 1 1 0 0 1 1 0 1 
+Mean MWFT(norm): 113.553
+Min, Max: 92.0075 146.996
+Quartiles: 104.822 114.302 121.335
+Std dev.: 10.87
+IQR: 16.5132
+
+Evaluating: 1 0 0 0 1 1 1 1 0 1 1 1 1 
+Mean MWFT(norm): 79.2188
+Min, Max: 64.7455 97.6477
+Quartiles: 74.8255 80.3586 83.8081
+Std dev.: 7.1309
+IQR: 8.98257
+
+Evaluating: 3 0 0 0 0 1 1 1 0 1 1 1 1 
+Mean MWFT(norm): 80.8287
+Min, Max: 67.2506 97.9826
+Quartiles: 76.763 81.7052 84.9615
+Std dev.: 6.51998
+IQR: 8.19854
+
+Evaluating: 2 1 0 0 1 0 1 1 0 1 1 1 1 
+Mean MWFT(norm): 81.7879
+Min, Max: 68.2476 98.5531
+Quartiles: 77.0969 83.1231 86.2319
+Std dev.: 6.62261
+IQR: 9.13505
+
+Evaluating: 2 0 1 0 1 1 0 1 0 1 1 1 1 
+Mean MWFT(norm): 82.841
+Min, Max: 69.2111 98.9609
+Quartiles: 78.1169 84.0074 87.8216
+Std dev.: 6.70471
+IQR: 9.70466
+
+Evaluating: 1 2 0 0 1 1 0 1 0 1 1 1 1 
+Mean MWFT(norm): 83.1854
+Min, Max: 69.179 99.1487
+Quartiles: 78.7341 84.4167 87.8905
+Std dev.: 6.56709
+IQR: 9.1564
+
+Evaluating: 2 0 0 1 1 1 1 0 0 1 1 1 1 
+Mean MWFT(norm): 85.4504
+Min, Max: 71.5463 101.576
+Quartiles: 80.653 86.7552 90.5205
+Std dev.: 6.37574
+IQR: 9.86747
+
+Evaluating: 1 1 1 0 1 1 1 0 0 1 1 1 1 
+Mean MWFT(norm): 85.4439
+Min, Max: 71.5393 101.65
+Quartiles: 80.4601 86.4354 90.6299
+Std dev.: 6.41925
+IQR: 10.1698
+
+Evaluating: 2 0 0 0 1 2 1 1 0 0 1 1 1 
+Mean MWFT(norm): 91.2896
+Min, Max: 76.7753 105.981
+Quartiles: 86.386 93.051 96.3977
+Std dev.: 6.8956
+IQR: 10.0118
+
+Evaluating: 1 1 0 0 2 1 1 1 0 0 1 1 1 
+Mean MWFT(norm): 92.0942
+Min, Max: 76.7419 107.334
+Quartiles: 86.7959 93.8283 97.5731
+Std dev.: 7.03026
+IQR: 10.7772
+
+Evaluating: 1 0 1 1 1 1 1 1 0 0 1 1 1 
+Mean MWFT(norm): 92.0607
+Min, Max: 76.4006 107.274
+Quartiles: 86.724 94.1145 97.6264
+Std dev.: 7.19589
+IQR: 10.9024
+
+Evaluating: 2 0 0 0 1 1 2 1 0 1 0 1 1 
+Mean MWFT(norm): 94.9468
+Min, Max: 78.414 114.429
+Quartiles: 88.5899 96.3574 100.632
+Std dev.: 8.41787
+IQR: 12.0417
+
+Evaluating: 1 1 0 0 1 2 1 1 0 1 0 1 1 
+Mean MWFT(norm): 95.8916
+Min, Max: 78.3768 115.57
+Quartiles: 89.003 97.761 102.047
+Std dev.: 8.58476
+IQR: 13.0435
+
+Evaluating: 1 0 1 0 2 1 1 1 0 1 0 1 1 
+Mean MWFT(norm): 96.5578
+Min, Max: 79.7463 115.758
+Quartiles: 89.4862 98.7854 102.997
+Std dev.: 8.74863
+IQR: 13.5103
+
+Evaluating: 1 0 0 2 1 1 1 1 0 1 0 1 1 
+Mean MWFT(norm): 96.7981
+Min, Max: 79.7896 115.729
+Quartiles: 89.7132 99.2115 103.355
+Std dev.: 8.78327
+IQR: 13.6422
+
+Evaluating: 2 0 0 0 1 1 1 2 0 1 1 0 1 
+Mean MWFT(norm): 99.8813
+Min, Max: 78.2088 138.674
+Quartiles: 90.8395 98.5499 106.454
+Std dev.: 12.9692
+IQR: 15.6146
+
+Evaluating: 1 1 0 0 1 1 2 1 0 1 1 0 1 
+Mean MWFT(norm): 102.317
+Min, Max: 80.441 139.32
+Quartiles: 93.0493 101.512 108.463
+Std dev.: 12.5511
+IQR: 15.4132
+
+Evaluating: 1 0 1 0 1 2 1 1 0 1 1 0 1 
+Mean MWFT(norm): 103.102
+Min, Max: 81.5176 141.448
+Quartiles: 94.0717 102.821 110.644
+Std dev.: 12.6409
+IQR: 16.5724
+
+Evaluating: 1 0 0 1 2 1 1 1 0 1 1 0 1 
+Mean MWFT(norm): 104.001
+Min, Max: 82.5541 141.522
+Quartiles: 94.7939 103.999 111.606
+Std dev.: 12.5775
+IQR: 16.8124
+
+Evaluating: 0 0 0 0 0 1 1 1 1 1 1 1 1 
+Mean MWFT(norm): 72.9714
+Min, Max: 59.4643 92.4707
+Quartiles: 68.8717 72.8913 75.9785
+Std dev.: 7.29112
+IQR: 7.10677
+
+Evaluating: 1 1 0 0 0 0 1 1 1 1 1 1 1 
+Mean MWFT(norm): 75.411
+Min, Max: 62.7974 94.2614
+Quartiles: 71.4869 75.1426 78.0914
+Std dev.: 6.71094
+IQR: 6.60452
+
+Evaluating: 1 0 1 0 0 1 0 1 1 1 1 1 1 
+Mean MWFT(norm): 75.8481
+Min, Max: 63.0529 94.1585
+Quartiles: 71.4931 76.0106 78.9811
+Std dev.: 6.97684
+IQR: 7.48796
+
+Evaluating: 0 2 0 0 0 1 0 1 1 1 1 1 1 
+Mean MWFT(norm): 76.2374
+Min, Max: 63.5139 94.1323
+Quartiles: 72.3172 76.2568 79.2382
+Std dev.: 6.70219
+IQR: 6.92101
+
+Evaluating: 1 0 0 1 0 1 1 0 1 1 1 1 1 
+Mean MWFT(norm): 77.3141
+Min, Max: 64.0461 95.8979
+Quartiles: 73.2267 77.8104 81.069
+Std dev.: 6.86132
+IQR: 7.84234
+
+Evaluating: 0 1 1 0 0 1 1 0 1 1 1 1 1 
+Mean MWFT(norm): 77.3042
+Min, Max: 64.595 95.5745
+Quartiles: 72.7804 77.8644 81.1103
+Std dev.: 6.74794
+IQR: 8.32991
+
+Evaluating: 1 0 0 0 1 1 1 1 0 1 1 1 1 
+Mean MWFT(norm): 79.2188
+Min, Max: 64.7455 97.6477
+Quartiles: 74.8255 80.3586 83.8081
+Std dev.: 7.1309
+IQR: 8.98257
+
+Evaluating: 0 1 0 1 0 1 1 1 0 1 1 1 1 
+Mean MWFT(norm): 79.4789
+Min, Max: 65.0582 97.6814
+Quartiles: 74.75 80.6053 84.2162
+Std dev.: 7.0642
+IQR: 9.46626
+
+Evaluating: 0 0 2 0 0 1 1 1 0 1 1 1 1 
+Mean MWFT(norm): 79.4434
+Min, Max: 65.6259 97.3951
+Quartiles: 74.4527 80.54 84.0715
+Std dev.: 7.03251
+IQR: 9.61878
+
+Evaluating: 1 0 0 0 0 2 1 1 1 0 1 1 1 
+Mean MWFT(norm): 81.253
+Min, Max: 66.5944 98.4021
+Quartiles: 76.7837 82.3127 85.4448
+Std dev.: 7.47828
+IQR: 8.66118
+
+Evaluating: 0 1 0 0 1 1 1 1 1 0 1 1 1 
+Mean MWFT(norm): 81.6768
+Min, Max: 66.3368 98.3805
+Quartiles: 76.9684 83.1434 86.2746
+Std dev.: 7.62435
+IQR: 9.30611
+
+Evaluating: 0 0 1 1 0 1 1 1 1 0 1 1 1 
+Mean MWFT(norm): 81.857
+Min, Max: 66.6514 98.42
+Quartiles: 77.2302 83.3507 86.6621
+Std dev.: 7.62726
+IQR: 9.4319
+
+Evaluating: 1 0 0 0 0 1 2 1 1 1 0 1 1 
+Mean MWFT(norm): 85.6922
+Min, Max: 68.9676 108.788
+Quartiles: 80.4809 85.9769 90.9169
+Std dev.: 9.2534
+IQR: 10.436
+
+Evaluating: 0 1 0 0 0 2 1 1 1 1 0 1 1 
+Mean MWFT(norm): 86.2461
+Min, Max: 69.4413 109.487
+Quartiles: 79.9642 86.6992 91.4117
+Std dev.: 9.24191
+IQR: 11.4475
+
+Evaluating: 0 0 1 0 1 1 1 1 1 1 0 1 1 
+Mean MWFT(norm): 86.4444
+Min, Max: 68.9326 109.548
+Quartiles: 80.5626 87.3365 91.8597
+Std dev.: 9.44409
+IQR: 11.2971
+
+Evaluating: 0 0 0 2 0 1 1 1 1 1 0 1 1 
+Mean MWFT(norm): 86.9521
+Min, Max: 69.8552 109.703
+Quartiles: 81.5923 87.7747 92.4446
+Std dev.: 9.3064
+IQR: 10.8522
+
+Evaluating: 1 0 0 0 0 1 1 2 1 1 1 0 1 
+Mean MWFT(norm): 91.9294
+Min, Max: 70.9111 135.058
+Quartiles: 83.2789 89.4767 99.5345
+Std dev.: 13.8426
+IQR: 16.2556
+
+Evaluating: 0 1 0 0 0 1 2 1 1 1 1 0 1 
+Mean MWFT(norm): 93.3391
+Min, Max: 71.7969 135.173
+Quartiles: 84.783 91.2934 100.694
+Std dev.: 13.542
+IQR: 15.9107
+
+Evaluating: 0 0 1 0 0 2 1 1 1 1 1 0 1 
+Mean MWFT(norm): 93.6382
+Min, Max: 71.8941 135.565
+Quartiles: 84.9247 91.9003 101.219
+Std dev.: 13.6408
+IQR: 16.2941
+
+Evaluating: 0 0 0 1 1 1 1 1 1 1 1 0 1 
+Mean MWFT(norm): 94.1568
+Min, Max: 71.8579 135.642
+Quartiles: 85.1594 92.7154 102.258
+Std dev.: 13.6335
+IQR: 17.0988
+
+Evaluating: 0 0 0 0 0 0 0 1 1 1 1 1 2 
+Mean MWFT(norm): 60.9784
+Min, Max: 55.2421 66.5064
+Quartiles: 58.8246 60.7967 63.2052
+Std dev.: 2.64928
+IQR: 4.38062
+
+Evaluating: 1 0 0 1 0 0 0 0 1 1 1 1 2 
+Mean MWFT(norm): 65.6662
+Min, Max: 59.5226 72.0074
+Quartiles: 63.3744 64.9774 68.3873
+Std dev.: 2.90741
+IQR: 5.01289
+
+Evaluating: 0 1 1 0 0 0 0 0 1 1 1 1 2 
+Mean MWFT(norm): 65.8078
+Min, Max: 59.6016 72.0495
+Quartiles: 63.5984 65.2065 68.4493
+Std dev.: 2.85714
+IQR: 4.85088
+
+Evaluating: 1 0 0 0 1 0 0 1 0 1 1 1 2 
+Mean MWFT(norm): 66.2297
+Min, Max: 60.0116 73.964
+Quartiles: 63.3879 65.3922 69.3777
+Std dev.: 3.58065
+IQR: 5.98984
+
+Evaluating: 0 1 0 1 0 0 0 1 0 1 1 1 2 
+Mean MWFT(norm): 66.8675
+Min, Max: 60.6407 74.5381
+Quartiles: 64.2667 66.058 70.0421
+Std dev.: 3.38352
+IQR: 5.77542
+
+Evaluating: 0 0 2 0 0 0 0 1 0 1 1 1 2 
+Mean MWFT(norm): 66.9432
+Min, Max: 60.6653 74.3326
+Quartiles: 64.2547 66.1519 70.0297
+Std dev.: 3.32496
+IQR: 5.775
+
+Evaluating: 1 0 0 0 0 1 0 1 1 0 1 1 2 
+Mean MWFT(norm): 66.4283
+Min, Max: 57.6535 73.9573
+Quartiles: 63.6262 66.1001 69.5963
+Std dev.: 3.70003
+IQR: 5.97004
+
+Evaluating: 0 1 0 0 1 0 0 1 1 0 1 1 2 
+Mean MWFT(norm): 67.624
+Min, Max: 60.705 75.3601
+Quartiles: 64.6274 67.2305 70.8027
+Std dev.: 3.70762
+IQR: 6.17529
+
+Evaluating: 0 0 1 1 0 0 0 1 1 0 1 1 2 
+Mean MWFT(norm): 68.1727
+Min, Max: 61.916 76.138
+Quartiles: 65.4781 67.4379 71.0784
+Std dev.: 3.47612
+IQR: 5.60022
+
+Evaluating: 1 0 0 0 0 0 1 1 1 1 0 1 2 
+Mean MWFT(norm): 67.7971
+Min, Max: 58.9057 74.633
+Quartiles: 65.7003 68.0269 70.7945
+Std dev.: 3.73207
+IQR: 5.09415
+
+Evaluating: 0 1 0 0 0 1 0 1 1 1 0 1 2 
+Mean MWFT(norm): 68.5642
+Min, Max: 59.563 75.9162
+Quartiles: 66.0885 68.614 71.9013
+Std dev.: 3.92224
+IQR: 5.81282
+
+Evaluating: 0 0 1 0 1 0 0 1 1 1 0 1 2 
+Mean MWFT(norm): 69.5986
+Min, Max: 61.0152 77.4335
+Quartiles: 66.9228 69.5129 73.0873
+Std dev.: 4.03152
+IQR: 6.1645
+
+Evaluating: 0 0 0 2 0 0 0 1 1 1 0 1 2 
+Mean MWFT(norm): 70.3859
+Min, Max: 63.1641 77.7949
+Quartiles: 67.8554 70.0825 73.4949
+Std dev.: 3.69465
+IQR: 5.63945
+
+Evaluating: 1 0 0 0 0 0 0 2 1 1 1 0 2 
+Mean MWFT(norm): 69.0046
+Min, Max: 59.697 79.6174
+Quartiles: 67.4062 70.0191 71.8177
+Std dev.: 3.97879
+IQR: 4.41144
+
+Evaluating: 0 1 0 0 0 0 1 1 1 1 1 0 2 
+Mean MWFT(norm): 69.6966
+Min, Max: 60.0478 79.4634
+Quartiles: 67.5932 70.4979 72.8842
+Std dev.: 4.24545
+IQR: 5.29091
+
+Evaluating: 0 0 1 0 0 1 0 1 1 1 1 0 2 
+Mean MWFT(norm): 70.1635
+Min, Max: 60.063 79.9827
+Quartiles: 67.8438 70.7098 73.8372
+Std dev.: 4.62339
+IQR: 5.99343
+
+Evaluating: 0 0 0 1 1 0 0 1 1 1 1 0 2 
+Mean MWFT(norm): 71.5125
+Min, Max: 61.8735 81.5803
+Quartiles: 68.8493 71.9418 75.3632
+Std dev.: 4.49848
+IQR: 6.51389
+
+Evaluating: 1 0 0 0 0 0 0 1 2 1 1 1 1 
+Mean MWFT(norm): 73.3245
+Min, Max: 61.8118 94.2235
+Quartiles: 69.7164 72.138 75.9302
+Std dev.: 6.74917
+IQR: 6.2138
+
+Evaluating: 0 1 0 0 0 0 0 2 1 1 1 1 1 
+Mean MWFT(norm): 74.4113
+Min, Max: 62.6469 93.9075
+Quartiles: 70.8433 73.5942 77.0388
+Std dev.: 6.8097
+IQR: 6.19549
+
+Evaluating: 0 0 1 0 0 0 1 1 1 1 1 1 1 
+Mean MWFT(norm): 74.8823
+Min, Max: 62.2536 93.8389
+Quartiles: 70.6772 74.7094 77.5936
+Std dev.: 6.93012
+IQR: 6.91631
+
+Evaluating: 0 0 0 1 0 1 0 1 1 1 1 1 1 
+Mean MWFT(norm): 75.6098
+Min, Max: 62.8569 94.0141
+Quartiles: 71.417 75.6982 78.8735
+Std dev.: 7.07816
+IQR: 7.45656
+
+Evaluating: 0 0 0 0 2 0 0 1 1 1 1 1 1 
+Mean MWFT(norm): 76.7791
+Min, Max: 63.7992 95.1643
+Quartiles: 72.7585 76.9172 79.9101
+Std dev.: 6.73212
+IQR: 7.15153
+
+Evaluating: 0 0 0 0 0 0 1 0 0 1 1 1 3 
+Mean MWFT(norm): 57.1268
+Min, Max: 49.6834 64.3496
+Quartiles: 54.1017 57.1969 60.6486
+Std dev.: 3.82707
+IQR: 6.5469
+
+Evaluating: 1 0 1 0 0 0 0 0 0 1 1 1 3 
+Mean MWFT(norm): 61.0213
+Min, Max: 52.5198 69.5642
+Quartiles: 57.905 61.3001 64.5019
+Std dev.: 4.01176
+IQR: 6.59684
+
+Evaluating: 0 2 0 0 0 0 0 0 0 1 1 1 3 
+Mean MWFT(norm): 61.3636
+Min, Max: 53.0748 69.9995
+Quartiles: 57.7739 61.6688 64.8773
+Std dev.: 4.01332
+IQR: 7.10344
+
+Evaluating: 1 0 0 0 0 1 1 0 0 0 1 1 3 
+Mean MWFT(norm): 62.8133
+Min, Max: 52.7243 71.4382
+Quartiles: 59.2357 62.7249 66.8605
+Std dev.: 4.66033
+IQR: 7.62481
+
+Evaluating: 0 1 0 0 1 0 1 0 0 0 1 1 3 
+Mean MWFT(norm): 64.0046
+Min, Max: 54.4645 72.9371
+Quartiles: 60.0466 63.7513 68.1848
+Std dev.: 4.7465
+IQR: 8.13816
+
+Evaluating: 0 0 1 1 0 0 1 0 0 0 1 1 3 
+Mean MWFT(norm): 64.3815
+Min, Max: 55.2902 73.2479
+Quartiles: 60.9207 64.1673 68.7992
+Std dev.: 4.6414
+IQR: 7.87851
+
+Evaluating: 1 0 0 0 0 0 2 0 0 1 0 1 3 
+Mean MWFT(norm): 63.2381
+Min, Max: 55.2343 71.167
+Quartiles: 59.9309 63.0626 67.0317
+Std dev.: 4.26177
+IQR: 7.10087
+
+Evaluating: 0 1 0 0 0 1 1 0 0 1 0 1 3 
+Mean MWFT(norm): 63.8142
+Min, Max: 55.7639 72.5609
+Quartiles: 60.1129 63.227 68.2341
+Std dev.: 4.55431
+IQR: 8.12113
+
+Evaluating: 0 0 1 0 1 0 1 0 0 1 0 1 3 
+Mean MWFT(norm): 64.7958
+Min, Max: 56.0766 74.1023
+Quartiles: 61.0339 64.0828 69.3936
+Std dev.: 4.72643
+IQR: 8.35971
+
+Evaluating: 0 0 0 2 0 0 1 0 0 1 0 1 3 
+Mean MWFT(norm): 65.4744
+Min, Max: 56.7554 74.3312
+Quartiles: 62.1666 64.7992 70.0678
+Std dev.: 4.56136
+IQR: 7.90123
+
+Evaluating: 1 0 0 0 0 0 1 1 0 1 1 0 3 
+Mean MWFT(norm): 62.1007
+Min, Max: 55.3839 69.9882
+Quartiles: 58.711 61.4777 65.8796
+Std dev.: 3.85322
+IQR: 7.16858
+
+Evaluating: 0 1 0 0 0 0 2 0 0 1 1 0 3 
+Mean MWFT(norm): 63.9481
+Min, Max: 57.1608 72.3847
+Quartiles: 60.4766 63.1812 67.869
+Std dev.: 4.07827
+IQR: 7.39239
+
+Evaluating: 0 0 1 0 0 1 1 0 0 1 1 0 3 
+Mean MWFT(norm): 64.2044
+Min, Max: 56.4353 73.4232
+Quartiles: 60.4199 63.1353 68.8318
+Std dev.: 4.50832
+IQR: 8.4119
+
+Evaluating: 0 0 0 1 1 0 1 0 0 1 1 0 3 
+Mean MWFT(norm): 65.5109
+Min, Max: 57.0655 75.1073
+Quartiles: 61.778 64.3664 69.8275
+Std dev.: 4.61271
+IQR: 8.04959
+
+Evaluating: 1 0 0 0 0 0 1 0 1 1 1 1 2 
+Mean MWFT(norm): 62.1155
+Min, Max: 56.1666 68.1767
+Quartiles: 59.6415 61.832 64.6507
+Std dev.: 2.96257
+IQR: 5.00922
+
+Evaluating: 0 1 0 0 0 0 1 1 0 1 1 1 2 
+Mean MWFT(norm): 63.4387
+Min, Max: 56.8136 70.4977
+Quartiles: 60.765 62.8923 66.6527
+Std dev.: 3.39343
+IQR: 5.88762
+
+Evaluating: 0 0 1 0 0 0 2 0 0 1 1 1 2 
+Mean MWFT(norm): 64.9257
+Min, Max: 57.7598 72.9915
+Quartiles: 62.0047 64.1296 68.3027
+Std dev.: 3.71647
+IQR: 6.29801
+
+Evaluating: 0 0 0 1 0 1 1 0 0 1 1 1 2 
+Mean MWFT(norm): 65.4838
+Min, Max: 57.9352 74.2905
+Quartiles: 62.1604 64.4355 69.2051
+Std dev.: 4.09284
+IQR: 7.04464
+
+Evaluating: 0 0 0 0 2 0 1 0 0 1 1 1 2 
+Mean MWFT(norm): 66.6983
+Min, Max: 59.854 75.2635
+Quartiles: 63.5807 65.7538 70.0721
+Std dev.: 4.08197
+IQR: 6.49135
+
+Evaluating: 0 0 0 1 0 0 0 0 0 0 1 1 4 
+Mean MWFT(norm): 58.6353
+Min, Max: 49.5853 67.8843
+Quartiles: 54.8278 59.3407 62.4807
+Std dev.: 4.51095
+IQR: 7.65288
+
+Evaluating: 0 0 0 0 1 0 0 0 0 1 0 1 4 
+Mean MWFT(norm): 58.7241
+Min, Max: 50.0843 67.2912
+Quartiles: 55.4496 58.933 62.8071
+Std dev.: 4.4641
+IQR: 7.35747
+
+Evaluating: 0 0 0 0 0 1 0 0 0 1 1 0 4 
+Mean MWFT(norm): 57.5892
+Min, Max: 49.1927 65.9242
+Quartiles: 54.4737 57.5396 61.6906
+Std dev.: 4.27607
+IQR: 7.21687
+
+Evaluating: 0 0 0 0 0 0 1 1 0 0 0 1 4 
+Mean MWFT(norm): 58.6584
+Min, Max: 49.5426 66.6156
+Quartiles: 55.0357 59.1145 62.6827
+Std dev.: 4.37352
+IQR: 7.64695
+
+Evaluating: 0 0 0 0 0 0 1 0 1 0 1 0 4 
+Mean MWFT(norm): 57.4738
+Min, Max: 49.4188 64.6448
+Quartiles: 54.1659 57.8675 61.1458
+Std dev.: 4.06371
+IQR: 6.97987
+
+Evaluating: 0 0 0 0 0 0 1 0 0 2 0 0 4 
+Mean MWFT(norm): 57.9959
+Min, Max: 50.6126 65.0626
+Quartiles: 55.0718 57.8661 61.4667
+Std dev.: 3.72859
+IQR: 6.39492
+
+Solution found: 
+100 125 150 175 200 225 250 275 300 325 350 375 400 
+0 0 0 0 0 0 0 1 1 0 1 1 3 
+57.0027
