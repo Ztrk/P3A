@@ -14,8 +14,6 @@ f = open(sys.argv[2], "w")
 
 f.write("instances: mean_time:\n")
 
-first_fetched = False
-
 for line in inst_output_times:
 	if(line_no == 0):
 		n_inst = int(line)
