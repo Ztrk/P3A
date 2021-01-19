@@ -78,9 +78,38 @@ int main(int argc, char *argv[]) {
         }
         sort(berth_lengths.begin(), berth_lengths.end());
 
-        LocalSearch solver(quay_length, berth_lengths, mpi_evaluator,
-            max_restarts, max_time, initial_solution);
-        auto result = solver.solve();
+	//Poszukiwacze zaginionego hiperparametru
+	double best_eval;
+	bool hyperparameter_tune=config.value("hyperparameter_tune", false);
+	vector<int> result;
+	if (hyperparameter_tune){
+		vector<int> hyperparameter_tuning_options=config["hyperparameter_tuning_options"].get<vector<int>>();
+		int ho_len=hyperparameter_tuning_options.size();
+		vector<int> mini_result;
+		int best_f=-1;
+
+		for (auto f: hyperparameter_tuning_options){
+			LocalSearch solver(quay_length, berth_lengths, mpi_evaluator,
+			    max_restarts, max_time/ho_len, vector<int>{}, f);
+			auto mini_result = solver.solve();
+			double eval=solver.score();
+			if (best_f==-1 || eval<best_eval){
+				result=mini_result;
+				best_eval=eval;
+				best_f=f;
+			}
+			cout << "Currently processed number of starts: " << f <<" with result "<< eval << endl;
+		}
+		cout << "The best number of starts is: " << best_f << endl;
+	}
+
+	else{
+		int ls_starts=config.value("hyperparameter_ls_starts", 500);
+		LocalSearch solver(quay_length, berth_lengths, mpi_evaluator,
+		    max_restarts, max_time, initial_solution, ls_starts);
+		result = solver.solve();
+		best_eval=solver.score();
+	}
 
         cout << "Solution found: \n";
         for (size_t i = 0; i < berth_lengths.size(); ++i) {
@@ -91,7 +120,7 @@ int main(int argc, char *argv[]) {
             cout << result[i] << ' ';
         }
         cout << '\n';
-        cout << solver.score() << endl;
+        cout << best_eval << endl;
 
         mpi_evaluator.stop_listeners();
     }

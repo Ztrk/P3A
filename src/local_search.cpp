@@ -123,10 +123,10 @@ bool MoveGenerator::is_valid(size_t i, const vector<int> &berths) {
 }
 
 LocalSearch::LocalSearch(int quay_length, const vector<int> &berth_lengths, EvaluatorInterface &evaluator,
-        int max_restarts, int max_time, const vector<int> &initial_solution)
+        int max_restarts, int max_time, const vector<int> &initial_solution, int f)
     : quay_length(quay_length), berth_lengths(berth_lengths), evaluator(evaluator), 
     initial_solution(initial_solution), max_restarts(max_restarts), 
-    max_time(max_time), log("local_search.log") { }
+    max_time(max_time), f(f), log("local_search.log") { }
 
 vector<int> LocalSearch::solve() {
     auto start_time = chrono::system_clock::now();
@@ -144,7 +144,7 @@ vector<int> LocalSearch::solve() {
             berth_frequencies = initial_solution;
         }
         else {
-	    for (auto j=0; j<100; j++){
+	    for (auto j=0; j<f; j++){
                 berth_frequencies = initial_solution_random();
 		tmp_tmp_best_eval = evaluator.evaluate(berth_frequencies, berth_lengths);
 		if(j==0 || tmp_tmp_best_eval < tmp_best_eval){

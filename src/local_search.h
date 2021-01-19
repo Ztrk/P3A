@@ -26,7 +26,7 @@ class LocalSearch {
 public:
     LocalSearch(int quay_length, const std::vector<int> &berth_lengths,
         EvaluatorInterface &evaluator, int max_restarts = 1, int max_time = 86400,
-        const std::vector<int> &initial_solution = std::vector<int>());
+        const std::vector<int> &initial_solution = std::vector<int>(), int f=500);
 
     std::vector<int> solve();
     double score() { return final_score; }
@@ -41,6 +41,7 @@ private:
     std::vector<int> initial_solution;
     int max_restarts;
     std::chrono::seconds max_time;
+    int f;
 
     std::ofstream log;
 
