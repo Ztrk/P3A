@@ -144,7 +144,7 @@ vector<int> LocalSearch::solve() {
             berth_frequencies = initial_solution;
         }
         else {
-	    for (auto j=0; j<f; j++){
+	    for (auto j=0; j<f && !should_exit(start_time); j++){
                 berth_frequencies = initial_solution_random();
 		tmp_tmp_best_eval = evaluator.evaluate(berth_frequencies, berth_lengths);
 		if(j==0 || tmp_tmp_best_eval < tmp_best_eval){
@@ -167,7 +167,7 @@ vector<int> LocalSearch::solve() {
         log_better_solution(start_time, tmp_best_eval);
 
         bool found_better = true;
-        while (found_better) {
+        while (found_better && !should_exit(start_time)) {
             found_better = false;
             auto neighborhood = moveGenerator.get_neighborhood(berth_frequencies);
             for (vector<int> &berths : neighborhood) {
@@ -180,10 +180,6 @@ vector<int> LocalSearch::solve() {
                     log_better_solution(start_time, tmp_best_eval);
                     break;
                 }
-
-                if (should_exit(start_time)) {
-                    break;
-                }
             }
         }
 
@@ -192,9 +188,6 @@ vector<int> LocalSearch::solve() {
             best=tmp_best;
         }
 
-        if (should_exit(start_time)) {
-            break;
-        }
     }
 
     log_better_solution(start_time, best_eval);
