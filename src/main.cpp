@@ -42,8 +42,12 @@ int main(int argc, char *argv[]) {
     bool read_instances_from_file = config["read_ships_from_file"].get<bool>();
     int n_instances;// = config["n_instances"].get<int>();
 
-    if(argc >= 5 && strcmp(argv[3], "-t") == 0) {
-        n_instances = stoi(argv[4]);
+    if(argc >= 3) {
+	for(int i = 1; i < argc; i = i + 2) {
+		if(strcmp(argv[i], "-t") == 0) {
+			n_instances = stoi(argv[i + 1]);
+		}
+	}
     }
     else {
         n_instances = config["n_instances"].get<int>();
