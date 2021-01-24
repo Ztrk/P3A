@@ -6,6 +6,10 @@
 #include <random>
 #include <vector>
 
+#include <bits/stdc++.h>
+#include <sys/stat.h> 
+#include <sys/types.h> 
+
 #include <mpi.h>
 #include <nlohmann/json.hpp>
 #include "evaluator.h"
@@ -42,16 +46,29 @@ int main(int argc, char *argv[]) {
     bool read_instances_from_file = config["read_ships_from_file"].get<bool>();
     int n_instances;// = config["n_instances"].get<int>();
 
+    //string qd_dir = "quay_divisions/";
+
     if(argc >= 3) {
 	for(int i = 1; i < argc; i = i + 2) {
 		if(strcmp(argv[i], "-t") == 0) {
 			n_instances = stoi(argv[i + 1]);
 		}
+		/*if(strcmp(argv[i], "-p") == 0) {
+			qd_dir = qd_dir + argv[i + 1] + "/";
+			cout << qd_dir << endl;
+		}*/
 	}
     }
     else {
         n_instances = config["n_instances"].get<int>();
     }
+
+
+    /*if(mkdir(qd_dir.c_str(), 0777) != -1) {
+	cout << "Folder with quay_divisions created!" << endl;
+    } else {
+       cout << "quay_divisions already exists! " << endl;
+    }*/
 
     InstanceGenerator generator(instances_path, read_instances_from_file);
     Evaluator evaluator(config["bap_algorithms"], generator);

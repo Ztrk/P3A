@@ -4,8 +4,9 @@
 #include <vector>
 #include <mpi.h>
 #include <string>
-#include <sys/stat.h>
-#include <sys/types.h>
+#include <bits/stdc++.h>
+#include <sys/stat.h> 
+#include <sys/types.h> 
 using namespace std;
 
 double MpiEvaluator::evaluate(const vector<int> &berth_frequencies, 
@@ -117,6 +118,7 @@ void MpiEvaluator::write_log(const vector<int> &berths, const vector<double> &mw
     }
     log.flush();
 
+
     // Prepare file system - create folders
     string berth_folder_name = "";
 
@@ -126,33 +128,48 @@ void MpiEvaluator::write_log(const vector<int> &berths, const vector<double> &mw
             berth_folder_name += "_";
         }
     }	    
-
+    
+    /*
     string command = "mkdir quay_divisions/" + berth_folder_name;
     
     int mkdir_result = system(command.c_str());
+    */
+
+
+    string tmp_division = "quay_divisions/" + berth_folder_name;
+    bool write_results_at_division = true;
+    // Creating a directory 
+    mkdir(tmp_division.c_str(), 0777);
 
     ofstream berth_div_stats;
-    berth_div_stats.open("quay_divisions/" + berth_folder_name + "/overall_stats.txt");
+    berth_div_stats.open(tmp_division + "/overall_stats.txt");
 
     // Compute and write statistics of results
     double mwft_sum = evaluator.aggregate(mwft_norm);
     double sd = standard_deviation(mwft_norm);
     vector<double> quart = quartiles(mwft_norm);
 
+    if (write_results_at_division) {
+	    berth_div_stats << "Mean MWFT(norm): " << mwft_sum << '\n';
+	    berth_div_stats << "Min, Max: " << min(mwft_norm) << ' ' << max(mwft_norm) << '\n';
+	    berth_div_stats << "Quartiles: " << quart[0] << ' ' << quart[1] << ' ' << quart[2] << '\n';
+	    berth_div_stats << "Std dev.: " << sd << '\n';
+	    berth_div_stats << "IQR: " << quart[2] - quart[0] << endl;
+    }
+
+
     cout << "Mean MWFT(norm): " << mwft_sum << '\n';
-    berth_div_stats << "Mean MWFT(norm): " << mwft_sum << '\n';
 
     cout << "Min, Max: " << min(mwft_norm) << ' ' << max(mwft_norm) << '\n';
-    berth_div_stats << "Min, Max: " << min(mwft_norm) << ' ' << max(mwft_norm) << '\n';
+    
     
     cout << "Quartiles: " << quart[0] << ' ' << quart[1] << ' ' << quart[2] << '\n';
-    berth_div_stats << "Quartiles: " << quart[0] << ' ' << quart[1] << ' ' << quart[2] << '\n';
+    
 
     cout << "Std dev.: " << sd << '\n';
-    berth_div_stats << "Std dev.: " << sd << '\n';
-
+    
     cout << "IQR: " << quart[2] - quart[0] << '\n';
-    berth_div_stats << "IQR: " << quart[2] - quart[0] << endl;
+    
     cout << endl;
 
     berth_div_stats.close();
