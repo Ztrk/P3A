@@ -43,7 +43,7 @@ Po uruchomieniu skryptu `p3ascr_v2_const_p_diff_inst.sh` powstaje plik wynikowy 
 Najpierw tworzony jest ogólny folder z podziałami nabrzeży `quay_divisions`.
 W wyniku uruchomienia programu `p3a` poleceniem zawartym w skrypcie tworzone są foldery związane z kolejnymi ewaluowanymi wektorami BLF (berth length frequencies). Następnie uruchamiany jest program `file_system_v2.py` generujący podfoldery dla każdego podziału nabrzeża, dzieląc wyniki na instancje(STM - Ship Traffic Model) i ostatecznie pliki tekstowe dla każdej instancji - wyniki dla każdego algorytmu BAP (berh allocation problem). Wyniki są wczytywane z pliku `evaluator.log` gdzie wyniki są zapisane kolejno instancjami (dla każdej instancji jest kolejno n-wierszy gdzie n to ilość używanych algorytmów BAP). 
 
-## v2_p3ascr_const_p_diff_inst.sh -uruchomienie
+#### v2_p3ascr_const_p_diff_inst.sh -uruchomienie
 Całą procedurę tworzenia systemu plików można uruchomić wykonując skrypt poleceniem:
 `sbatch v2_p3ascr_const_p_diff_inst.sh "xx"`      gdzie "xx" to identyfikator portu (lh, rt, sh,...)
 Na obecną chwilę należy argument "xx" wpisać, także w pliku `p3a_config.json` dla spójności systemu.
