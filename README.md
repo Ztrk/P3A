@@ -39,9 +39,28 @@ Druga wersja skryptu - `p3ascr_v2_const_p_diff_inst.sh` służy do pomiaru czasu
 
 Po uruchomieniu skryptu `p3ascr_v2_const_p_diff_inst.sh` powstaje plik wynikowy `10tasks_100to10inst.txt`, który zawiera cykliczne informacje zawierające - liczbę instancji i 5 wartości czasów wykonywanego algorytmu, każda informacja w osobnym wierszu. Przy obecności tego pliku można uruchomić skrypt `diff_inst_mean_alg_time.py` (python diff_inst_mean_alg_time.py), co daje ostatecznie w pliku wynikowym `mean_times_const_proc_diff_inst.txt` zestawienie: 'liczba instancji' oraz 'przyspieszenie dla danej liczby instancji' w odniesieniu do największej uwzględnianej liczby instancji (100) przy stałej ilości procesorów (--ntasks w skrypcie).
 
+### Druga wersja skryptu + modyfikacje - v2_p3ascr_const_p_diff_inst.sh
+Najpierw tworzony jest ogólny folder z podziałami nabrzeży `quay_divisions`.
+W wyniku uruchomienia programu `p3a` poleceniem zawartym w skrypcie tworzone są foldery związane z kolejnymi ewaluowanymi wektorami BLF (berth length frequencies). Następnie uruchamiany jest program `file_system_v2.py` generujący podfoldery dla każdego podziału nabrzeża, dzieląc wyniki na instancje(STM - Ship Traffic Model) i ostatecznie pliki tekstowe dla każdej instancji - wyniki dla każdego algorytmu BAP (berh allocation problem). Wyniki są wczytywane z pliku `evaluator.log` gdzie wyniki są zapisane kolejno instancjami (dla każdej instancji jest kolejno n-wierszy gdzie n to ilość używanych algorytmów BAP). 
+
+## v2_p3ascr_const_p_diff_inst.sh -uruchomienie
+Całą procedurę tworzenia systemu plików można uruchomić wykonując skrypt poleceniem:
+`sbatch v2_p3ascr_const_p_diff_inst.sh "xx"`      gdzie "xx" to identyfikator portu (lh, rt, sh,...)
+Na obecną chwilę należy argument "xx" wpisać, także w pliku `p3a_config.json` dla spójności systemu.
+
+Wymagane pliki w folderze gdzie znajduje się skrypt:
+`p3a_config.json`
+`p3a`
+`evaluator.log`
+`file_system_v2.py`
+
+Dla pomiarów czasu wykonywania algorytmu także:
+`local_search.log`
+`get_inst_time.py`
+
 #### Uwagi - PCSS
 
-Przed uruchomieniem polecenia `cmake -S .` na używanym w projekcie klastrze eagle PCSS należy załadować biblioteke MPI poleceniem `module load mpich`.
+Przed uruchomieniem polecenia `cmake -S .` na używanym w projekcie klastrze eagle PCSS należy załadować bibliotekę MPI poleceniem `module load mpich`.
 
 
 
