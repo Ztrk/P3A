@@ -16,8 +16,6 @@ with open('./p3a_config.json') as config_json:
 bap_algorithms = data["bap_algorithms"]
 bap_length = len(bap_algorithms)
 
-instances = data["n_instances"]
-
 ev_log = open("evaluator.log", "r")
 Lines = ev_log.readlines() 
 
