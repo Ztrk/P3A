@@ -2,9 +2,10 @@ import sys
 
 def mean_from_arr(arr):
 	mean = 0
- 	for i in range (0, len(arr)):
+	arr_len = len(arr)
+	for i in range(0, arr_len):
 		mean = mean + arr[i]
-	return (mean / 3)
+	return (mean / arr_len)
 
 inst_output_times = open(sys.argv[1])
 
@@ -24,12 +25,12 @@ for line in inst_output_times:
 	else:
 		times_arr.append(float(line))
 		line_no = line_no + 1
-		if(line_no == 6):
+		if(line_no == 4):
 			times_arr.sort()
 			times_arr.pop()
 			times_arr.pop(0)
 			mean_time = mean_from_arr(times_arr)
 			f.write(str(n_inst) + " " + str(mean_time) + "\n")
-			line_no = 0		
+			line_no = 0
 f.close()
 inst_output_times.close()
