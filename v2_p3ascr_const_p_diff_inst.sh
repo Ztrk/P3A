@@ -2,7 +2,7 @@
 #SBATCH --job-name=p3arun
 #SBATCH --output=p3arun.out
 #SBATCH --error=p3arun.err
-#SBATCH --time=00:05:00
+#SBATCH --time=01:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=10
 #SBATCH --partition=fast
@@ -15,7 +15,7 @@ do
 	for((j = 1; j <= 1; j++))
 	do
 		mpiexec ./p3a -t $i
-		python get_inst_time.py + "\n"
+		#python get_inst_time.py + "\n"
 	done
 done
 
