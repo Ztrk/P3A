@@ -10,14 +10,11 @@ fslog = open("file_system.log", "w")
 
 port_name = sys.argv[1]
 
-#print("port_name: " + port_name)
-
 with open('./p3a_config.json') as config_json:
   data = json.load(config_json)
 
 bap_algorithms = data["bap_algorithms"]
 bap_length = len(bap_algorithms)
-#print(bap_length)
 
 instances = data["n_instances"]
 
@@ -33,7 +30,6 @@ division_info = ""
 
 BLF_dir = ""
 
-# Strips the newline character 
 for line in Lines:
     if line[0] in numbers:
 	bap_no = bap_no + 1
@@ -70,7 +66,6 @@ for line in Lines:
 
 	#file path - END
 
-	#print(info_tmp)
 	division_info = division_info + info_tmp + "\n"
 	if bap_no == bap_length - 1:
 		bap_no = -1
@@ -87,6 +82,4 @@ for line in Lines:
 		BLF_dir = "_".join(BLF)
 		division_info = ""
 		divisiion_info = division_info + BLF_dir + "\n"
-		#print("")
-		#print(BLF_dir)
 fslog.close()
