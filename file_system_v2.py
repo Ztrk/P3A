@@ -11,19 +11,36 @@ def get_bap_dir_name(bap_entry):
 
 fs_log = open("file_system.log", "w")
 port_name = sys.argv[1]
+max_proc_exec = sys.argv[2]
 
 with open('./p3a_config.json') as config_json:
     data = json.load(config_json)
 
 bap_algorithms = data["bap_algorithms"]
 bap_length = len(bap_algorithms)
-ev_log = open("evaluator.log", "r")
+
+berths = data["berths"]
+
+evaluator_location = "quay_divisions/" + port_name + "/p" + str(max_proc_exec) + "/evaluator.log"
+ev_log = open(evaluator_location, "r")
 Lines = ev_log.readlines()
 ev_log.close()
+
+berth_lengths = open("quay_divisions/" + port_name + "/p" + str(max_proc_exec) + "/berth_lengths.txt", "w")
+berth_str = "berth lengths:\n["
+for berth in berths:
+	berth_str = berth_str + str(berth) + ", "
+
+berth_str = berth_str[:-2]
+berth_str = berth_str + "]"
+
+berth_lengths.write(berth_str)
+berth_lengths.close()
+
+
 numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 bap_no = -1
 inst_no = 0
-division_info = ""
 BLF_dir = ""
 
 for line in Lines:
@@ -32,44 +49,38 @@ for line in Lines:
         info_tmp = str(inst_no) + " " + str(bap_no) + " " + line
         # file path - START
         original_umask = os.umask(0)
-        BLF_path = "quay_divisions/" + port_name + "/" + BLF_dir
+	#port_path = "quay_divisions/" + port_name
+	port_path = "quay_divisions/" + port_name + "/" + "p" + str(max_proc_exec) + "/"
+        #BLF_path = port_path + "/p" + str(max_proc_exec) + BLF_dir
+	BLF_path = port_path + BLF_dir
         bap_dir = "/inst" + str(inst_no) + "/"
         whole_path = BLF_path + bap_dir
         try:
             os.makedirs(whole_path, 0o755)
         except:
             fs_log.write("file already exists: (" + whole_path + ")\n")
-        bap_file_name = get_bap_dir_name(bap_algorithms[bap_no]) + ".txt"
+        
+	bap_file_name = get_bap_dir_name(bap_algorithms[bap_no]) + ".txt"
         bap_filepath = os.path.join(whole_path, bap_file_name)
-        bap_lb_path = os.path.join(whole_path, "lb") + ".txt"
-        bap_file_w_mode = open(bap_filepath, "w")
+        
+        
+
+	bap_lb_path = os.path.join(whole_path, "lb") + ".txt"
         bap_lb_file = open(bap_lb_path, "w")
-        bap_file_w_mode.write("MWFT(norm) MWFT LB\n")
+	bap_lb_file.write("Lower Bound: " + line.split()[2])
+        
+	bap_file_w_mode = open(bap_filepath, "w")
+	bap_file_w_mode.write("MWFT(norm) MWFT LB\n")
         bap_file_w_mode.write(line)
-        bap_lb_file.write("Lower Bound: " + line.split()[2])
-        bap_file_w_mode.close()
+	bap_file_w_mode.close()
+
         # file path - END
-        division_info = division_info + info_tmp + "\n"
         if bap_no == bap_length - 1:
             bap_no = -1
             inst_no = inst_no + 1
     else:
         if line[0] == "E":
             inst_no = 0
-            # if first BLF parsed
-            if BLF_dir != "":
-                MWFT_detailed = open("quay_divisions/" + port_name + "/" + BLF_dir + "/MWFT_all.txt", "w")
-                MWFT_detailed.write(division_info)
-                MWFT_detailed.close()
-
             BLF = line.split(": ")[1].split()
             BLF_dir = "_".join(BLF)
-
-            # include headings
-            MWFT_detailed = open("quay_divisions/" + port_name + "/" + BLF_dir + "/MWFT_all.txt", "w")
-            MWFT_detailed.write("instance_no BAP_no MWFT(norm) MWFT LB")
-            MWFT_detailed.close()
-
-            division_info = ""
-            division_info = division_info + BLF_dir + "\n"
 fs_log.close()
