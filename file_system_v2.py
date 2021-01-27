@@ -3,7 +3,7 @@ import sys
 import os
 
 
-def get_bap_dir_name(bap_entry):
+def get_bap_file_name(bap_entry):
     algo = bap_entry["algorithm"] + "-" + bap_entry["scheduling_policy"]
     f_arr = "-" + "future_arrivals" + str(bap_entry["future_arrivals"])
     return algo + f_arr
@@ -54,7 +54,7 @@ for line in Lines:
         except:
             fs_log.write("file already exists: (" + whole_path + ")\n")
         
-	bap_file_name = get_bap_dir_name(bap_algorithms[bap_no]) + ".txt"
+	bap_file_name = get_bap_file_name(bap_algorithms[bap_no]) + ".txt"
         bap_filepath = os.path.join(whole_path, bap_file_name)
         
 	bap_lb_path = os.path.join(whole_path, "lb") + ".txt"
