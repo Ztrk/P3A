@@ -62,5 +62,9 @@ Dla pomiarów czasu wykonywania algorytmu także:
 
 Przed uruchomieniem polecenia `cmake -S .` na używanym w projekcie klastrze eagle PCSS należy załadować bibliotekę MPI poleceniem `module load mpich`.
 
+### System plików
 
+System plików dzielących dane wyjściowe (pliki `evaluator.log`, `local_search.log`, plik z wynikiem czasowym wykonywanego programu dla instancji przy danej liczby procesorów).
 
+Aby uzyskać podzielone w ten sposób dane należy uruchomić skrypt `create_file_system.sh` poleceniem:
+`sbatch create_file_system.sh "xx" i`, gdzie "xx" to folder (najlepiej jednoznacznie określający badany port) do którego mają zostać zapisane dane w uporządkowany sposób, i - oznacza liczbę instancji, które mają być przetwarzane przez maksymalnie `mp` procesorów - wartość ustalana w pliku `create_file_system.sh`.
