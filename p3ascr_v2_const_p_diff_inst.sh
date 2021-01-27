@@ -8,12 +8,12 @@
 
 module load mpich
 
-for ((i = 100; i>=10; i = i - 10))
+for ((i = 50; i>=10; i = i - 10))
 do
-	echo "$i" >> 10tasks_100to10inst.txt
+	echo "$i" >> 10tasks_50to10inst.txt
 	for((j = 1; j <= 5; j++))
 	do
-		mpiexec ./p3a -e "nothing"  -t $i > evaluated_berths_info.txt
-		python get_inst_time.py + "\n"  >> 10tasks_100to10inst.txt
+		mpiexec ./p3a -t $i > evaluated_berths_info.txt
+		python get_inst_time.py + "\n"  >> 10tasks_50to10inst.txt
 	done
 done
